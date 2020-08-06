@@ -1,8 +1,0 @@
-"0","#1 - Get the names of the files in our Stimtracks folder"
-"0","StimTracks <- dir(here(""Stimuli/Original Recordings/Stimtracks""), full.names= TRUE, pattern = ""\\.txt"") #Note we use full.names = TRUE here so the file names have their file paths and can be referenced further down"
-"0",""
-"0","#2 - Read in the files from that directory"
-"0","temp <- lapply(StimTracks, fread, sep = ""\t"")"
-"0",""
-"0","#2a - Explore an index (just to show how it is done)"
-"0","head(temp[[2]])"

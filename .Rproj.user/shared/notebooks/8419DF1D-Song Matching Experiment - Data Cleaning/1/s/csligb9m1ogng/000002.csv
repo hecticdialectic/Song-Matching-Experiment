@@ -1,5 +1,0 @@
-"0","#1- Obtaining filenames"
-"0","StimTracks2 <- dir(here(""Stimuli/Original Recordings/Stimtracks""), pattern = ""\\.txt"")"
-"0",""
-"0","#2 Adding our filename column"
-"0","AggregatedStimTracks$FileName <- rep(StimTracks2, each= 60)"
