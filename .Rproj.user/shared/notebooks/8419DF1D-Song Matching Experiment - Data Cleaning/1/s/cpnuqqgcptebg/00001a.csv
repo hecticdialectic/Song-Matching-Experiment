@@ -1,0 +1,4 @@
+"0",""
+"0","#3 - Transform our lists of lists into a dataframe "
+"0","AggregatedStimTracks <- bind_rows(temp)"
+"0","head(AggregatedStimTracks)"

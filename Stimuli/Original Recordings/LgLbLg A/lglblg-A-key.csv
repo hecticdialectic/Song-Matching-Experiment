@@ -1,0 +1,7 @@
+Decoy?,Song,Mask
+Actual,Fast,B
+Actual,Control,C
+Actual,Slow,F
+Decoy,Fast,D
+Decoy,Control,E
+Decoy,Slow,A

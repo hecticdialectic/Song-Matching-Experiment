@@ -1,0 +1,487 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Bird	Experiment	Signal Type	Stim Type	Response	Overlapping	Notes
+192	Waveform 1	1	3.851764926	6.753427902	0.0	22050.0	PDP	dawn	c				
+192	Spectrogram 1	1	3.851764926	6.753427902	0.0	22050.0	PDP	dawn	c				
+193	Waveform 1	1	7.600815667	10.142980576	0.0	22050.0	PDP	dawn	c				
+193	Spectrogram 1	1	7.600815667	10.142980576	0.0	22050.0	PDP	dawn	c				
+195	Waveform 1	1	12.454039410	15.016747065	0.0	22050.0	PDP	dawn	pre-trial-sing				
+195	Spectrogram 1	1	12.454039410	15.016747065	0.0	22050.0	PDP	dawn	pre-trial-sing				
+194	Waveform 1	1	15.098918052	15.643300840	0.0	22050.0	PDP	dawn	c				the bird
+194	Spectrogram 1	1	15.098918052	15.643300840	0.0	22050.0	PDP	dawn	c				the bird
+197	Waveform 1	1	20.152433038	22.653512452	0.0	22050.0	PDP	dawn	pre-trial-sing				
+197	Spectrogram 1	1	20.152433038	22.653512452	0.0	22050.0	PDP	dawn	pre-trial-sing				
+196	Waveform 1	1	23.156809747	23.567664682	0.0	22050.0	PDP	dawn	c				the bird
+196	Spectrogram 1	1	23.156809747	23.567664682	0.0	22050.0	PDP	dawn	c				the bird
+199	Waveform 1	1	35.400285830	38.348169986	0.0	22050.0	PDP	dawn	pre-trial-sing				
+199	Spectrogram 1	1	35.400285830	38.348169986	0.0	22050.0	PDP	dawn	pre-trial-sing				
+198	Waveform 1	1	39.873468844	40.561650860	0.0	22050.0	PDP	dawn	c				the bird
+198	Spectrogram 1	1	39.873468844	40.561650860	0.0	22050.0	PDP	dawn	c				the bird
+201	Waveform 1	1	46.056835351	49.025262254	0.0	22050.0	PDP	dawn	pre-trial-sing				
+201	Spectrogram 1	1	46.056835351	49.025262254	0.0	22050.0	PDP	dawn	pre-trial-sing				
+200	Waveform 1	1	49.215282661	49.800750943	0.0	22050.0	PDP	dawn	c				the bird
+200	Spectrogram 1	1	49.215282661	49.800750943	0.0	22050.0	PDP	dawn	c				the bird
+203	Waveform 1	1	56.004659209	57.812420921	0.0	22050.0	PDP	dawn	pre-trial-sing				
+203	Spectrogram 1	1	56.004659209	57.812420921	0.0	22050.0	PDP	dawn	pre-trial-sing				
+202	Waveform 1	1	60.703812438	61.366316020	0.0	22050.0	PDP	dawn	c				the bird
+202	Spectrogram 1	1	60.703812438	61.366316020	0.0	22050.0	PDP	dawn	c				the bird
+205	Waveform 1	1	63.238250759	65.924214894	0.0	22050.0	PDP	dawn	pre-trial-sing				
+205	Spectrogram 1	1	63.238250759	65.924214894	0.0	22050.0	PDP	dawn	pre-trial-sing				
+204	Waveform 1	1	66.186134828	66.617532509	0.0	22050.0	PDP	dawn	c				the bird
+204	Spectrogram 1	1	66.186134828	66.617532509	0.0	22050.0	PDP	dawn	c				the bird
+206	Waveform 1	1	68.774520916	70.469297522	0.0	22050.0	PDP	dawn	c				
+206	Spectrogram 1	1	68.774520916	70.469297522	0.0	22050.0	PDP	dawn	c				
+208	Waveform 1	1	71.224243293	73.391503073	0.0	22050.0	PDP	dawn	pre-trial-sing				
+208	Spectrogram 1	1	71.224243293	73.391503073	0.0	22050.0	PDP	dawn	pre-trial-sing				
+207	Waveform 1	1	73.725322708	74.305655303	0.0	22050.0	PDP	dawn	c				the bird
+207	Spectrogram 1	1	73.725322708	74.305655303	0.0	22050.0	PDP	dawn	c				the bird
+210	Waveform 1	1	86.888087157	89.409709319	0.0	22050.0	PDP	dawn	pre-trial-sing				
+210	Spectrogram 1	1	86.888087157	89.409709319	0.0	22050.0	PDP	dawn	pre-trial-sing				
+209	Waveform 1	1	89.440523439	89.964363480	0.0	22050.0	PDP	dawn	c				the bird
+209	Spectrogram 1	1	89.440523439	89.964363480	0.0	22050.0	PDP	dawn	c				the bird
+212	Waveform 1	1	94.627566729	96.604806102	0.0	22050.0	PDP	dawn	pre-trial-sing				
+212	Spectrogram 1	1	94.627566729	96.604806102	0.0	22050.0	PDP	dawn	pre-trial-sing				
+211	Waveform 1	1	96.861590436	97.262173997	0.0	22050.0	PDP	dawn	c				the bird
+211	Spectrogram 1	1	96.861590436	97.262173997	0.0	22050.0	PDP	dawn	c				the bird
+213	Waveform 1	1	100.307636114	102.166754693	0.0	22050.0	PDP	dawn	c				
+213	Spectrogram 1	1	100.307636114	102.166754693	0.0	22050.0	PDP	dawn	c				
+215	Waveform 1	1	102.962785905	105.741192400	0.0	22050.0	PDP	dawn	pre-trial-sing				
+215	Spectrogram 1	1	102.962785905	105.741192400	0.0	22050.0	PDP	dawn	pre-trial-sing				
+214	Waveform 1	1	106.008248021	106.424238643	0.0	22050.0	PDP	dawn	c				the bird
+214	Spectrogram 1	1	106.008248021	106.424238643	0.0	22050.0	PDP	dawn	c				the bird
+217	Waveform 1	1	109.372122625	111.616417706	0.0	22050.0	PDP	dawn	pre-trial-sing				
+217	Spectrogram 1	1	109.372122625	111.616417706	0.0	22050.0	PDP	dawn	pre-trial-sing				
+216	Waveform 1	1	112.063222447	112.612740923	0.0	22050.0	PDP	dawn	c				the bird
+216	Spectrogram 1	1	112.063222447	112.612740923	0.0	22050.0	PDP	dawn	c				the bird
+218	Waveform 1	1	117.522457132	119.735938092	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted but loud...
+218	Spectrogram 1	1	117.522457132	119.735938092	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted but loud...
+220	Waveform 1	1	123.438768018	126.853999662	0.0	22050.0	PDP	dawn	pre-trial-sing				
+220	Spectrogram 1	1	123.438768018	126.853999662	0.0	22050.0	PDP	dawn	pre-trial-sing				
+219	Waveform 1	1	127.126191056	127.655166785	0.0	22050.0	PDP	dawn	c				the bird
+219	Spectrogram 1	1	127.126191056	127.655166785	0.0	22050.0	PDP	dawn	c				the bird
+221	Waveform 1	1	131.537745365	133.592020038	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+221	Spectrogram 1	1	131.537745365	133.592020038	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+222	Waveform 1	1	140.237598346	142.415129500	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+222	Spectrogram 1	1	140.237598346	142.415129500	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+223	Waveform 1	1	147.540544550	149.851603558	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+223	Spectrogram 1	1	147.540544550	149.851603558	0.0	22050.0	PDP	dawn	pre-trial-sing				not noted
+225	Waveform 1	1	156.906669637	159.438563171	0.0	22050.0	PDP	dawn	pre-trial-sing				
+225	Spectrogram 1	1	156.906669637	159.438563171	0.0	22050.0	PDP	dawn	pre-trial-sing				
+224	Waveform 1	1	159.429658875	159.907277737	0.0	22050.0	PDP	dawn	c				the bird
+224	Spectrogram 1	1	159.429658875	159.907277737	0.0	22050.0	PDP	dawn	c				the bird
+227	Waveform 1	1	171.712853911	174.106083906	0.0	22050.0	PDP	dawn	pre-trial-sing				
+227	Spectrogram 1	1	171.712853911	174.106083906	0.0	22050.0	PDP	dawn	pre-trial-sing				
+226	Waveform 1	1	174.208797639	174.650466694	0.0	22050.0	PDP	dawn	c				the bird
+226	Spectrogram 1	1	174.208797639	174.650466694	0.0	22050.0	PDP	dawn	c				the bird
+229	Waveform 1	1	179.765610371	182.276961159	0.0	22050.0	PDP	dawn	pre-trial-sing				
+229	Spectrogram 1	1	179.765610371	182.276961159	0.0	22050.0	PDP	dawn	pre-trial-sing				
+228	Waveform 1	1	182.657001887	183.324641156	0.0	22050.0	PDP	dawn	c				our bird
+228	Spectrogram 1	1	182.657001887	183.324641156	0.0	22050.0	PDP	dawn	c				our bird
+231	Waveform 1	1	195.727324062	198.079468563	0.0	22050.0	PDP	dawn	pre-trial-sing				
+231	Spectrogram 1	1	195.727324062	198.079468563	0.0	22050.0	PDP	dawn	pre-trial-sing				
+230	Waveform 1	1	198.351659958	198.829278819	0.0	22050.0	PDP	dawn	c				the bird
+230	Spectrogram 1	1	198.351659958	198.829278819	0.0	22050.0	PDP	dawn	c				the bird
+233	Waveform 1	1	203.163798120	205.700827341	0.0	22050.0	PDP	dawn	pre-trial-sing				
+233	Spectrogram 1	1	203.163798120	205.700827341	0.0	22050.0	PDP	dawn	pre-trial-sing				
+232	Waveform 1	1	205.875440689	206.327381117	0.0	22050.0	PDP	dawn	c				the bird
+232	Spectrogram 1	1	205.875440689	206.327381117	0.0	22050.0	PDP	dawn	c				the bird
+235	Waveform 1	1	211.766072604	214.133624165	0.0	22050.0	PDP	dawn	pre-trial-sing				
+235	Spectrogram 1	1	211.766072604	214.133624165	0.0	22050.0	PDP	dawn	pre-trial-sing				
+234	Waveform 1	1	214.369865752	214.852620301	0.0	22050.0	PDP	dawn	c				the bird
+234	Spectrogram 1	1	214.369865752	214.852620301	0.0	22050.0	PDP	dawn	c				the bird
+237	Waveform 1	1	220.275905178	222.181244938	0.0	22050.0	PDP	dawn	pre-trial-sing				
+237	Spectrogram 1	1	220.275905178	222.181244938	0.0	22050.0	PDP	dawn	pre-trial-sing				
+236	Waveform 1	1	222.761577446	223.131346887	0.0	22050.0	PDP	dawn	c				the bird
+236	Spectrogram 1	1	222.761577446	223.131346887	0.0	22050.0	PDP	dawn	c				the bird
+238	Waveform 1	1	235.292652520	236.735780478	0.0	22050.0	PDP	dawn	pre-trial-sing				
+238	Spectrogram 1	1	235.292652520	236.735780478	0.0	22050.0	PDP	dawn	pre-trial-sing				
+239	Waveform 1	1	236.807680092	237.280163267	0.0	22050.0	PDP	dawn	c				the bird
+239	Spectrogram 1	1	236.807680092	237.280163267	0.0	22050.0	PDP	dawn	c				the bird
+241	Waveform 1	1	249.364433599	251.583050246	0.0	22050.0	PDP	dawn	pre-trial-sing				
+241	Spectrogram 1	1	249.364433599	251.583050246	0.0	22050.0	PDP	dawn	pre-trial-sing				
+240	Waveform 1	1	252.214739622	252.666680050	0.0	22050.0	PDP	dawn	c				the bird
+240	Spectrogram 1	1	252.214739622	252.666680050	0.0	22050.0	PDP	dawn	c				the bird
+242	Waveform 1	1	256.174353968	256.636565769	0.0	22050.0	PDP	dawn	c				wow
+242	Spectrogram 1	1	256.174353968	256.636565769	0.0	22050.0	PDP	dawn	c				wow
+244	Waveform 1	1	257.894808834	260.092882734	0.0	22050.0	PDP	dawn	pre-trial-sing				
+244	Spectrogram 1	1	257.894808834	260.092882734	0.0	22050.0	PDP	dawn	pre-trial-sing				
+243	Waveform 1	1	260.765657689	261.212462431	0.0	22050.0	PDP	dawn	c				the bird
+243	Spectrogram 1	1	260.765657689	261.212462431	0.0	22050.0	PDP	dawn	c				the bird
+246	Waveform 1	1	281.796293878	284.287101919	0.0	22050.0	PDP	dawn	pre-trial-sing				
+246	Spectrogram 1	1	281.796293878	284.287101919	0.0	22050.0	PDP	dawn	pre-trial-sing				
+245	Waveform 1	1	284.343594473	284.887977261	0.0	22050.0	PDP	dawn	c				the bird
+245	Spectrogram 1	1	284.343594473	284.887977261	0.0	22050.0	PDP	dawn	c				the bird
+1	Waveform 1	1	302.466000000	304.723907300	0.0	22050.0	PDP	dawn	s	c	y		
+1	Spectrogram 1	1	302.466000000	304.723907300	0.0	22050.0	PDP	dawn	s	c	y		
+31	Waveform 1	1	304.859485076	305.265204324	0.0	22050.0	PDP	dawn	c				playback
+31	Spectrogram 1	1	304.859485076	305.265204324	0.0	22050.0	PDP	dawn	c				playback
+33	Waveform 1	1	310.117662675	312.053816555	0.0	22050.0	PDP	dawn	r				
+33	Spectrogram 1	1	310.117662675	312.053816555	0.0	22050.0	PDP	dawn	r				
+32	Waveform 1	1	312.102217953	312.507937201	0.0	22050.0	PDP	dawn	c				the bird
+32	Spectrogram 1	1	312.102217953	312.507937201	0.0	22050.0	PDP	dawn	c				the bird
+2	Waveform 1	1	313.989970348	316.398607402	0.0	22050.0	PDP	dawn	s	c	y		
+2	Spectrogram 1	1	313.989970348	316.398607402	0.0	22050.0	PDP	dawn	s	c	y		
+34	Waveform 1	1	316.645120276	317.194638751	0.0	22050.0	PDP	dawn	c				playback
+34	Spectrogram 1	1	316.645120276	317.194638751	0.0	22050.0	PDP	dawn	c				playback
+36	Waveform 1	1	318.925365077	321.128574664	0.0	22050.0	PDP	dawn	r				
+36	Spectrogram 1	1	318.925365077	321.128574664	0.0	22050.0	PDP	dawn	r				
+35	Waveform 1	1	321.354544878	321.796213933	0.0	22050.0	PDP	dawn	c				the bird
+35	Spectrogram 1	1	321.354544878	321.796213933	0.0	22050.0	PDP	dawn	c				the bird
+3	Waveform 1	1	326.053460100	327.810828100	0.0	22050.0	PDP	dawn	s	s	y	y	
+3	Spectrogram 1	1	326.053460100	327.810828100	0.0	22050.0	PDP	dawn	s	s	y	y	
+38	Waveform 1	1	326.903286874	328.983239980	0.0	22050.0	PDP	dawn	r			y	
+38	Spectrogram 1	1	326.903286874	328.983239980	0.0	22050.0	PDP	dawn	r			y	
+37	Waveform 1	1	328.765340276	330.460116882	0.0	22050.0	PDP	dawn	c				the bird... match?
+37	Spectrogram 1	1	328.765340276	330.460116882	0.0	22050.0	PDP	dawn	c				the bird... match?
+4	Waveform 1	1	337.522022200	339.557061700	0.0	22050.0	PDP	dawn	s	f	y		
+4	Spectrogram 1	1	337.522022200	339.557061700	0.0	22050.0	PDP	dawn	s	f	y		
+39	Waveform 1	1	340.261207504	341.103460120	0.0	22050.0	PDP	dawn	c				playback
+39	Spectrogram 1	1	340.261207504	341.103460120	0.0	22050.0	PDP	dawn	c				playback
+41	Waveform 1	1	343.672451854	346.060546162	0.0	22050.0	PDP	dawn	r				
+41	Spectrogram 1	1	343.672451854	346.060546162	0.0	22050.0	PDP	dawn	r				
+40	Waveform 1	1	346.239146630	346.670544311	0.0	22050.0	PDP	dawn	c				the bird
+40	Spectrogram 1	1	346.239146630	346.670544311	0.0	22050.0	PDP	dawn	c				the bird
+5	Waveform 1	1	349.451701800	351.808255600	0.0	22050.0	PDP	dawn	s	c	y		
+5	Spectrogram 1	1	349.451701800	351.808255600	0.0	22050.0	PDP	dawn	s	c	y		
+42	Waveform 1	1	351.643245878	352.608754975	0.0	22050.0	PDP	dawn	c				playback
+42	Spectrogram 1	1	351.643245878	352.608754975	0.0	22050.0	PDP	dawn	c				playback
+44	Waveform 1	1	352.024317171	354.196712638	0.0	22050.0	PDP	dawn	r				
+44	Spectrogram 1	1	352.024317171	354.196712638	0.0	22050.0	PDP	dawn	r				
+43	Waveform 1	1	354.447330721	354.976306449	0.0	22050.0	PDP	dawn	c				the bird
+43	Spectrogram 1	1	354.447330721	354.976306449	0.0	22050.0	PDP	dawn	c				the bird
+47	Waveform 1	1	360.165209677	362.691967525	0.0	22050.0	PDP	dawn	r			y	
+47	Spectrogram 1	1	360.165209677	362.691967525	0.0	22050.0	PDP	dawn	r			y	
+6	Waveform 1	1	361.412352168	363.463149900	0.0	22050.0	PDP	dawn	s	s	y	y	
+6	Spectrogram 1	1	361.412352168	363.463149900	0.0	22050.0	PDP	dawn	s	s	y	y	
+45	Waveform 1	1	363.548797742	364.642699005	0.0	22050.0	PDP	dawn	c				first the bird playback?
+45	Spectrogram 1	1	363.548797742	364.642699005	0.0	22050.0	PDP	dawn	c				first the bird playback?
+49	Waveform 1	1	368.690449280	370.544432173	0.0	22050.0	PDP	dawn	r				
+49	Spectrogram 1	1	368.690449280	370.544432173	0.0	22050.0	PDP	dawn	r				
+48	Waveform 1	1	372.033781311	372.444636246	0.0	22050.0	PDP	dawn	c				the bird
+48	Spectrogram 1	1	372.033781311	372.444636246	0.0	22050.0	PDP	dawn	c				the bird
+7	Waveform 1	1	373.083004600	375.044972600	0.0	22050.0	PDP	dawn	s	s	y		
+7	Spectrogram 1	1	373.083004600	375.044972600	0.0	22050.0	PDP	dawn	s	s	y		
+50	Waveform 1	1	375.359138252	375.657008080	0.0	22050.0	PDP	dawn	c				playback
+50	Spectrogram 1	1	375.359138252	375.657008080	0.0	22050.0	PDP	dawn	c				playback
+52	Waveform 1	1	376.139762541	378.086187794	0.0	22050.0	PDP	dawn	r				
+52	Spectrogram 1	1	376.139762541	378.086187794	0.0	22050.0	PDP	dawn	r				
+51	Waveform 1	1	378.466228609	379.626893799	0.0	22050.0	PDP	dawn	c				the bird
+51	Spectrogram 1	1	378.466228609	379.626893799	0.0	22050.0	PDP	dawn	c				the bird
+53	Waveform 1	1	379.806642747	381.337077378	0.0	22050.0	PDP	dawn	c				
+53	Spectrogram 1	1	379.806642747	381.337077378	0.0	22050.0	PDP	dawn	c				
+55	Waveform 1	1	382.726280127	385.109238748	0.0	22050.0	PDP	dawn	r				
+55	Spectrogram 1	1	382.726280127	385.109238748	0.0	22050.0	PDP	dawn	r				
+8	Waveform 1	1	384.909616500	386.977538100	0.0	22050.0	PDP	dawn	s	f			
+8	Spectrogram 1	1	384.909616500	386.977538100	0.0	22050.0	PDP	dawn	s	f			
+54	Waveform 1	1	385.355751623	385.756335184	0.0	22050.0	PDP	dawn	c				the bird
+54	Spectrogram 1	1	385.355751623	385.756335184	0.0	22050.0	PDP	dawn	c				the bird
+56	Waveform 1	1	387.055663915	387.610318076	0.0	22050.0	PDP	dawn	c				playback
+56	Spectrogram 1	1	387.055663915	387.610318076	0.0	22050.0	PDP	dawn	c				playback
+59	Waveform 1	1	391.962812331	392.176000000	0.0	22050.0	PDP	dawn	r				sounds like a response- not noted by experimenter
+59	Spectrogram 1	1	391.962812331	392.176000000	0.0	22050.0	PDP	dawn	r				sounds like a response- not noted by experimenter
+57	Waveform 1	1	392.175943365	393.521493276	0.0	22050.0	PDP	dawn	c				
+57	Spectrogram 1	1	392.175943365	393.521493276	0.0	22050.0	PDP	dawn	c				
+58	Waveform 1	1	393.742327716	396.371799298	0.0	22050.0	PDP	dawn	c				
+58	Spectrogram 1	1	393.742327716	396.371799298	0.0	22050.0	PDP	dawn	c				
+9	Waveform 1	1	396.864103500	398.953946500	0.0	22050.0	PDP	dawn	s	f	y		
+9	Spectrogram 1	1	396.864103500	398.953946500	0.0	22050.0	PDP	dawn	s	f	y		
+60	Waveform 1	1	398.933594493	399.252007068	0.0	22050.0	PDP	dawn	c				playback
+60	Spectrogram 1	1	398.933594493	399.252007068	0.0	22050.0	PDP	dawn	c				playback
+61	Waveform 1	1	401.316552610	403.185942562	0.0	22050.0	PDP	dawn	c				
+61	Spectrogram 1	1	401.316552610	403.185942562	0.0	22050.0	PDP	dawn	c				
+63	Waveform 1	1	401.588744004	404.469864233	0.0	22050.0	PDP	dawn	r				
+63	Spectrogram 1	1	401.588744004	404.469864233	0.0	22050.0	PDP	dawn	r				
+62	Waveform 1	1	404.521221100	404.942347408	0.0	22050.0	PDP	dawn	c				the bird
+62	Spectrogram 1	1	404.521221100	404.942347408	0.0	22050.0	PDP	dawn	c				the bird
+10	Waveform 1	1	407.715212000	409.684487200	0.0	22050.0	PDP	dawn	s	s	y		
+10	Spectrogram 1	1	407.715212000	409.684487200	0.0	22050.0	PDP	dawn	s	s	y		
+65	Waveform 1	1	411.444126403	413.857899144	0.0	22050.0	PDP	dawn	r				
+65	Spectrogram 1	1	411.444126403	413.857899144	0.0	22050.0	PDP	dawn	r				
+64	Waveform 1	1	413.945205817	414.258482705	0.0	22050.0	PDP	dawn	c				the bird
+64	Spectrogram 1	1	413.945205817	414.258482705	0.0	22050.0	PDP	dawn	c				the bird
+11	Waveform 1	1	419.376692600	421.488457100	0.0	22050.0	PDP	dawn	s	f	y		
+11	Spectrogram 1	1	419.376692600	421.488457100	0.0	22050.0	PDP	dawn	s	f	y		
+66	Waveform 1	1	421.432468970	422.012801565	0.0	22050.0	PDP	dawn	c				playback
+66	Spectrogram 1	1	421.432468970	422.012801565	0.0	22050.0	PDP	dawn	c				playback
+68	Waveform 1	1	421.499232897	424.339267633	0.0	22050.0	PDP	dawn	r				
+68	Spectrogram 1	1	421.499232897	424.339267633	0.0	22050.0	PDP	dawn	r				
+67	Waveform 1	1	424.554966474	425.556425377	0.0	22050.0	PDP	dawn	c				the bird match
+67	Spectrogram 1	1	424.554966474	425.556425377	0.0	22050.0	PDP	dawn	c				the bird match
+70	Waveform 1	1	429.650667722	432.321224798	0.0	22050.0	PDP	dawn	r				
+70	Spectrogram 1	1	429.650667722	432.321224798	0.0	22050.0	PDP	dawn	r				
+12	Waveform 1	1	431.061903000	433.166360300	0.0	22050.0	PDP	dawn	s	f	y		
+12	Spectrogram 1	1	431.061903000	433.166360300	0.0	22050.0	PDP	dawn	s	f	y		
+69	Waveform 1	1	433.156238054	435.148884487	0.0	22050.0	PDP	dawn	c				first the bird then playback
+69	Spectrogram 1	1	433.156238054	435.148884487	0.0	22050.0	PDP	dawn	c				first the bird then playback
+72	Waveform 1	1	439.455595280	441.746111541	0.0	22050.0	PDP	dawn	r				
+72	Spectrogram 1	1	439.455595280	441.746111541	0.0	22050.0	PDP	dawn	r				
+71	Waveform 1	1	441.858194622	442.828839405	0.0	22050.0	PDP	dawn	c				the bird
+71	Spectrogram 1	1	441.858194622	442.828839405	0.0	22050.0	PDP	dawn	c				the bird
+13	Waveform 1	1	442.373363000	444.810295300	0.0	22050.0	PDP	dawn	s	c	y		
+13	Spectrogram 1	1	442.373363000	444.810295300	0.0	22050.0	PDP	dawn	s	c	y		
+73	Waveform 1	1	444.658045267	445.104850008	0.0	22050.0	PDP	dawn	c				playback
+73	Spectrogram 1	1	444.658045267	445.104850008	0.0	22050.0	PDP	dawn	c				playback
+75	Waveform 1	1	449.182584611	451.298487524	0.0	22050.0	PDP	dawn	r				
+75	Spectrogram 1	1	449.182584611	451.298487524	0.0	22050.0	PDP	dawn	r				
+74	Waveform 1	1	452.073976664	452.505374345	0.0	22050.0	PDP	dawn	c				the bird
+74	Spectrogram 1	1	452.073976664	452.505374345	0.0	22050.0	PDP	dawn	c				the bird
+14	Waveform 1	1	454.280353400	456.129060700	0.0	22050.0	PDP	dawn	s	s	y	y	
+14	Spectrogram 1	1	454.280353400	456.129060700	0.0	22050.0	PDP	dawn	s	s	y	y	
+77	Waveform 1	1	456.130607425	458.970642161	0.0	22050.0	PDP	dawn	r			y	
+77	Spectrogram 1	1	456.130607425	458.970642161	0.0	22050.0	PDP	dawn	r			y	
+76	Waveform 1	1	459.073355808	459.997779411	0.0	22050.0	PDP	dawn	c				playback and the bird
+76	Spectrogram 1	1	459.073355808	459.997779411	0.0	22050.0	PDP	dawn	c				playback and the bird
+15	Waveform 1	1	465.014547300	467.111697500	0.0	22050.0	PDP	dawn	s	f	y		
+15	Spectrogram 1	1	465.014547300	467.111697500	0.0	22050.0	PDP	dawn	s	f	y		
+79	Waveform 1	1	475.403807949	477.904887364	0.0	22050.0	PDP	dawn	r			y	
+79	Spectrogram 1	1	475.403807949	477.904887364	0.0	22050.0	PDP	dawn	r			y	
+16	Waveform 1	1	476.824557700	479.239568600	0.0	22050.0	PDP	dawn	s	c	y	y	
+16	Spectrogram 1	1	476.824557700	479.239568600	0.0	22050.0	PDP	dawn	s	c	y	y	
+78	Waveform 1	1	478.799526764	482.317472142	0.0	22050.0	PDP	dawn	c				first the bird then playback
+78	Spectrogram 1	1	478.799526764	482.317472142	0.0	22050.0	PDP	dawn	c				first the bird then playback
+81	Waveform 1	1	481.023278751	483.637343273	0.0	22050.0	PDP	dawn	r				
+81	Spectrogram 1	1	481.023278751	483.637343273	0.0	22050.0	PDP	dawn	r				
+80	Waveform 1	1	484.849365330	485.388612432	0.0	22050.0	PDP	dawn	c				the bird
+80	Spectrogram 1	1	484.849365330	485.388612432	0.0	22050.0	PDP	dawn	c				the bird
+83	Waveform 1	1	485.732703353	487.828063520	0.0	22050.0	PDP	dawn	r				
+83	Spectrogram 1	1	485.732703353	487.828063520	0.0	22050.0	PDP	dawn	r				
+82	Waveform 1	1	488.254325428	488.685723109	0.0	22050.0	PDP	dawn	c				the bird
+82	Spectrogram 1	1	488.254325428	488.685723109	0.0	22050.0	PDP	dawn	c				the bird
+17	Waveform 1	1	488.940879300	491.374158100	0.0	22050.0	PDP	dawn	s	c	y		
+17	Spectrogram 1	1	488.940879300	491.374158100	0.0	22050.0	PDP	dawn	s	c	y		
+84	Waveform 1	1	491.412772651	491.874984453	0.0	22050.0	PDP	dawn	c				playback
+84	Spectrogram 1	1	491.412772651	491.874984453	0.0	22050.0	PDP	dawn	c				playback
+86	Waveform 1	1	494.376063694	496.343031694	0.0	22050.0	PDP	dawn	r				
+86	Spectrogram 1	1	494.376063694	496.343031694	0.0	22050.0	PDP	dawn	r				
+85	Waveform 1	1	497.123656070	497.698852978	0.0	22050.0	PDP	dawn	c				the bird
+85	Spectrogram 1	1	497.123656070	497.698852978	0.0	22050.0	PDP	dawn	c				the bird
+18	Waveform 1	1	500.340023600	502.401483754	0.0	22050.0	PDP	dawn	s	s	y		
+18	Spectrogram 1	1	500.340023600	502.401483754	0.0	22050.0	PDP	dawn	s	s	y		
+88	Waveform 1	1	502.730167186	504.091124157	0.0	22050.0	PDP	dawn	c				
+88	Spectrogram 1	1	502.730167186	504.091124157	0.0	22050.0	PDP	dawn	c				
+90	Waveform 1	1	508.631071012	510.736702552	0.0	22050.0	PDP	dawn	r				
+90	Spectrogram 1	1	508.631071012	510.736702552	0.0	22050.0	PDP	dawn	r				
+89	Waveform 1	1	511.270813967	511.722754395	0.0	22050.0	PDP	dawn	c				the bird
+89	Spectrogram 1	1	511.270813967	511.722754395	0.0	22050.0	PDP	dawn	c				the bird
+19	Waveform 1	1	511.742821500	513.609796600	0.0	22050.0	PDP	dawn	s	s	y		
+19	Spectrogram 1	1	511.742821500	513.609796600	0.0	22050.0	PDP	dawn	s	s	y		
+91	Waveform 1	1	513.928531336	514.293165091	0.0	22050.0	PDP	dawn	c				playback
+91	Spectrogram 1	1	513.928531336	514.293165091	0.0	22050.0	PDP	dawn	c				playback
+94	Waveform 1	1	514.216129791	516.583681351	0.0	22050.0	PDP	dawn	r				
+94	Spectrogram 1	1	514.216129791	516.583681351	0.0	22050.0	PDP	dawn	r				
+93	Waveform 1	1	517.446476628	519.927013296	0.0	22050.0	PDP	dawn	r				
+93	Spectrogram 1	1	517.446476628	519.927013296	0.0	22050.0	PDP	dawn	r				
+92	Waveform 1	1	520.178661856	520.646009345	0.0	22050.0	PDP	dawn	c				the bird
+92	Spectrogram 1	1	520.178661856	520.646009345	0.0	22050.0	PDP	dawn	c				the bird
+20	Waveform 1	1	523.274957900	525.704583100	0.0	22050.0	PDP	dawn	s	c	y		
+20	Spectrogram 1	1	523.274957900	525.704583100	0.0	22050.0	PDP	dawn	s	c	y		
+95	Waveform 1	1	526.197686476	526.541777484	0.0	22050.0	PDP	dawn	c				playback
+95	Spectrogram 1	1	526.197686476	526.541777484	0.0	22050.0	PDP	dawn	c				playback
+97	Waveform 1	1	528.510309801	531.504415138	0.0	22050.0	PDP	dawn	r				
+97	Spectrogram 1	1	528.510309801	531.504415138	0.0	22050.0	PDP	dawn	r				
+96	Waveform 1	1	531.723684723	532.191032212	0.0	22050.0	PDP	dawn	c				the bird
+96	Spectrogram 1	1	531.723684723	532.191032212	0.0	22050.0	PDP	dawn	c				the bird
+21	Waveform 1	1	535.203870000	537.085459500	0.0	22050.0	PDP	dawn	s	s	y		
+21	Spectrogram 1	1	535.203870000	537.085459500	0.0	22050.0	PDP	dawn	s	s	y		
+98	Waveform 1	1	537.583202880	537.906751141	0.0	22050.0	PDP	dawn	c				playback
+98	Spectrogram 1	1	537.583202880	537.906751141	0.0	22050.0	PDP	dawn	c				playback
+100	Waveform 1	1	539.190672725	541.866365487	0.0	22050.0	PDP	dawn	r				
+100	Spectrogram 1	1	539.190672725	541.866365487	0.0	22050.0	PDP	dawn	r				
+99	Waveform 1	1	542.415883962	542.842145957	0.0	22050.0	PDP	dawn	c				the bird
+99	Spectrogram 1	1	542.415883962	542.842145957	0.0	22050.0	PDP	dawn	c				the bird
+22	Waveform 1	1	546.617628600	548.502871600	0.0	22050.0	PDP	dawn	s	s	y		
+22	Spectrogram 1	1	546.617628600	548.502871600	0.0	22050.0	PDP	dawn	s	s	y		
+101	Waveform 1	1	548.529371912	548.955633907	0.0	22050.0	PDP	dawn	c				playback
+101	Spectrogram 1	1	548.529371912	548.955633907	0.0	22050.0	PDP	dawn	c				playback
+103	Waveform 1	1	550.117286754	552.269139474	0.0	22050.0	PDP	dawn	r				
+103	Spectrogram 1	1	550.117286754	552.269139474	0.0	22050.0	PDP	dawn	r				
+102	Waveform 1	1	556.344841295	556.822460157	0.0	22050.0	PDP	dawn	c				the bird
+102	Spectrogram 1	1	556.344841295	556.822460157	0.0	22050.0	PDP	dawn	c				the bird
+23	Waveform 1	1	558.093193100	560.303604000	0.0	22050.0	PDP	dawn	s	f	y		
+23	Spectrogram 1	1	558.093193100	560.303604000	0.0	22050.0	PDP	dawn	s	f	y		
+104	Waveform 1	1	560.701936748	561.076841876	0.0	22050.0	PDP	dawn	c				playback
+104	Spectrogram 1	1	560.701936748	561.076841876	0.0	22050.0	PDP	dawn	c				playback
+106	Waveform 1	1	565.914658021	568.123003295	0.0	22050.0	PDP	dawn	r				
+106	Spectrogram 1	1	565.914658021	568.123003295	0.0	22050.0	PDP	dawn	r				
+105	Waveform 1	1	568.872813551	569.288804172	0.0	22050.0	PDP	dawn	c				the bird
+105	Spectrogram 1	1	568.872813551	569.288804172	0.0	22050.0	PDP	dawn	c				the bird
+24	Waveform 1	1	569.258508500	571.684480100	0.0	22050.0	PDP	dawn	s	c	y	y	
+24	Spectrogram 1	1	569.258508500	571.684480100	0.0	22050.0	PDP	dawn	s	c	y	y	
+108	Waveform 1	1	569.375025193	571.567963407	0.0	22050.0	PDP	dawn	r			y	
+108	Spectrogram 1	1	569.375025193	571.567963407	0.0	22050.0	PDP	dawn	r			y	
+107	Waveform 1	1	572.250745593	574.726146574	0.0	22050.0	PDP	dawn	c				playback something match
+107	Spectrogram 1	1	572.250745593	574.726146574	0.0	22050.0	PDP	dawn	c				playback something match
+110	Waveform 1	1	581.476000000	582.691859807	0.0	22050.0	PDP	dawn	r				
+110	Spectrogram 1	1	581.476000000	582.691859807	0.0	22050.0	PDP	dawn	r				
+25	Waveform 1	1	581.476052500	583.321106200	0.0	22050.0	PDP	dawn	s	s			
+25	Spectrogram 1	1	581.476052500	583.321106200	0.0	22050.0	PDP	dawn	s	s			
+109	Waveform 1	1	583.683047408	587.139364546	0.0	22050.0	PDP	dawn	c				the bird and playback
+109	Spectrogram 1	1	583.683047408	587.139364546	0.0	22050.0	PDP	dawn	c				the bird and playback
+111	Waveform 1	1	588.305164642	589.886956140	0.0	22050.0	PDP	dawn	c				playback was overlapping?
+111	Spectrogram 1	1	588.305164642	589.886956140	0.0	22050.0	PDP	dawn	c				playback was overlapping?
+26	Waveform 1	1	592.509839600	594.661793300	0.0	22050.0	PDP	dawn	s	f	y		
+26	Spectrogram 1	1	592.509839600	594.661793300	0.0	22050.0	PDP	dawn	s	f	y		
+113	Waveform 1	1	594.788968807	595.220366489	0.0	22050.0	PDP	dawn	c				playback
+113	Spectrogram 1	1	594.788968807	595.220366489	0.0	22050.0	PDP	dawn	c				playback
+115	Waveform 1	1	597.010607093	599.701706915	0.0	22050.0	PDP	dawn	r				
+115	Spectrogram 1	1	597.010607093	599.701706915	0.0	22050.0	PDP	dawn	r				
+114	Waveform 1	1	599.945198064	602.014879798	0.0	22050.0	PDP	dawn	c				
+114	Spectrogram 1	1	599.945198064	602.014879798	0.0	22050.0	PDP	dawn	c				
+27	Waveform 1	1	604.215883600	606.331301600	0.0	22050.0	PDP	dawn	s	f	y		
+27	Spectrogram 1	1	604.215883600	606.331301600	0.0	22050.0	PDP	dawn	s	f	y		
+116	Waveform 1	1	606.693943779	607.109934401	0.0	22050.0	PDP	dawn	c				playback
+116	Spectrogram 1	1	606.693943779	607.109934401	0.0	22050.0	PDP	dawn	c				playback
+118	Waveform 1	1	608.563333645	610.874392653	0.0	22050.0	PDP	dawn	r				
+118	Spectrogram 1	1	608.563333645	610.874392653	0.0	22050.0	PDP	dawn	r				
+117	Waveform 1	1	611.521489088	612.137771490	0.0	22050.0	PDP	dawn	c				the bird
+117	Spectrogram 1	1	611.521489088	612.137771490	0.0	22050.0	PDP	dawn	c				the bird
+28	Waveform 1	1	615.914620700	618.420970900	0.0	22050.0	PDP	dawn	s	c	y		
+28	Spectrogram 1	1	615.914620700	618.420970900	0.0	22050.0	PDP	dawn	s	c	y		
+120	Waveform 1	1	619.445321936	621.874501737	0.0	22050.0	PDP	dawn	r				
+120	Spectrogram 1	1	619.445321936	621.874501737	0.0	22050.0	PDP	dawn	r				
+119	Waveform 1	1	621.972276599	623.091856296	0.0	22050.0	PDP	dawn	c				...match?
+119	Spectrogram 1	1	621.972276599	623.091856296	0.0	22050.0	PDP	dawn	c				...match?
+122	Waveform 1	1	622.655125685	624.848063898	0.0	22050.0	PDP	dawn	r				
+122	Spectrogram 1	1	622.655125685	624.848063898	0.0	22050.0	PDP	dawn	r				
+121	Waveform 1	1	624.791571258	625.870065462	0.0	22050.0	PDP	dawn	c				playback and the bird
+121	Spectrogram 1	1	624.791571258	625.870065462	0.0	22050.0	PDP	dawn	c				playback and the bird
+29	Waveform 1	1	628.124857700	630.594672200	0.0	22050.0	PDP	dawn	s	c	y		
+29	Spectrogram 1	1	628.124857700	630.594672200	0.0	22050.0	PDP	dawn	s	c	y		
+123	Waveform 1	1	632.679985830	633.090840765	0.0	22050.0	PDP	dawn	c				playback
+123	Spectrogram 1	1	632.679985830	633.090840765	0.0	22050.0	PDP	dawn	c				playback
+125	Waveform 1	1	633.337353639	635.602191467	0.0	22050.0	PDP	dawn	r				
+125	Spectrogram 1	1	633.337353639	635.602191467	0.0	22050.0	PDP	dawn	r				
+124	Waveform 1	1	635.905196981	636.357137409	0.0	22050.0	PDP	dawn	c				the bird
+124	Spectrogram 1	1	635.905196981	636.357137409	0.0	22050.0	PDP	dawn	c				the bird
+30	Waveform 1	1	639.735909000	641.747337900	0.0	22050.0	PDP	dawn	s	f	y		
+30	Spectrogram 1	1	639.735909000	641.747337900	0.0	22050.0	PDP	dawn	s	f	y		
+126	Waveform 1	1	643.287745923	643.678058111	0.0	22050.0	PDP	dawn	c				playback
+126	Spectrogram 1	1	643.287745923	643.678058111	0.0	22050.0	PDP	dawn	c				playback
+127	Waveform 1	1	646.625942181	649.147564342	0.0	22050.0	PDP	dawn	c				
+127	Spectrogram 1	1	646.625942181	649.147564342	0.0	22050.0	PDP	dawn	c				
+129	Waveform 1	1	649.085936079	651.412402147	0.0	22050.0	PDP	dawn	r				
+129	Spectrogram 1	1	649.085936079	651.412402147	0.0	22050.0	PDP	dawn	r				
+128	Waveform 1	1	651.366180880	653.209892399	0.0	22050.0	PDP	dawn	c				... our bird
+128	Spectrogram 1	1	651.366180880	653.209892399	0.0	22050.0	PDP	dawn	c				... our bird
+130	Waveform 1	1	657.395476574	658.458563718	0.0	22050.0	PDP	dawn	c				
+130	Spectrogram 1	1	657.395476574	658.458563718	0.0	22050.0	PDP	dawn	c				
+132	Waveform 1	1	661.966237549	663.743185142	0.0	22050.0	PDP	dawn	post-trial-sing				
+132	Spectrogram 1	1	661.966237549	663.743185142	0.0	22050.0	PDP	dawn	post-trial-sing				
+131	Waveform 1	1	662.094629716	663.111495680	0.0	22050.0	PDP	dawn	c				
+131	Spectrogram 1	1	662.094629716	663.111495680	0.0	22050.0	PDP	dawn	c				
+133	Waveform 1	1	664.302974990	664.975749946	0.0	22050.0	PDP	dawn	c				the bird
+133	Spectrogram 1	1	664.302974990	664.975749946	0.0	22050.0	PDP	dawn	c				the bird
+134	Waveform 1	1	667.127602493	669.228098346	0.0	22050.0	PDP	dawn	c				
+134	Spectrogram 1	1	667.127602493	669.228098346	0.0	22050.0	PDP	dawn	c				
+136	Waveform 1	1	671.924333508	674.553805090	0.0	22050.0	PDP	dawn	post-trial-sing				
+136	Spectrogram 1	1	671.924333508	674.553805090	0.0	22050.0	PDP	dawn	post-trial-sing				
+135	Waveform 1	1	674.420277410	677.476010986	0.0	22050.0	PDP	dawn	c				
+135	Spectrogram 1	1	674.420277410	677.476010986	0.0	22050.0	PDP	dawn	c				
+138	Waveform 1	1	687.577905549	690.078984963	0.0	22050.0	PDP	dawn	post-trial-sing				
+138	Spectrogram 1	1	687.577905549	690.078984963	0.0	22050.0	PDP	dawn	post-trial-sing				
+137	Waveform 1	1	690.043035157	691.188293287	0.0	22050.0	PDP	dawn	c				second is the bird?
+137	Spectrogram 1	1	690.043035157	691.188293287	0.0	22050.0	PDP	dawn	c				second is the bird?
+140	Waveform 1	1	702.656280780	704.890304487	0.0	22050.0	PDP	dawn	post-trial-sing				
+140	Spectrogram 1	1	702.656280780	704.890304487	0.0	22050.0	PDP	dawn	post-trial-sing				
+139	Waveform 1	1	704.998154188	707.622490083	0.0	22050.0	PDP	dawn	c				our bird... is a match.. something
+139	Spectrogram 1	1	704.998154188	707.622490083	0.0	22050.0	PDP	dawn	c				our bird... is a match.. something
+142	Waveform 1	1	711.736174576	714.155083004	0.0	22050.0	PDP	dawn	post-trial-sing				
+142	Spectrogram 1	1	711.736174576	714.155083004	0.0	22050.0	PDP	dawn	post-trial-sing				
+141	Waveform 1	1	716.111779544	716.568855659	0.0	22050.0	PDP	dawn	c				the bird
+141	Spectrogram 1	1	716.111779544	716.568855659	0.0	22050.0	PDP	dawn	c				the bird
+144	Waveform 1	1	723.620153128	726.475594924	0.0	22050.0	PDP	dawn	post-trial-sing				
+144	Spectrogram 1	1	723.620153128	726.475594924	0.0	22050.0	PDP	dawn	post-trial-sing				
+143	Waveform 1	1	727.343525974	727.774923655	0.0	22050.0	PDP	dawn	c				the bird
+143	Spectrogram 1	1	727.343525974	727.774923655	0.0	22050.0	PDP	dawn	c				the bird
+146	Waveform 1	1	735.740373354	738.487965730	0.0	22050.0	PDP	dawn	post-trial-sing				
+146	Spectrogram 1	1	735.740373354	738.487965730	0.0	22050.0	PDP	dawn	post-trial-sing				
+145	Waveform 1	1	738.493101330	740.932552504	0.0	22050.0	PDP	dawn	c				the bird....
+145	Spectrogram 1	1	738.493101330	740.932552504	0.0	22050.0	PDP	dawn	c				the bird....
+147	Waveform 1	1	741.728583854	742.401358809	0.0	22050.0	PDP	dawn	c				
+147	Spectrogram 1	1	741.728583854	742.401358809	0.0	22050.0	PDP	dawn	c				
+148	Waveform 1	1	743.033048184	744.188577688	0.0	22050.0	PDP	dawn	c				
+148	Spectrogram 1	1	743.033048184	744.188577688	0.0	22050.0	PDP	dawn	c				
+149	Waveform 1	1	744.794588630	747.752744160	0.0	22050.0	PDP	dawn	c				
+149	Spectrogram 1	1	744.794588630	747.752744160	0.0	22050.0	PDP	dawn	c				
+151	Waveform 1	1	748.969901367	751.368267048	0.0	22050.0	PDP	dawn	post-trial-sing				
+151	Spectrogram 1	1	748.969901367	751.368267048	0.0	22050.0	PDP	dawn	post-trial-sing				
+150	Waveform 1	1	751.625051295	752.467303911	0.0	22050.0	PDP	dawn	c				our bird
+150	Spectrogram 1	1	751.625051295	752.467303911	0.0	22050.0	PDP	dawn	c				our bird
+153	Waveform 1	1	768.423881830	770.611684357	0.0	22050.0	PDP	dawn	post-trial-sing				
+153	Spectrogram 1	1	768.423881830	770.611684357	0.0	22050.0	PDP	dawn	post-trial-sing				
+152	Waveform 1	1	772.101033408	775.336516019	0.0	22050.0	PDP	dawn	c				...the bird...
+152	Spectrogram 1	1	772.101033408	775.336516019	0.0	22050.0	PDP	dawn	c				...the bird...
+154	Waveform 1	1	777.996801547	778.679847876	0.0	22050.0	PDP	dawn	c				
+154	Spectrogram 1	1	777.996801547	778.679847876	0.0	22050.0	PDP	dawn	c				
+155	Waveform 1	1	800.711942604	801.846929361	0.0	22050.0	PDP	dawn	c				
+155	Spectrogram 1	1	800.711942604	801.846929361	0.0	22050.0	PDP	dawn	c				
+156	Waveform 1	1	803.557112940	804.954019718	0.0	22050.0	PDP	dawn	c				
+156	Spectrogram 1	1	803.557112940	804.954019718	0.0	22050.0	PDP	dawn	c				
+157	Waveform 1	1	811.270913875	811.825568037	0.0	22050.0	PDP	dawn	c				
+157	Spectrogram 1	1	811.270913875	811.825568037	0.0	22050.0	PDP	dawn	c				
+159	Waveform 1	1	812.637006446	813.807943010	0.0	22050.0	PDP	dawn	post-trial-sing				
+159	Spectrogram 1	1	812.637006446	813.807943010	0.0	22050.0	PDP	dawn	post-trial-sing				
+158	Waveform 1	1	813.422766509	814.280426185	0.0	22050.0	PDP	dawn	c				our bird
+158	Spectrogram 1	1	813.422766509	814.280426185	0.0	22050.0	PDP	dawn	c				our bird
+160	Waveform 1	1	815.122678714	817.171817701	0.0	22050.0	PDP	dawn	c				
+160	Spectrogram 1	1	815.122678714	817.171817701	0.0	22050.0	PDP	dawn	c				
+162	Waveform 1	1	826.734465872	829.035253506	0.0	22050.0	PDP	dawn	post-trial-sing				
+162	Spectrogram 1	1	826.734465872	829.035253506	0.0	22050.0	PDP	dawn	post-trial-sing				
+161	Waveform 1	1	829.487193934	831.238463093	0.0	22050.0	PDP	dawn	c				... and our bird
+161	Spectrogram 1	1	829.487193934	831.238463093	0.0	22050.0	PDP	dawn	c				... and our bird
+163	Waveform 1	1	835.927344775	837.149638206	0.0	22050.0	PDP	dawn	c				
+163	Spectrogram 1	1	835.927344775	837.149638206	0.0	22050.0	PDP	dawn	c				
+164	Waveform 1	1	839.044706505	839.963994422	0.0	22050.0	PDP	dawn	c				
+164	Spectrogram 1	1	839.044706505	839.963994422	0.0	22050.0	PDP	dawn	c				
+166	Waveform 1	1	840.528919870	842.742400831	0.0	22050.0	PDP	dawn	post-trial-sing				
+166	Spectrogram 1	1	840.528919870	842.742400831	0.0	22050.0	PDP	dawn	post-trial-sing				
+165	Waveform 1	1	842.608872977	843.148120079	0.0	22050.0	PDP	dawn	c				our bird
+165	Spectrogram 1	1	842.608872977	843.148120079	0.0	22050.0	PDP	dawn	c				our bird
+167	Waveform 1	1	846.434959383	847.128277085	0.0	22050.0	PDP	dawn	c				
+167	Spectrogram 1	1	846.434959383	847.128277085	0.0	22050.0	PDP	dawn	c				
+169	Waveform 1	1	850.040211348	852.099621708	0.0	22050.0	PDP	dawn	post-trial-sing				
+169	Spectrogram 1	1	850.040211348	852.099621708	0.0	22050.0	PDP	dawn	post-trial-sing				
+168	Waveform 1	1	852.120164368	853.111351898	0.0	22050.0	PDP	dawn	c				our bird the second
+168	Spectrogram 1	1	852.120164368	853.111351898	0.0	22050.0	PDP	dawn	c				our bird the second
+171	Waveform 1	1	861.025444546	863.110533339	0.0	22050.0	PDP	dawn	post-trial-sing				
+171	Spectrogram 1	1	861.025444546	863.110533339	0.0	22050.0	PDP	dawn	post-trial-sing				
+170	Waveform 1	1	865.755412165	867.244761303	0.0	22050.0	PDP	dawn	c				our bird
+170	Spectrogram 1	1	865.755412165	867.244761303	0.0	22050.0	PDP	dawn	c				our bird
+172	Waveform 1	1	870.197780702	872.565332263	0.0	22050.0	PDP	dawn	post-trial-sing				
+172	Spectrogram 1	1	870.197780702	872.565332263	0.0	22050.0	PDP	dawn	post-trial-sing				
+173	Waveform 1	1	873.125122025	874.116309555	0.0	22050.0	PDP	dawn	c				
+173	Spectrogram 1	1	873.125122025	874.116309555	0.0	22050.0	PDP	dawn	c				
+175	Waveform 1	1	880.006941921	882.425850349	0.0	22050.0	PDP	dawn	post-trial-sing				
+175	Spectrogram 1	1	880.006941921	882.425850349	0.0	22050.0	PDP	dawn	post-trial-sing				
+174	Waveform 1	1	882.343679362	882.852112343	0.0	22050.0	PDP	dawn	c				our bird
+174	Spectrogram 1	1	882.343679362	882.852112343	0.0	22050.0	PDP	dawn	c				our bird
+178	Waveform 1	1	891.618729112	893.565154365	0.0	22050.0	PDP	dawn	post-trial-sing				
+178	Spectrogram 1	1	891.618729112	893.565154365	0.0	22050.0	PDP	dawn	post-trial-sing				
+176	Waveform 1	1	893.744903452	896.148404820	0.0	22050.0	PDP	dawn	c				
+176	Spectrogram 1	1	893.744903452	896.148404820	0.0	22050.0	PDP	dawn	c				
+177	Waveform 1	1	896.841722295	898.382428300	0.0	22050.0	PDP	dawn	c				
+177	Spectrogram 1	1	896.841722295	898.382428300	0.0	22050.0	PDP	dawn	c				
+179	Waveform 1	1	899.096288663	902.850475541	0.0	22050.0	PDP	dawn	c				
+179	Spectrogram 1	1	899.096288663	902.850475541	0.0	22050.0	PDP	dawn	c				
+181	Waveform 1	1	905.238569676	907.349336903	0.0	22050.0	PDP	dawn	post-trial-sing				
+181	Spectrogram 1	1	905.238569676	907.349336903	0.0	22050.0	PDP	dawn	post-trial-sing				
+180	Waveform 1	1	907.518814563	908.140232652	0.0	22050.0	PDP	dawn	c				our bird
+180	Spectrogram 1	1	907.518814563	908.140232652	0.0	22050.0	PDP	dawn	c				our bird
+182	Waveform 1	1	917.266347542	919.669848909	0.0	22050.0	PDP	dawn	post-trial-sing				
+182	Spectrogram 1	1	917.266347542	919.669848909	0.0	22050.0	PDP	dawn	post-trial-sing				
+183	Waveform 1	1	920.332352491	920.835649786	0.0	22050.0	PDP	dawn	c				our bird
+183	Spectrogram 1	1	920.332352491	920.835649786	0.0	22050.0	PDP	dawn	c				our bird
+185	Waveform 1	1	930.069613559	932.616914154	0.0	22050.0	PDP	dawn	post-trial-sing				
+185	Spectrogram 1	1	930.069613559	932.616914154	0.0	22050.0	PDP	dawn	post-trial-sing				
+184	Waveform 1	1	933.186975376	933.592694624	0.0	22050.0	PDP	dawn	c				our bird
+184	Spectrogram 1	1	933.186975376	933.592694624	0.0	22050.0	PDP	dawn	c				our bird
+187	Waveform 1	1	943.196428288	945.589658283	0.0	22050.0	PDP	dawn	post-trial-sing				
+187	Spectrogram 1	1	943.196428288	945.589658283	0.0	22050.0	PDP	dawn	post-trial-sing				
+186	Waveform 1	1	945.928613604	946.709237980	0.0	22050.0	PDP	dawn	c				our bird
+186	Spectrogram 1	1	945.928613604	946.709237980	0.0	22050.0	PDP	dawn	c				our bird
+188	Waveform 1	1	953.540848489	954.876127026	0.0	22050.0	PDP	dawn	c				
+188	Spectrogram 1	1	953.540848489	954.876127026	0.0	22050.0	PDP	dawn	c				
+190	Waveform 1	1	955.086690094	957.500462835	0.0	22050.0	PDP	dawn	post-trial-sing				
+190	Spectrogram 1	1	955.086690094	957.500462835	0.0	22050.0	PDP	dawn	post-trial-sing				
+189	Waveform 1	1	957.978081696	958.630313905	0.0	22050.0	PDP	dawn	c				our bird
+189	Spectrogram 1	1	957.978081696	958.630313905	0.0	22050.0	PDP	dawn	c				our bird
+191	Waveform 1	1	959.423304290	960.707225960	0.0	22050.0	PDP	dawn	c				ending
+191	Spectrogram 1	1	959.423304290	960.707225960	0.0	22050.0	PDP	dawn	c				ending

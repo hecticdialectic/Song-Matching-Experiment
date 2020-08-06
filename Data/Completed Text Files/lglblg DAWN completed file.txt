@@ -1,0 +1,599 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Bird	Experiment	Signal Type	Stim Type	Response	Overlapping	Notes
+1	Waveform 1	1	1.504736500	2.849879735	0.0	22050.0	lglblg	dawn	c				
+1	Spectrogram 1	1	1.504736500	2.849879735	0.0	22050.0	lglblg	dawn	c				
+2	Waveform 1	1	3.173626073	3.734482405	0.0	22050.0	lglblg	dawn	c				
+2	Spectrogram 1	1	3.173626073	3.734482405	0.0	22050.0	lglblg	dawn	c				
+3	Waveform 1	1	4.508082597	5.155575273	0.0	22050.0	lglblg	dawn	c				
+3	Spectrogram 1	1	4.508082597	5.155575273	0.0	22050.0	lglblg	dawn	c				
+4	Waveform 1	1	6.988226258	9.569077346	0.0	22050.0	lglblg	dawn	c				
+4	Spectrogram 1	1	6.988226258	9.569077346	0.0	22050.0	lglblg	dawn	c				
+5	Waveform 1	1	11.144419447	13.551997847	0.0	22050.0	lglblg	dawn	c				
+5	Spectrogram 1	1	11.144419447	13.551997847	0.0	22050.0	lglblg	dawn	c				
+6	Waveform 1	1	16.659828309	19.017248826	0.0	22050.0	lglblg	dawn	pre trial sing				
+6	Spectrogram 1	1	16.659828309	19.017248826	0.0	22050.0	lglblg	dawn	pre trial sing				
+7	Waveform 1	1	19.263085871	20.010894314	0.0	22050.0	lglblg	dawn	c				
+7	Spectrogram 1	1	19.263085871	20.010894314	0.0	22050.0	lglblg	dawn	c				
+8	Waveform 1	1	33.775244812	35.448694192	0.0	22050.0	lglblg	dawn	pre trial sing				
+8	Spectrogram 1	1	33.775244812	35.448694192	0.0	22050.0	lglblg	dawn	pre trial sing				
+9	Waveform 1	1	36.281964898	37.043452763	0.0	22050.0	lglblg	dawn	c				
+9	Spectrogram 1	1	36.281964898	37.043452763	0.0	22050.0	lglblg	dawn	c				
+10	Waveform 1	1	40.903650572	42.882607060	0.0	22050.0	lglblg	dawn	pre trial sing				
+10	Spectrogram 1	1	40.903650572	42.882607060	0.0	22050.0	lglblg	dawn	pre trial sing				
+11	Waveform 1	1	43.766424603	45.772739936	0.0	22050.0	lglblg	dawn	c				
+11	Spectrogram 1	1	43.766424603	45.772739936	0.0	22050.0	lglblg	dawn	c				
+12	Waveform 1	1	46.596891027	48.156345218	0.0	22050.0	lglblg	dawn	c				
+12	Spectrogram 1	1	46.596891027	48.156345218	0.0	22050.0	lglblg	dawn	c				
+13	Waveform 1	1	49.882945645	53.640227088	0.0	22050.0	lglblg	dawn	c				
+13	Spectrogram 1	1	49.882945645	53.640227088	0.0	22050.0	lglblg	dawn	c				
+14	Waveform 1	1	55.868013785	57.819611427	0.0	22050.0	lglblg	dawn	pre trial sing				
+14	Spectrogram 1	1	55.868013785	57.819611427	0.0	22050.0	lglblg	dawn	pre trial sing				
+15	Waveform 1	1	58.507360854	59.255169297	0.0	22050.0	lglblg	dawn	c				
+15	Spectrogram 1	1	58.507360854	59.255169297	0.0	22050.0	lglblg	dawn	c				
+16	Waveform 1	1	60.612425310	61.729578166	0.0	22050.0	lglblg	dawn	c				
+16	Spectrogram 1	1	60.612425310	61.729578166	0.0	22050.0	lglblg	dawn	c				
+17	Waveform 1	1	63.466076116	64.232123788	0.0	22050.0	lglblg	dawn	c				
+17	Spectrogram 1	1	63.466076116	64.232123788	0.0	22050.0	lglblg	dawn	c				
+18	Waveform 1	1	64.596908394	67.328233133	0.0	22050.0	lglblg	dawn	c				
+18	Spectrogram 1	1	64.596908394	67.328233133	0.0	22050.0	lglblg	dawn	c				
+19	Waveform 1	1	68.470785626	70.568297111	0.0	22050.0	lglblg	dawn	pre trial sing				
+19	Spectrogram 1	1	68.470785626	70.568297111	0.0	22050.0	lglblg	dawn	pre trial sing				
+20	Waveform 1	1	71.301252050	71.748113193	0.0	22050.0	lglblg	dawn	c				
+20	Spectrogram 1	1	71.301252050	71.748113193	0.0	22050.0	lglblg	dawn	c				
+21	Waveform 1	1	84.523772379	86.685121170	0.0	22050.0	lglblg	dawn	pre trial sing				
+21	Spectrogram 1	1	84.523772379	86.685121170	0.0	22050.0	lglblg	dawn	pre trial sing				
+22	Waveform 1	1	86.693844612	87.300299019	0.0	22050.0	lglblg	dawn	c				
+22	Spectrogram 1	1	86.693844612	87.300299019	0.0	22050.0	lglblg	dawn	c				
+23	Waveform 1	1	94.633903341	96.735974633	0.0	22050.0	lglblg	dawn	pre trial sing				
+23	Spectrogram 1	1	94.633903341	96.735974633	0.0	22050.0	lglblg	dawn	pre trial sing				
+24	Waveform 1	1	96.903895166	97.510349574	0.0	22050.0	lglblg	dawn	c				
+24	Spectrogram 1	1	96.903895166	97.510349574	0.0	22050.0	lglblg	dawn	c				
+25	Waveform 1	1	103.868155074	106.421647317	0.0	22050.0	lglblg	dawn	c				
+25	Spectrogram 1	1	103.868155074	106.421647317	0.0	22050.0	lglblg	dawn	c				
+26	Waveform 1	1	107.327867724	108.846283647	0.0	22050.0	lglblg	dawn	pre trial sing				
+26	Spectrogram 1	1	107.327867724	108.846283647	0.0	22050.0	lglblg	dawn	pre trial sing				
+27	Waveform 1	1	109.146056866	110.614314906	0.0	22050.0	lglblg	dawn	c				
+27	Spectrogram 1	1	109.146056866	110.614314906	0.0	22050.0	lglblg	dawn	c				
+28	Waveform 1	1	112.934471835	114.904308708	0.0	22050.0	lglblg	dawn	pre trial sing				
+28	Spectrogram 1	1	112.934471835	114.904308708	0.0	22050.0	lglblg	dawn	pre trial sing				
+29	Waveform 1	1	128.795557715	130.646839591	0.0	22050.0	lglblg	dawn	pre trial sing				
+29	Spectrogram 1	1	128.795557715	130.646839591	0.0	22050.0	lglblg	dawn	pre trial sing				
+30	Waveform 1	1	130.870270163	131.449365725	0.0	22050.0	lglblg	dawn	c				
+30	Spectrogram 1	1	130.870270163	131.449365725	0.0	22050.0	lglblg	dawn	c				
+31	Waveform 1	1	140.760341840	142.401872567	0.0	22050.0	lglblg	dawn	pre trial sing				
+31	Spectrogram 1	1	140.760341840	142.401872567	0.0	22050.0	lglblg	dawn	pre trial sing				
+32	Waveform 1	1	142.720662924	143.327117332	0.0	22050.0	lglblg	dawn	c				
+32	Spectrogram 1	1	142.720662924	143.327117332	0.0	22050.0	lglblg	dawn	c				
+33	Waveform 1	1	156.581167360	158.514525772	0.0	22050.0	lglblg	dawn	pre trial sing				
+33	Spectrogram 1	1	156.581167360	158.514525772	0.0	22050.0	lglblg	dawn	pre trial sing				
+34	Waveform 1	1	158.755417666	159.443948610	0.0	22050.0	lglblg	dawn	c				
+34	Spectrogram 1	1	158.755417666	159.443948610	0.0	22050.0	lglblg	dawn	c				
+35	Waveform 1	1	165.123106249	167.361971769	0.0	22050.0	lglblg	dawn	pre trial sing				
+35	Spectrogram 1	1	165.123106249	167.361971769	0.0	22050.0	lglblg	dawn	pre trial sing				
+36	Waveform 1	1	167.776136351	168.505705563	0.0	22050.0	lglblg	dawn	c				
+36	Spectrogram 1	1	167.776136351	168.505705563	0.0	22050.0	lglblg	dawn	c				
+37	Waveform 1	1	174.918214315	176.933649263	0.0	22050.0	lglblg	dawn	pre trial sing				
+37	Spectrogram 1	1	174.918214315	176.933649263	0.0	22050.0	lglblg	dawn	pre trial sing				
+38	Waveform 1	1	177.142636944	178.022679806	0.0	22050.0	lglblg	dawn	c				
+38	Spectrogram 1	1	177.142636944	178.022679806	0.0	22050.0	lglblg	dawn	c				
+39	Waveform 1	1	182.142383254	184.280933007	0.0	22050.0	lglblg	dawn	pre trial sing				
+39	Spectrogram 1	1	182.142383254	184.280933007	0.0	22050.0	lglblg	dawn	pre trial sing				
+40	Waveform 1	1	184.635805651	185.265059097	0.0	22050.0	lglblg	dawn	c				
+40	Spectrogram 1	1	184.635805651	185.265059097	0.0	22050.0	lglblg	dawn	c				
+41	Waveform 1	1	193.742793386	195.808386218	0.0	22050.0	lglblg	dawn	pre trial sing				
+41	Spectrogram 1	1	193.742793386	195.808386218	0.0	22050.0	lglblg	dawn	pre trial sing				
+42	Waveform 1	1	195.926148868	196.742354424	0.0	22050.0	lglblg	dawn	c				
+42	Spectrogram 1	1	195.926148868	196.742354424	0.0	22050.0	lglblg	dawn	c				
+43	Waveform 1	1	200.520085793	202.690554199	0.0	22050.0	lglblg	dawn	pre trial sing				
+43	Spectrogram 1	1	200.520085793	202.690554199	0.0	22050.0	lglblg	dawn	pre trial sing				
+44	Waveform 1	1	202.882067068	203.702832431	0.0	22050.0	lglblg	dawn	c				
+44	Spectrogram 1	1	202.882067068	203.702832431	0.0	22050.0	lglblg	dawn	c				
+45	Waveform 1	1	209.267216973	211.501522686	0.0	22050.0	lglblg	dawn	pre trial sing				
+45	Spectrogram 1	1	209.267216973	211.501522686	0.0	22050.0	lglblg	dawn	pre trial sing				
+46	Waveform 1	1	211.642098813	212.622457442	0.0	22050.0	lglblg	dawn	c				
+46	Spectrogram 1	1	211.642098813	212.622457442	0.0	22050.0	lglblg	dawn	c				
+47	Waveform 1	1	216.870246115	218.785365297	0.0	22050.0	lglblg	dawn	pre trial sing				
+47	Spectrogram 1	1	216.870246115	218.785365297	0.0	22050.0	lglblg	dawn	pre trial sing				
+48	Waveform 1	1	219.117057170	220.029018685	0.0	22050.0	lglblg	dawn	c				
+48	Spectrogram 1	1	219.117057170	220.029018685	0.0	22050.0	lglblg	dawn	c				
+49	Waveform 1	1	224.536701950	226.242069983	0.0	22050.0	lglblg	dawn	pre trial sing				
+49	Spectrogram 1	1	224.536701950	226.242069983	0.0	22050.0	lglblg	dawn	pre trial sing				
+50	Waveform 1	1	226.542239376	227.572755888	0.0	22050.0	lglblg	dawn	c				
+50	Spectrogram 1	1	226.542239376	227.572755888	0.0	22050.0	lglblg	dawn	c				
+51	Waveform 1	1	230.598501691	232.933123170	0.0	22050.0	lglblg	dawn	pre trial sing				
+51	Spectrogram 1	1	230.598501691	232.933123170	0.0	22050.0	lglblg	dawn	pre trial sing				
+52	Waveform 1	1	232.969601631	233.913481799	0.0	22050.0	lglblg	dawn	c				
+52	Spectrogram 1	1	232.969601631	233.913481799	0.0	22050.0	lglblg	dawn	c				
+53	Waveform 1	1	237.850411210	240.157673843	0.0	22050.0	lglblg	dawn	pre trial sing				
+53	Spectrogram 1	1	237.850411210	240.157673843	0.0	22050.0	lglblg	dawn	pre trial sing				
+54	Waveform 1	1	240.489365716	241.342049733	0.0	22050.0	lglblg	dawn	c				
+54	Spectrogram 1	1	240.489365716	241.342049733	0.0	22050.0	lglblg	dawn	c				
+55	Waveform 1	1	245.398708221	247.140554715	0.0	22050.0	lglblg	dawn	pre trial sing				
+55	Spectrogram 1	1	245.398708221	247.140554715	0.0	22050.0	lglblg	dawn	pre trial sing				
+56	Waveform 1	1	247.272407401	248.102292380	0.0	22050.0	lglblg	dawn	c				
+56	Spectrogram 1	1	247.272407401	248.102292380	0.0	22050.0	lglblg	dawn	c				
+57	Waveform 1	1	251.096119530	252.938281791	0.0	22050.0	lglblg	dawn	pre trial sing				
+57	Spectrogram 1	1	251.096119530	252.938281791	0.0	22050.0	lglblg	dawn	pre trial sing				
+58	Waveform 1	1	253.325483701	254.196406948	0.0	22050.0	lglblg	dawn	c				
+58	Spectrogram 1	1	253.325483701	254.196406948	0.0	22050.0	lglblg	dawn	c				
+59	Waveform 1	1	258.352192683	260.176115713	0.0	22050.0	lglblg	dawn	pre trial sing				
+59	Spectrogram 1	1	258.352192683	260.176115713	0.0	22050.0	lglblg	dawn	pre trial sing				
+60	Waveform 1	1	260.381307054	261.261349916	0.0	22050.0	lglblg	dawn	c				
+60	Spectrogram 1	1	260.381307054	261.261349916	0.0	22050.0	lglblg	dawn	c				
+61	Waveform 1	1	267.505174667	269.461332117	0.0	22050.0	lglblg	dawn	pre trial sing				
+61	Spectrogram 1	1	267.505174667	269.461332117	0.0	22050.0	lglblg	dawn	pre trial sing				
+62	Waveform 1	1	269.678999920	270.641119319	0.0	22050.0	lglblg	dawn	c				
+62	Spectrogram 1	1	269.678999920	270.641119319	0.0	22050.0	lglblg	dawn	c				
+63	Waveform 1	1	272.778523871	274.921633432	0.0	22050.0	lglblg	dawn	pre trial sing				
+63	Spectrogram 1	1	272.778523871	274.921633432	0.0	22050.0	lglblg	dawn	pre trial sing				
+64	Waveform 1	1	275.189869732	276.115510670	0.0	22050.0	lglblg	dawn	c				
+64	Spectrogram 1	1	275.189869732	276.115510670	0.0	22050.0	lglblg	dawn	c				
+65	Waveform 1	1	280.600013163	282.829759068	0.0	22050.0	lglblg	dawn	pre trial sing				
+65	Spectrogram 1	1	280.600013163	282.829759068	0.0	22050.0	lglblg	dawn	pre trial sing				
+66	Waveform 1	1	282.852147492	283.868984582	0.0	22050.0	lglblg	dawn	c				
+66	Spectrogram 1	1	282.852147492	283.868984582	0.0	22050.0	lglblg	dawn	c				
+67	Waveform 1	1	287.815458661	289.461549196	0.0	22050.0	lglblg	dawn	pre trial sing				
+67	Spectrogram 1	1	287.815458661	289.461549196	0.0	22050.0	lglblg	dawn	pre trial sing				
+68	Waveform 1	1	288.157004736	290.031085650	0.0	22050.0	lglblg	dawn	c				
+68	Spectrogram 1	1	288.157004736	290.031085650	0.0	22050.0	lglblg	dawn	c				
+69	Waveform 1	1	295.404368887	297.406124413	0.0	22050.0	lglblg	dawn	pre trial sing				
+69	Spectrogram 1	1	295.404368887	297.406124413	0.0	22050.0	lglblg	dawn	pre trial sing				
+70	Waveform 1	1	295.518364077	296.106579254	0.0	22050.0	lglblg	dawn	c				
+70	Spectrogram 1	1	295.518364077	296.106579254	0.0	22050.0	lglblg	dawn	c				
+71	Waveform 1	1	298.000000000	301.040935700	0.0	22050.0	lglblg	dawn	stim	s			
+71	Spectrogram 1	1	298.000000000	301.040935700	0.0	22050.0	lglblg	dawn	stim	s			
+72	Waveform 1	1	301.010994658	301.375779264	0.0	22050.0	lglblg	dawn	c				
+72	Spectrogram 1	1	301.010994658	301.375779264	0.0	22050.0	lglblg	dawn	c				
+73	Waveform 1	1	308.994152000	311.453962693	0.0	22050.0	lglblg	dawn	stim	c			
+73	Spectrogram 1	1	308.994152000	311.453962693	0.0	22050.0	lglblg	dawn	stim	c			
+74	Waveform 1	1	311.827866914	312.274728057	0.0	22050.0	lglblg	dawn	c				
+74	Spectrogram 1	1	311.827866914	312.274728057	0.0	22050.0	lglblg	dawn	c				
+75	Waveform 1	1	321.043101510	322.620794932	0.0	22050.0	lglblg	dawn	stim	c			
+75	Spectrogram 1	1	321.043101510	322.620794932	0.0	22050.0	lglblg	dawn	stim	c			
+76	Waveform 1	1	323.254608185	323.728828173	0.0	22050.0	lglblg	dawn	c				
+76	Spectrogram 1	1	323.254608185	323.728828173	0.0	22050.0	lglblg	dawn	c				
+77	Waveform 1	1	332.310660129	334.038827200	0.0	22050.0	lglblg	dawn	stim	f			
+77	Spectrogram 1	1	332.310660129	334.038827200	0.0	22050.0	lglblg	dawn	stim	f			
+78	Waveform 1	1	334.057066431	334.554085456	0.0	22050.0	lglblg	dawn	c				
+78	Spectrogram 1	1	334.057066431	334.554085456	0.0	22050.0	lglblg	dawn	c				
+79	Waveform 1	1	336.841524166	339.317499679	0.0	22050.0	lglblg	dawn	c				
+79	Spectrogram 1	1	336.841524166	339.317499679	0.0	22050.0	lglblg	dawn	c				
+80	Waveform 1	1	342.795321600	344.581347535	0.0	22050.0	lglblg	dawn	stim	c	y		
+80	Spectrogram 1	1	342.795321600	344.581347535	0.0	22050.0	lglblg	dawn	stim	c	y		
+81	Waveform 1	1	344.854935989	345.260758864	0.0	22050.0	lglblg	dawn	c				
+81	Spectrogram 1	1	344.854935989	345.260758864	0.0	22050.0	lglblg	dawn	c				
+82	Waveform 1	1	349.649094785	350.378663997	0.0	22050.0	lglblg	dawn	c				
+82	Spectrogram 1	1	349.649094785	350.378663997	0.0	22050.0	lglblg	dawn	c				
+83	Waveform 1	1	353.395700798	355.538810359	0.0	22050.0	lglblg	dawn	r		y	y	
+83	Spectrogram 1	1	353.395700798	355.538810359	0.0	22050.0	lglblg	dawn	r		y	y	
+84	Waveform 1	1	354.730357792	357.751572300	0.0	22050.0	lglblg	dawn	stim	s			
+84	Spectrogram 1	1	354.730357792	357.751572300	0.0	22050.0	lglblg	dawn	stim	s			
+85	Waveform 1	1	356.701150677	360.677302884	0.0	22050.0	lglblg	dawn	c				
+85	Spectrogram 1	1	356.701150677	360.677302884	0.0	22050.0	lglblg	dawn	c				
+86	Waveform 1	1	366.404833068	368.443067055	0.0	22050.0	lglblg	dawn	stim	c	y		poor recording 
+86	Spectrogram 1	1	366.404833068	368.443067055	0.0	22050.0	lglblg	dawn	stim	c	y		poor recording 
+87	Waveform 1	1	368.643179083	369.181236377	0.0	22050.0	lglblg	dawn	c				
+87	Spectrogram 1	1	368.643179083	369.181236377	0.0	22050.0	lglblg	dawn	c				
+88	Waveform 1	1	373.136390579	375.010471493	0.0	22050.0	lglblg	dawn	r		y		
+88	Spectrogram 1	1	373.136390579	375.010471493	0.0	22050.0	lglblg	dawn	r		y		
+89	Waveform 1	1	375.173832218	378.666644822	0.0	22050.0	lglblg	dawn	c				
+89	Spectrogram 1	1	375.173832218	378.666644822	0.0	22050.0	lglblg	dawn	c				
+90	Waveform 1	1	378.671570438	380.468134623	0.0	22050.0	lglblg	dawn	stim	f	y		
+90	Spectrogram 1	1	378.671570438	380.468134623	0.0	22050.0	lglblg	dawn	stim	f	y		
+91	Waveform 1	1	380.329008159	382.152931190	0.0	22050.0	lglblg	dawn	r		y		
+91	Spectrogram 1	1	380.329008159	382.152931190	0.0	22050.0	lglblg	dawn	r		y		
+92	Waveform 1	1	380.630366073	381.177542982	0.0	22050.0	lglblg	dawn	c				
+92	Spectrogram 1	1	380.630366073	381.177542982	0.0	22050.0	lglblg	dawn	c				
+93	Waveform 1	1	382.371038486	383.588507109	0.0	22050.0	lglblg	dawn	c				
+93	Spectrogram 1	1	382.371038486	383.588507109	0.0	22050.0	lglblg	dawn	c				
+94	Waveform 1	1	385.570849324	387.941949263	0.0	22050.0	lglblg	dawn	r		y		
+94	Spectrogram 1	1	385.570849324	387.941949263	0.0	22050.0	lglblg	dawn	r		y		
+95	Waveform 1	1	388.019084258	388.548021937	0.0	22050.0	lglblg	dawn	c				
+95	Spectrogram 1	1	388.019084258	388.548021937	0.0	22050.0	lglblg	dawn	c				
+96	Waveform 1	1	390.149233100	392.274844368	0.0	22050.0	lglblg	dawn	stim	f			
+96	Spectrogram 1	1	390.149233100	392.274844368	0.0	22050.0	lglblg	dawn	stim	f			
+97	Waveform 1	1	392.275978107	392.718279442	0.0	22050.0	lglblg	dawn	c				
+97	Spectrogram 1	1	392.275978107	392.718279442	0.0	22050.0	lglblg	dawn	c				
+98	Waveform 1	1	402.093947800	404.784006200	0.0	22050.0	lglblg	dawn	stim	s			
+98	Spectrogram 1	1	402.093947800	404.784006200	0.0	22050.0	lglblg	dawn	stim	s			
+99	Waveform 1	1	404.737766817	405.216546613	0.0	22050.0	lglblg	dawn	c				
+99	Spectrogram 1	1	404.737766817	405.216546613	0.0	22050.0	lglblg	dawn	c				
+100	Waveform 1	1	414.272053836	416.209972056	0.0	22050.0	lglblg	dawn	stim	f			
+100	Spectrogram 1	1	414.272053836	416.209972056	0.0	22050.0	lglblg	dawn	stim	f			
+101	Waveform 1	1	416.410737697	416.784641918	0.0	22050.0	lglblg	dawn	c				
+101	Spectrogram 1	1	416.410737697	416.784641918	0.0	22050.0	lglblg	dawn	c				
+102	Waveform 1	1	426.634832123	429.005932062	0.0	22050.0	lglblg	dawn	stim	s	y		
+102	Spectrogram 1	1	426.634832123	429.005932062	0.0	22050.0	lglblg	dawn	stim	s	y		
+103	Waveform 1	1	427.668355474	430.080493682	0.0	22050.0	lglblg	dawn	r		y	y	
+103	Spectrogram 1	1	427.668355474	430.080493682	0.0	22050.0	lglblg	dawn	r		y	y	
+104	Waveform 1	1	430.143567520	432.893131489	0.0	22050.0	lglblg	dawn	c				
+104	Spectrogram 1	1	430.143567520	432.893131489	0.0	22050.0	lglblg	dawn	c				
+105	Waveform 1	1	435.280504231	437.309618602	0.0	22050.0	lglblg	dawn	r		y		
+105	Spectrogram 1	1	435.280504231	437.309618602	0.0	22050.0	lglblg	dawn	r		y		
+106	Waveform 1	1	437.792194738	438.375850108	0.0	22050.0	lglblg	dawn	c				
+106	Spectrogram 1	1	437.792194738	438.375850108	0.0	22050.0	lglblg	dawn	c				
+107	Waveform 1	1	438.596347392	440.903610026	0.0	22050.0	lglblg	dawn	stim	s	y		
+107	Spectrogram 1	1	438.596347392	440.903610026	0.0	22050.0	lglblg	dawn	stim	s	y		
+108	Waveform 1	1	440.809613273	443.887483387	0.0	22050.0	lglblg	dawn	c				
+108	Spectrogram 1	1	440.809613273	443.887483387	0.0	22050.0	lglblg	dawn	c				
+109	Waveform 1	1	448.466538879	450.481973828	0.0	22050.0	lglblg	dawn	r		y	y	
+109	Spectrogram 1	1	448.466538879	450.481973828	0.0	22050.0	lglblg	dawn	r		y	y	
+110	Waveform 1	1	450.091508311	451.682881155	0.0	22050.0	lglblg	dawn	stim	c	y		
+110	Spectrogram 1	1	450.091508311	451.682881155	0.0	22050.0	lglblg	dawn	stim	c	y		
+111	Waveform 1	1	451.826353595	453.636597203	0.0	22050.0	lglblg	dawn	c				
+111	Spectrogram 1	1	451.826353595	453.636597203	0.0	22050.0	lglblg	dawn	c				
+112	Waveform 1	1	453.886623152	454.684589478	0.0	22050.0	lglblg	dawn	c				
+112	Spectrogram 1	1	453.886623152	454.684589478	0.0	22050.0	lglblg	dawn	c				
+113	Waveform 1	1	455.978371869	458.098682392	0.0	22050.0	lglblg	dawn	r		y		
+113	Spectrogram 1	1	455.978371869	458.098682392	0.0	22050.0	lglblg	dawn	r		y		
+114	Waveform 1	1	458.194056618	458.786831602	0.0	22050.0	lglblg	dawn	c				
+114	Spectrogram 1	1	458.194056618	458.786831602	0.0	22050.0	lglblg	dawn	c				
+115	Waveform 1	1	461.456187335	463.913923618	0.0	22050.0	lglblg	dawn	stim	s	y		
+115	Spectrogram 1	1	461.456187335	463.913923618	0.0	22050.0	lglblg	dawn	stim	s	y		
+116	Waveform 1	1	464.178325190	464.730061907	0.0	22050.0	lglblg	dawn	c				
+116	Spectrogram 1	1	464.178325190	464.730061907	0.0	22050.0	lglblg	dawn	c				
+117	Waveform 1	1	469.328559590	471.257358195	0.0	22050.0	lglblg	dawn	r		y		
+117	Spectrogram 1	1	469.328559590	471.257358195	0.0	22050.0	lglblg	dawn	r		y		
+118	Waveform 1	1	471.598962029	472.292052781	0.0	22050.0	lglblg	dawn	c				
+118	Spectrogram 1	1	471.598962029	472.292052781	0.0	22050.0	lglblg	dawn	c				
+119	Waveform 1	1	472.961493800	475.300675100	0.0	22050.0	lglblg	dawn	stim	f	y		
+119	Spectrogram 1	1	472.961493800	475.300675100	0.0	22050.0	lglblg	dawn	stim	f	y		
+120	Waveform 1	1	475.154408978	476.107408762	0.0	22050.0	lglblg	dawn	c				
+120	Spectrogram 1	1	475.154408978	476.107408762	0.0	22050.0	lglblg	dawn	c				
+121	Waveform 1	1	482.227736974	484.316128844	0.0	22050.0	lglblg	dawn	r		y		
+121	Spectrogram 1	1	482.227736974	484.316128844	0.0	22050.0	lglblg	dawn	r		y		
+122	Waveform 1	1	484.365002600	486.960024891	0.0	22050.0	lglblg	dawn	stim	s	y		
+122	Spectrogram 1	1	484.365002600	486.960024891	0.0	22050.0	lglblg	dawn	stim	s	y		
+123	Waveform 1	1	484.898991866	485.459848198	0.0	22050.0	lglblg	dawn	c				
+123	Spectrogram 1	1	484.898991866	485.459848198	0.0	22050.0	lglblg	dawn	c				
+124	Waveform 1	1	486.973704314	488.177493514	0.0	22050.0	lglblg	dawn	c				
+124	Spectrogram 1	1	486.973704314	488.177493514	0.0	22050.0	lglblg	dawn	c				
+125	Waveform 1	1	489.073809178	491.298995276	0.0	22050.0	lglblg	dawn	r		y		
+125	Spectrogram 1	1	489.073809178	491.298995276	0.0	22050.0	lglblg	dawn	r		y		
+126	Waveform 1	1	491.485947386	492.256554867	0.0	22050.0	lglblg	dawn	c				
+126	Spectrogram 1	1	491.485947386	492.256554867	0.0	22050.0	lglblg	dawn	c				
+127	Waveform 1	1	496.177868100	499.628160400	0.0	22050.0	lglblg	dawn	stim	c	y	y	
+127	Spectrogram 1	1	496.177868100	499.628160400	0.0	22050.0	lglblg	dawn	stim	c	y	y	
+128	Waveform 1	1	499.566963977	501.076260284	0.0	22050.0	lglblg	dawn	c				
+128	Spectrogram 1	1	499.566963977	501.076260284	0.0	22050.0	lglblg	dawn	c				
+129	Waveform 1	1	503.846275129	505.597241238	0.0	22050.0	lglblg	dawn	r		y		
+129	Spectrogram 1	1	503.846275129	505.597241238	0.0	22050.0	lglblg	dawn	r		y		
+130	Waveform 1	1	505.651958929	506.367848719	0.0	22050.0	lglblg	dawn	c				
+130	Spectrogram 1	1	505.651958929	506.367848719	0.0	22050.0	lglblg	dawn	c				
+131	Waveform 1	1	507.568983000	510.609918700	0.0	22050.0	lglblg	dawn	stim	c	y		
+131	Spectrogram 1	1	507.568983000	510.609918700	0.0	22050.0	lglblg	dawn	stim	c	y		
+132	Waveform 1	1	510.337092956	511.016504285	0.0	22050.0	lglblg	dawn	c				
+132	Spectrogram 1	1	510.337092956	511.016504285	0.0	22050.0	lglblg	dawn	c				
+133	Waveform 1	1	514.051751437	516.108224654	0.0	22050.0	lglblg	dawn	r		y		
+133	Spectrogram 1	1	514.051751437	516.108224654	0.0	22050.0	lglblg	dawn	r		y		
+134	Waveform 1	1	516.325921337	516.932375744	0.0	22050.0	lglblg	dawn	c				
+134	Spectrogram 1	1	516.325921337	516.932375744	0.0	22050.0	lglblg	dawn	c				
+135	Waveform 1	1	519.323369000	521.356131196	0.0	22050.0	lglblg	dawn	stim	f	y	y	
+135	Spectrogram 1	1	519.323369000	521.356131196	0.0	22050.0	lglblg	dawn	stim	f	y	y	
+136	Waveform 1	1	521.399460234	521.942077335	0.0	22050.0	lglblg	dawn	c				
+136	Spectrogram 1	1	521.399460234	521.942077335	0.0	22050.0	lglblg	dawn	c				
+137	Waveform 1	1	524.954878303	526.523452110	0.0	22050.0	lglblg	dawn	c				
+137	Spectrogram 1	1	524.954878303	526.523452110	0.0	22050.0	lglblg	dawn	c				
+138	Waveform 1	1	526.873793826	529.299611456	0.0	22050.0	lglblg	dawn	c				
+138	Spectrogram 1	1	526.873793826	529.299611456	0.0	22050.0	lglblg	dawn	c				
+139	Waveform 1	1	529.936457582	532.640423475	0.0	22050.0	lglblg	dawn	r		y	y	
+139	Spectrogram 1	1	529.936457582	532.640423475	0.0	22050.0	lglblg	dawn	r		y	y	
+140	Waveform 1	1	530.609918700	532.840120585	0.0	22050.0	lglblg	dawn	stim	c	y	y	
+140	Spectrogram 1	1	530.609918700	532.840120585	0.0	22050.0	lglblg	dawn	stim	c	y	y	
+141	Waveform 1	1	533.391617644	536.852511594	0.0	22050.0	lglblg	dawn	c				
+141	Spectrogram 1	1	533.391617644	536.852511594	0.0	22050.0	lglblg	dawn	c				
+142	Waveform 1	1	539.398685254	541.450598664	0.0	22050.0	lglblg	dawn	r		y		
+142	Spectrogram 1	1	539.398685254	541.450598664	0.0	22050.0	lglblg	dawn	r		y		
+143	Waveform 1	1	541.755695158	542.371269181	0.0	22050.0	lglblg	dawn	c				
+143	Spectrogram 1	1	541.755695158	542.371269181	0.0	22050.0	lglblg	dawn	c				
+144	Waveform 1	1	542.494236377	544.204164218	0.0	22050.0	lglblg	dawn	stim	f	y		
+144	Spectrogram 1	1	542.494236377	544.204164218	0.0	22050.0	lglblg	dawn	stim	f	y		
+145	Waveform 1	1	542.813570516	543.356187617	0.0	22050.0	lglblg	dawn	c				
+145	Spectrogram 1	1	542.813570516	543.356187617	0.0	22050.0	lglblg	dawn	c				
+146	Waveform 1	1	545.023903109	546.975500752	0.0	22050.0	lglblg	dawn	c				
+146	Spectrogram 1	1	545.023903109	546.975500752	0.0	22050.0	lglblg	dawn	c				
+147	Waveform 1	1	546.541555565	548.689224933	0.0	22050.0	lglblg	dawn	r		y		
+147	Spectrogram 1	1	546.541555565	548.689224933	0.0	22050.0	lglblg	dawn	r		y		
+148	Waveform 1	1	548.998881235	549.660053334	0.0	22050.0	lglblg	dawn	c				
+148	Spectrogram 1	1	548.998881235	549.660053334	0.0	22050.0	lglblg	dawn	c				
+149	Waveform 1	1	553.406596848	555.422031797	0.0	22050.0	lglblg	dawn	stim	f	y	y	
+149	Spectrogram 1	1	553.406596848	555.422031797	0.0	22050.0	lglblg	dawn	stim	f	y	y	
+150	Waveform 1	1	556.049791927	558.297777062	0.0	22050.0	lglblg	dawn	c				
+150	Spectrogram 1	1	556.049791927	558.297777062	0.0	22050.0	lglblg	dawn	c				
+151	Waveform 1	1	561.450405130	563.511438154	0.0	22050.0	lglblg	dawn	r		y		
+151	Spectrogram 1	1	561.450405130	563.511438154	0.0	22050.0	lglblg	dawn	r		y		
+152	Waveform 1	1	563.597663885	564.450347901	0.0	22050.0	lglblg	dawn	c				
+152	Spectrogram 1	1	563.597663885	564.450347901	0.0	22050.0	lglblg	dawn	c				
+153	Waveform 1	1	564.385758586	566.811576217	0.0	22050.0	lglblg	dawn	stim	s			
+153	Spectrogram 1	1	564.385758586	566.811576217	0.0	22050.0	lglblg	dawn	stim	s			
+154	Waveform 1	1	567.498921622	568.169213335	0.0	22050.0	lglblg	dawn	c				
+154	Spectrogram 1	1	567.498921622	568.169213335	0.0	22050.0	lglblg	dawn	c				
+155	Waveform 1	1	575.603740200	577.814596778	0.0	22050.0	lglblg	dawn	stim	f	y		
+155	Spectrogram 1	1	575.603740200	577.814596778	0.0	22050.0	lglblg	dawn	stim	f	y		
+156	Waveform 1	1	578.638747869	579.195044393	0.0	22050.0	lglblg	dawn	c				
+156	Spectrogram 1	1	578.638747869	579.195044393	0.0	22050.0	lglblg	dawn	c				
+157	Waveform 1	1	579.281680737	581.497747219	0.0	22050.0	lglblg	dawn	r		y		
+157	Spectrogram 1	1	579.281680737	581.497747219	0.0	22050.0	lglblg	dawn	r		y		
+158	Waveform 1	1	581.578649675	583.553046355	0.0	22050.0	lglblg	dawn	c				
+158	Spectrogram 1	1	581.578649675	583.553046355	0.0	22050.0	lglblg	dawn	c				
+159	Waveform 1	1	586.132370509	587.947173924	0.0	22050.0	lglblg	dawn	r		y	y	
+159	Spectrogram 1	1	586.132370509	587.947173924	0.0	22050.0	lglblg	dawn	r		y	y	
+160	Waveform 1	1	587.522963136	589.369685205	0.0	22050.0	lglblg	dawn	stim	c	y		
+160	Spectrogram 1	1	587.522963136	589.369685205	0.0	22050.0	lglblg	dawn	stim	c	y		
+161	Waveform 1	1	589.732623187	591.597584485	0.0	22050.0	lglblg	dawn	c				
+161	Spectrogram 1	1	589.732623187	591.597584485	0.0	22050.0	lglblg	dawn	c				
+162	Waveform 1	1	592.923314409	595.107462238	0.0	22050.0	lglblg	dawn	r		y		
+162	Spectrogram 1	1	592.923314409	595.107462238	0.0	22050.0	lglblg	dawn	r		y		
+163	Waveform 1	1	595.977622018	596.871344303	0.0	22050.0	lglblg	dawn	c				
+163	Spectrogram 1	1	595.977622018	596.871344303	0.0	22050.0	lglblg	dawn	c				
+164	Waveform 1	1	598.679563400	601.662019500	0.0	22050.0	lglblg	dawn	stim	f	y		
+164	Spectrogram 1	1	598.679563400	601.662019500	0.0	22050.0	lglblg	dawn	stim	f	y		
+165	Waveform 1	1	601.519999869	603.740626158	0.0	22050.0	lglblg	dawn	r		y		
+165	Spectrogram 1	1	601.519999869	603.740626158	0.0	22050.0	lglblg	dawn	r		y		
+166	Waveform 1	1	601.520410482	602.021989315	0.0	22050.0	lglblg	dawn	c				
+166	Spectrogram 1	1	601.520410482	602.021989315	0.0	22050.0	lglblg	dawn	c				
+167	Waveform 1	1	603.593891089	605.176144318	0.0	22050.0	lglblg	dawn	c				
+167	Spectrogram 1	1	603.593891089	605.176144318	0.0	22050.0	lglblg	dawn	c				
+168	Waveform 1	1	608.799253793	610.518301249	0.0	22050.0	lglblg	dawn	r		y	y	
+168	Spectrogram 1	1	608.799253793	610.518301249	0.0	22050.0	lglblg	dawn	r		y	y	
+169	Waveform 1	1	609.828406889	612.345420671	0.0	22050.0	lglblg	dawn	stim	s			
+169	Spectrogram 1	1	609.828406889	612.345420671	0.0	22050.0	lglblg	dawn	stim	s			
+170	Waveform 1	1	612.295452123	614.958379748	0.0	22050.0	lglblg	dawn	c				
+170	Spectrogram 1	1	612.295452123	614.958379748	0.0	22050.0	lglblg	dawn	c				
+171	Waveform 1	1	622.129855800	624.654849230	0.0	22050.0	lglblg	dawn	stim	s			
+171	Spectrogram 1	1	622.129855800	624.654849230	0.0	22050.0	lglblg	dawn	stim	s			
+172	Waveform 1	1	624.660750287	626.717223504	0.0	22050.0	lglblg	dawn	r		y		
+172	Spectrogram 1	1	624.660750287	626.717223504	0.0	22050.0	lglblg	dawn	r		y		
+173	Waveform 1	1	627.405343835	628.166831700	0.0	22050.0	lglblg	dawn	c				
+173	Spectrogram 1	1	627.405343835	628.166831700	0.0	22050.0	lglblg	dawn	c				
+174	Waveform 1	1	628.736044180	630.874593933	0.0	22050.0	lglblg	dawn	r		y		
+174	Spectrogram 1	1	628.736044180	630.874593933	0.0	22050.0	lglblg	dawn	r		y		
+175	Waveform 1	1	631.128711317	632.136428791	0.0	22050.0	lglblg	dawn	c				
+175	Spectrogram 1	1	631.128711317	632.136428791	0.0	22050.0	lglblg	dawn	c				
+176	Waveform 1	1	633.940996270	634.396977028	0.0	22050.0	lglblg	dawn	c				
+176	Spectrogram 1	1	633.940996270	634.396977028	0.0	22050.0	lglblg	dawn	c				
+177	Waveform 1	1	634.001200800	636.191337900	0.0	22050.0	lglblg	dawn	stim	c			
+177	Spectrogram 1	1	634.001200800	636.191337900	0.0	22050.0	lglblg	dawn	stim	c			
+178	Waveform 1	1	636.120584291	636.658641585	0.0	22050.0	lglblg	dawn	c				
+178	Spectrogram 1	1	636.120584291	636.658641585	0.0	22050.0	lglblg	dawn	c				
+179	Waveform 1	1	638.143964775	639.707978773	0.0	22050.0	lglblg	dawn	c				
+179	Spectrogram 1	1	638.143964775	639.707978773	0.0	22050.0	lglblg	dawn	c				
+180	Waveform 1	1	641.948998180	643.973552744	0.0	22050.0	lglblg	dawn	post trial sing				
+180	Spectrogram 1	1	641.948998180	643.973552744	0.0	22050.0	lglblg	dawn	post trial sing				
+181	Waveform 1	1	643.326470681	647.754043838	0.0	22050.0	lglblg	dawn	c				
+181	Spectrogram 1	1	643.326470681	647.754043838	0.0	22050.0	lglblg	dawn	c				
+182	Waveform 1	1	647.277886302	649.024292603	0.0	22050.0	lglblg	dawn	post trial sing				
+182	Spectrogram 1	1	647.277886302	649.024292603	0.0	22050.0	lglblg	dawn	post trial sing				
+183	Waveform 1	1	648.586140463	650.300628111	0.0	22050.0	lglblg	dawn	c				
+183	Spectrogram 1	1	648.586140463	650.300628111	0.0	22050.0	lglblg	dawn	c				
+184	Waveform 1	1	652.464599162	654.247483924	0.0	22050.0	lglblg	dawn	post trial sing				
+184	Spectrogram 1	1	652.464599162	654.247483924	0.0	22050.0	lglblg	dawn	post trial sing				
+185	Waveform 1	1	652.492368621	652.920990533	0.0	22050.0	lglblg	dawn	c				
+185	Spectrogram 1	1	652.492368621	652.920990533	0.0	22050.0	lglblg	dawn	c				
+186	Waveform 1	1	654.229655307	654.899947021	0.0	22050.0	lglblg	dawn	c				
+186	Spectrogram 1	1	654.229655307	654.899947021	0.0	22050.0	lglblg	dawn	c				
+187	Waveform 1	1	656.689956091	658.728190077	0.0	22050.0	lglblg	dawn	post trial sing				
+187	Spectrogram 1	1	656.689956091	658.728190077	0.0	22050.0	lglblg	dawn	post trial sing				
+188	Waveform 1	1	658.736899079	661.053281328	0.0	22050.0	lglblg	dawn	c				
+188	Spectrogram 1	1	658.736899079	661.053281328	0.0	22050.0	lglblg	dawn	c				
+189	Waveform 1	1	661.868312803	663.915666405	0.0	22050.0	lglblg	dawn	post trial sing				
+189	Spectrogram 1	1	661.868312803	663.915666405	0.0	22050.0	lglblg	dawn	post trial sing				
+190	Waveform 1	1	664.001539282	664.744787917	0.0	22050.0	lglblg	dawn	c				
+190	Spectrogram 1	1	664.001539282	664.744787917	0.0	22050.0	lglblg	dawn	c				
+191	Waveform 1	1	666.699771286	668.687847389	0.0	22050.0	lglblg	dawn	post trial sing				
+191	Spectrogram 1	1	666.699771286	668.687847389	0.0	22050.0	lglblg	dawn	post trial sing				
+192	Waveform 1	1	668.741390999	669.539357325	0.0	22050.0	lglblg	dawn	c				
+192	Spectrogram 1	1	668.741390999	669.539357325	0.0	22050.0	lglblg	dawn	c				
+193	Waveform 1	1	672.068876449	674.093431013	0.0	22050.0	lglblg	dawn	post trial sing				
+193	Spectrogram 1	1	672.068876449	674.093431013	0.0	22050.0	lglblg	dawn	post trial sing				
+194	Waveform 1	1	674.270500041	675.022868291	0.0	22050.0	lglblg	dawn	c				
+194	Spectrogram 1	1	674.270500041	675.022868291	0.0	22050.0	lglblg	dawn	c				
+195	Waveform 1	1	676.931842972	679.070392725	0.0	22050.0	lglblg	dawn	post trial sing				
+195	Spectrogram 1	1	676.931842972	679.070392725	0.0	22050.0	lglblg	dawn	post trial sing				
+196	Waveform 1	1	678.691928696	681.063028636	0.0	22050.0	lglblg	dawn	c				
+196	Spectrogram 1	1	678.691928696	681.063028636	0.0	22050.0	lglblg	dawn	c				
+197	Waveform 1	1	682.183156605	684.052677712	0.0	22050.0	lglblg	dawn	post trial sing				
+197	Spectrogram 1	1	682.183156605	684.052677712	0.0	22050.0	lglblg	dawn	post trial sing				
+198	Waveform 1	1	684.420848044	685.059221105	0.0	22050.0	lglblg	dawn	c				
+198	Spectrogram 1	1	684.420848044	685.059221105	0.0	22050.0	lglblg	dawn	c				
+199	Waveform 1	1	687.470185232	689.695371329	0.0	22050.0	lglblg	dawn	post trial sing				
+199	Spectrogram 1	1	687.470185232	689.695371329	0.0	22050.0	lglblg	dawn	post trial sing				
+200	Waveform 1	1	689.858760935	690.424177074	0.0	22050.0	lglblg	dawn	c				
+200	Spectrogram 1	1	689.858760935	690.424177074	0.0	22050.0	lglblg	dawn	c				
+201	Waveform 1	1	692.848820624	695.151523450	0.0	22050.0	lglblg	dawn	post trial sing				
+201	Spectrogram 1	1	692.848820624	695.151523450	0.0	22050.0	lglblg	dawn	post trial sing				
+202	Waveform 1	1	695.200917866	696.026243037	0.0	22050.0	lglblg	dawn	c				
+202	Spectrogram 1	1	695.200917866	696.026243037	0.0	22050.0	lglblg	dawn	c				
+203	Waveform 1	1	698.058332522	700.247040159	0.0	22050.0	lglblg	dawn	post trial sing				
+203	Spectrogram 1	1	698.058332522	700.247040159	0.0	22050.0	lglblg	dawn	post trial sing				
+204	Waveform 1	1	700.611414151	701.208748944	0.0	22050.0	lglblg	dawn	c				
+204	Spectrogram 1	1	700.611414151	701.208748944	0.0	22050.0	lglblg	dawn	c				
+205	Waveform 1	1	703.478006182	705.557278437	0.0	22050.0	lglblg	dawn	post trial sing				
+205	Spectrogram 1	1	703.478006182	705.557278437	0.0	22050.0	lglblg	dawn	post trial sing				
+206	Waveform 1	1	705.797774157	706.627659136	0.0	22050.0	lglblg	dawn	c				
+206	Spectrogram 1	1	705.797774157	706.627659136	0.0	22050.0	lglblg	dawn	c				
+207	Waveform 1	1	708.614503400	710.743933538	0.0	22050.0	lglblg	dawn	post trial sing				
+207	Spectrogram 1	1	708.614503400	710.743933538	0.0	22050.0	lglblg	dawn	post trial sing				
+208	Waveform 1	1	710.853016065	711.628183353	0.0	22050.0	lglblg	dawn	c				
+208	Spectrogram 1	1	710.853016065	711.628183353	0.0	22050.0	lglblg	dawn	c				
+209	Waveform 1	1	713.806597294	715.698917438	0.0	22050.0	lglblg	dawn	post trial sing				
+209	Spectrogram 1	1	713.806597294	715.698917438	0.0	22050.0	lglblg	dawn	post trial sing				
+210	Waveform 1	1	715.921937396	716.906855832	0.0	22050.0	lglblg	dawn	c				
+210	Spectrogram 1	1	715.921937396	716.906855832	0.0	22050.0	lglblg	dawn	c				
+211	Waveform 1	1	719.608884177	721.546802397	0.0	22050.0	lglblg	dawn	post trial sing				
+211	Spectrogram 1	1	719.608884177	721.546802397	0.0	22050.0	lglblg	dawn	post trial sing				
+212	Waveform 1	1	721.500383095	722.134196348	0.0	22050.0	lglblg	dawn	c				
+212	Spectrogram 1	1	721.500383095	722.134196348	0.0	22050.0	lglblg	dawn	c				
+213	Waveform 1	1	724.636356626	726.806825032	0.0	22050.0	lglblg	dawn	post trial sing				
+213	Spectrogram 1	1	724.636356626	726.806825032	0.0	22050.0	lglblg	dawn	post trial sing				
+214	Waveform 1	1	727.129807903	727.873056538	0.0	22050.0	lglblg	dawn	c				
+214	Spectrogram 1	1	727.129807903	727.873056538	0.0	22050.0	lglblg	dawn	c				
+215	Waveform 1	1	729.900996828	731.670202168	0.0	22050.0	lglblg	dawn	post trial sing				
+215	Spectrogram 1	1	729.900996828	731.670202168	0.0	22050.0	lglblg	dawn	post trial sing				
+216	Waveform 1	1	732.120859651	732.813950402	0.0	22050.0	lglblg	dawn	c				
+216	Spectrogram 1	1	732.120859651	732.813950402	0.0	22050.0	lglblg	dawn	c				
+217	Waveform 1	1	734.796292617	737.089875828	0.0	22050.0	lglblg	dawn	post trial sing				
+217	Spectrogram 1	1	734.796292617	737.089875828	0.0	22050.0	lglblg	dawn	post trial sing				
+218	Waveform 1	1	736.952260374	737.576954012	0.0	22050.0	lglblg	dawn	c				
+218	Spectrogram 1	1	736.952260374	737.576954012	0.0	22050.0	lglblg	dawn	c				
+219	Waveform 1	1	741.181413643	743.329083012	0.0	22050.0	lglblg	dawn	post trial sing				
+219	Spectrogram 1	1	741.181413643	743.329083012	0.0	22050.0	lglblg	dawn	post trial sing				
+220	Waveform 1	1	743.561633198	744.177207221	0.0	22050.0	lglblg	dawn	c				
+220	Spectrogram 1	1	743.561633198	744.177207221	0.0	22050.0	lglblg	dawn	c				
+221	Waveform 1	1	746.122307508	748.548125138	0.0	22050.0	lglblg	dawn	post trial sing				
+221	Spectrogram 1	1	746.122307508	748.548125138	0.0	22050.0	lglblg	dawn	post trial sing				
+222	Waveform 1	1	748.814531695	749.639856866	0.0	22050.0	lglblg	dawn	c				
+222	Spectrogram 1	1	748.814531695	749.639856866	0.0	22050.0	lglblg	dawn	c				
+223	Waveform 1	1	752.207302460	754.455287595	0.0	22050.0	lglblg	dawn	post trial sing				
+223	Spectrogram 1	1	752.207302460	754.455287595	0.0	22050.0	lglblg	dawn	post trial sing				
+224	Waveform 1	1	754.582551594	755.312120806	0.0	22050.0	lglblg	dawn	c				
+224	Spectrogram 1	1	754.582551594	755.312120806	0.0	22050.0	lglblg	dawn	c				
+225	Waveform 1	1	759.455048345	761.716712903	0.0	22050.0	lglblg	dawn	post trial sing				
+225	Spectrogram 1	1	759.455048345	761.716712903	0.0	22050.0	lglblg	dawn	post trial sing				
+226	Waveform 1	1	761.775169175	762.491058964	0.0	22050.0	lglblg	dawn	c				
+226	Spectrogram 1	1	761.775169175	762.491058964	0.0	22050.0	lglblg	dawn	c				
+227	Waveform 1	1	765.394129455	767.550918439	0.0	22050.0	lglblg	dawn	post trial sing				
+227	Spectrogram 1	1	765.394129455	767.550918439	0.0	22050.0	lglblg	dawn	post trial sing				
+228	Waveform 1	1	767.659943207	768.353033959	0.0	22050.0	lglblg	dawn	c				
+228	Spectrogram 1	1	767.659943207	768.353033959	0.0	22050.0	lglblg	dawn	c				
+229	Waveform 1	1	770.052315250	771.999353085	0.0	22050.0	lglblg	dawn	post trial sing				
+229	Spectrogram 1	1	770.052315250	771.999353085	0.0	22050.0	lglblg	dawn	post trial sing				
+230	Waveform 1	1	772.180924161	772.814737415	0.0	22050.0	lglblg	dawn	c				
+230	Spectrogram 1	1	772.180924161	772.814737415	0.0	22050.0	lglblg	dawn	c				
+231	Waveform 1	1	774.911074819	776.785155733	0.0	22050.0	lglblg	dawn	post trial sing				
+231	Spectrogram 1	1	774.911074819	776.785155733	0.0	22050.0	lglblg	dawn	post trial sing				
+232	Waveform 1	1	777.154089533	777.851740092	0.0	22050.0	lglblg	dawn	c				
+232	Spectrogram 1	1	777.154089533	777.851740092	0.0	22050.0	lglblg	dawn	c				
+233	Waveform 1	1	780.207223061	782.715117228	0.0	22050.0	lglblg	dawn	post trial sing				
+233	Spectrogram 1	1	780.207223061	782.715117228	0.0	22050.0	lglblg	dawn	post trial sing				
+234	Waveform 1	1	782.805902766	783.649467168	0.0	22050.0	lglblg	dawn	c				
+234	Spectrogram 1	1	782.805902766	783.649467168	0.0	22050.0	lglblg	dawn	c				
+235	Waveform 1	1	786.265269781	788.230546847	0.0	22050.0	lglblg	dawn	post trial sing				
+235	Spectrogram 1	1	786.265269781	788.230546847	0.0	22050.0	lglblg	dawn	post trial sing				
+236	Waveform 1	1	788.439887382	789.014423137	0.0	22050.0	lglblg	dawn	c				
+236	Spectrogram 1	1	788.439887382	789.014423137	0.0	22050.0	lglblg	dawn	c				
+237	Waveform 1	1	792.026460637	794.269885965	0.0	22050.0	lglblg	dawn	post trial sing				
+237	Spectrogram 1	1	792.026460637	794.269885965	0.0	22050.0	lglblg	dawn	post trial sing				
+238	Waveform 1	1	794.373234604	794.966009589	0.0	22050.0	lglblg	dawn	c				
+238	Spectrogram 1	1	794.373234604	794.966009589	0.0	22050.0	lglblg	dawn	c				
+239	Waveform 1	1	797.778647396	799.880718688	0.0	22050.0	lglblg	dawn	post trial sing				
+239	Spectrogram 1	1	797.778647396	799.880718688	0.0	22050.0	lglblg	dawn	post trial sing				
+240	Waveform 1	1	799.747720801	800.518328282	0.0	22050.0	lglblg	dawn	c				
+240	Spectrogram 1	1	799.747720801	800.518328282	0.0	22050.0	lglblg	dawn	c				
+241	Waveform 1	1	802.427655816	804.169502310	0.0	22050.0	lglblg	dawn	post trial sing				
+241	Spectrogram 1	1	802.427655816	804.169502310	0.0	22050.0	lglblg	dawn	post trial sing				
+242	Waveform 1	1	804.665757869	805.336049582	0.0	22050.0	lglblg	dawn	c				
+242	Spectrogram 1	1	804.665757869	805.336049582	0.0	22050.0	lglblg	dawn	c				
+243	Waveform 1	1	808.138746548	810.195219765	0.0	22050.0	lglblg	dawn	post trial sing				
+243	Spectrogram 1	1	808.138746548	810.195219765	0.0	22050.0	lglblg	dawn	post trial sing				
+244	Waveform 1	1	810.431566291	811.256891462	0.0	22050.0	lglblg	dawn	c				
+244	Spectrogram 1	1	810.431566291	811.256891462	0.0	22050.0	lglblg	dawn	c				
+245	Waveform 1	1	813.266592523	815.455300159	0.0	22050.0	lglblg	dawn	post trial sing				
+245	Spectrogram 1	1	813.266592523	815.455300159	0.0	22050.0	lglblg	dawn	post trial sing				
+246	Waveform 1	1	815.623602426	816.512764904	0.0	22050.0	lglblg	dawn	c				
+246	Spectrogram 1	1	815.623602426	816.512764904	0.0	22050.0	lglblg	dawn	c				
+247	Waveform 1	1	817.892801905	820.172705693	0.0	22050.0	lglblg	dawn	post trial sing				
+247	Spectrogram 1	1	817.892801905	820.172705693	0.0	22050.0	lglblg	dawn	post trial sing				
+248	Waveform 1	1	820.472889526	821.175099893	0.0	22050.0	lglblg	dawn	c				
+248	Spectrogram 1	1	820.472889526	821.175099893	0.0	22050.0	lglblg	dawn	c				
+249	Waveform 1	1	823.877538850	826.016088604	0.0	22050.0	lglblg	dawn	post trial sing				
+249	Spectrogram 1	1	823.877538850	826.016088604	0.0	22050.0	lglblg	dawn	post trial sing				
+250	Waveform 1	1	825.942721069	826.841003162	0.0	22050.0	lglblg	dawn	c				
+250	Spectrogram 1	1	825.942721069	826.841003162	0.0	22050.0	lglblg	dawn	c				
+251	Waveform 1	1	829.078283988	831.472182965	0.0	22050.0	lglblg	dawn	post trial sing				
+251	Spectrogram 1	1	829.078283988	831.472182965	0.0	22050.0	lglblg	dawn	post trial sing				
+252	Waveform 1	1	831.813347307	832.647792093	0.0	22050.0	lglblg	dawn	c				
+252	Spectrogram 1	1	831.813347307	832.647792093	0.0	22050.0	lglblg	dawn	c				
+253	Waveform 1	1	835.773882542	838.053786330	0.0	22050.0	lglblg	dawn	post trial sing				
+253	Spectrogram 1	1	835.773882542	838.053786330	0.0	22050.0	lglblg	dawn	post trial sing				
+254	Waveform 1	1	837.989185557	838.654917463	0.0	22050.0	lglblg	dawn	c				
+254	Spectrogram 1	1	837.989185557	838.654917463	0.0	22050.0	lglblg	dawn	c				
+255	Waveform 1	1	842.437562444	844.781303538	0.0	22050.0	lglblg	dawn	post trial sing				
+255	Spectrogram 1	1	842.437562444	844.781303538	0.0	22050.0	lglblg	dawn	post trial sing				
+256	Waveform 1	1	844.721262572	845.624104472	0.0	22050.0	lglblg	dawn	c				
+256	Spectrogram 1	1	844.721262572	845.624104472	0.0	22050.0	lglblg	dawn	c				
+257	Waveform 1	1	848.987304915	850.993620249	0.0	22050.0	lglblg	dawn	post trial sing				
+257	Spectrogram 1	1	848.987304915	850.993620249	0.0	22050.0	lglblg	dawn	post trial sing				
+258	Waveform 1	1	851.189281361	852.192439028	0.0	22050.0	lglblg	dawn	c				
+258	Spectrogram 1	1	851.189281361	852.192439028	0.0	22050.0	lglblg	dawn	c				
+259	Waveform 1	1	854.780825037	856.942173828	0.0	22050.0	lglblg	dawn	post trial sing				
+259	Spectrogram 1	1	854.780825037	856.942173828	0.0	22050.0	lglblg	dawn	post trial sing				
+260	Waveform 1	1	856.791289565	857.502619547	0.0	22050.0	lglblg	dawn	c				
+260	Spectrogram 1	1	856.791289565	857.502619547	0.0	22050.0	lglblg	dawn	c				
+261	Waveform 1	1	859.803795438	861.823790194	0.0	22050.0	lglblg	dawn	post trial sing				
+261	Spectrogram 1	1	859.803795438	861.823790194	0.0	22050.0	lglblg	dawn	post trial sing				
+262	Waveform 1	1	861.969704037	862.708392864	0.0	22050.0	lglblg	dawn	c				
+262	Spectrogram 1	1	861.969704037	862.708392864	0.0	22050.0	lglblg	dawn	c				
+263	Waveform 1	1	865.195699639	866.992263824	0.0	22050.0	lglblg	dawn	post trial sing				
+263	Spectrogram 1	1	865.195699639	866.992263824	0.0	22050.0	lglblg	dawn	post trial sing				
+264	Waveform 1	1	867.397676085	868.150044335	0.0	22050.0	lglblg	dawn	c				
+264	Spectrogram 1	1	867.397676085	868.150044335	0.0	22050.0	lglblg	dawn	c				
+265	Waveform 1	1	871.667867622	873.779058530	0.0	22050.0	lglblg	dawn	post trial sing				
+265	Spectrogram 1	1	871.667867622	873.779058530	0.0	22050.0	lglblg	dawn	post trial sing				
+266	Waveform 1	1	873.997929294	874.691020045	0.0	22050.0	lglblg	dawn	c				
+266	Spectrogram 1	1	873.997929294	874.691020045	0.0	22050.0	lglblg	dawn	c				
+267	Waveform 1	1	877.424614189	879.239417604	0.0	22050.0	lglblg	dawn	post trial sing				
+267	Spectrogram 1	1	877.424614189	879.239417604	0.0	22050.0	lglblg	dawn	post trial sing				
+268	Waveform 1	1	879.376211831	880.032824122	0.0	22050.0	lglblg	dawn	c				
+268	Spectrogram 1	1	879.376211831	880.032824122	0.0	22050.0	lglblg	dawn	c				
+269	Waveform 1	1	882.511364136	885.174291761	0.0	22050.0	lglblg	dawn	post trial sing				
+269	Spectrogram 1	1	882.511364136	885.174291761	0.0	22050.0	lglblg	dawn	post trial sing				
+270	Waveform 1	1	885.091804611	885.935369013	0.0	22050.0	lglblg	dawn	c				
+270	Spectrogram 1	1	885.091804611	885.935369013	0.0	22050.0	lglblg	dawn	c				
+271	Waveform 1	1	888.770042390	890.817395992	0.0	22050.0	lglblg	dawn	post trial sing				
+271	Spectrogram 1	1	888.770042390	890.817395992	0.0	22050.0	lglblg	dawn	post trial sing				
+272	Waveform 1	1	890.424489073	891.331890781	0.0	22050.0	lglblg	dawn	c				
+272	Spectrogram 1	1	890.424489073	891.331890781	0.0	22050.0	lglblg	dawn	c				
+273	Waveform 1	1	893.947577876	896.200122819	0.0	22050.0	lglblg	dawn	post trial sing				
+273	Spectrogram 1	1	893.947577876	896.200122819	0.0	22050.0	lglblg	dawn	post trial sing				
+274	Waveform 1	1	895.917061895	896.614712454	0.0	22050.0	lglblg	dawn	c				
+274	Spectrogram 1	1	895.917061895	896.614712454	0.0	22050.0	lglblg	dawn	c				
+275	Waveform 1	1	898.018311961	899.472890578	0.0	22050.0	lglblg	dawn	c				
+275	Spectrogram 1	1	898.018311961	899.472890578	0.0	22050.0	lglblg	dawn	c				
+276	Waveform 1	1	900.671003649	902.508606102	0.0	22050.0	lglblg	dawn	post trial sing				
+276	Spectrogram 1	1	900.671003649	902.508606102	0.0	22050.0	lglblg	dawn	post trial sing				
+277	Waveform 1	1	900.867075375	901.683280931	0.0	22050.0	lglblg	dawn	c				
+277	Spectrogram 1	1	900.867075375	901.683280931	0.0	22050.0	lglblg	dawn	c				
+278	Waveform 1	1	902.412028916	905.412382301	0.0	22050.0	lglblg	dawn	c				
+278	Spectrogram 1	1	902.412028916	905.412382301	0.0	22050.0	lglblg	dawn	c				
+279	Waveform 1	1	906.664334078	909.217826320	0.0	22050.0	lglblg	dawn	post trial sing				
+279	Spectrogram 1	1	906.664334078	909.217826320	0.0	22050.0	lglblg	dawn	post trial sing				
+280	Waveform 1	1	909.180584392	909.928392835	0.0	22050.0	lglblg	dawn	c				
+280	Spectrogram 1	1	909.180584392	909.928392835	0.0	22050.0	lglblg	dawn	c				
+281	Waveform 1	1	913.018768291	915.079801315	0.0	22050.0	lglblg	dawn	post trial sing				
+281	Spectrogram 1	1	913.018768291	915.079801315	0.0	22050.0	lglblg	dawn	post trial sing				
+282	Waveform 1	1	915.179764227	915.895654017	0.0	22050.0	lglblg	dawn	c				
+282	Spectrogram 1	1	915.179764227	915.895654017	0.0	22050.0	lglblg	dawn	c				
+283	Waveform 1	1	919.153157659	921.401142794	0.0	22050.0	lglblg	dawn	post trial sing				
+283	Spectrogram 1	1	919.153157659	921.401142794	0.0	22050.0	lglblg	dawn	post trial sing				
+284	Waveform 1	1	921.487779138	922.276625849	0.0	22050.0	lglblg	dawn	c				
+284	Spectrogram 1	1	921.487779138	922.276625849	0.0	22050.0	lglblg	dawn	c				
+285	Waveform 1	1	924.686826508	926.870974337	0.0	22050.0	lglblg	dawn	post trial sing				
+285	Spectrogram 1	1	924.686826508	926.870974337	0.0	22050.0	lglblg	dawn	post trial sing				
+286	Waveform 1	1	926.847764686	927.837242930	0.0	22050.0	lglblg	dawn	c				
+286	Spectrogram 1	1	926.847764686	927.837242930	0.0	22050.0	lglblg	dawn	c				
+287	Waveform 1	1	931.697051786	933.744405388	0.0	22050.0	lglblg	dawn	post trial sing				
+287	Spectrogram 1	1	931.697051786	933.744405388	0.0	22050.0	lglblg	dawn	post trial sing				
+288	Waveform 1	1	933.925976464	934.673784906	0.0	22050.0	lglblg	dawn	c				
+288	Spectrogram 1	1	933.925976464	934.673784906	0.0	22050.0	lglblg	dawn	c				
+289	Waveform 1	1	937.449944253	939.241948630	0.0	22050.0	lglblg	dawn	post trial sing				
+289	Spectrogram 1	1	937.449944253	939.241948630	0.0	22050.0	lglblg	dawn	post trial sing				
+290	Waveform 1	1	939.185704005	939.855995718	0.0	22050.0	lglblg	dawn	c				
+290	Spectrogram 1	1	939.185704005	939.855995718	0.0	22050.0	lglblg	dawn	c				
+291	Waveform 1	1	943.197513445	944.994077630	0.0	22050.0	lglblg	dawn	post trial sing				
+291	Spectrogram 1	1	943.197513445	944.994077630	0.0	22050.0	lglblg	dawn	post trial sing				
+292	Waveform 1	1	945.093277075	945.882123786	0.0	22050.0	lglblg	dawn	c				
+292	Spectrogram 1	1	945.093277075	945.882123786	0.0	22050.0	lglblg	dawn	c				
+293	Waveform 1	1	946.146592625	947.842841044	0.0	22050.0	lglblg	dawn	c				
+293	Spectrogram 1	1	946.146592625	947.842841044	0.0	22050.0	lglblg	dawn	c				
+294	Waveform 1	1	948.666934375	950.937718548	0.0	22050.0	lglblg	dawn	post trial sing				
+294	Spectrogram 1	1	948.666934375	950.937718548	0.0	22050.0	lglblg	dawn	post trial sing				
+295	Waveform 1	1	950.968463120	951.647874449	0.0	22050.0	lglblg	dawn	c				
+295	Spectrogram 1	1	950.968463120	951.647874449	0.0	22050.0	lglblg	dawn	c				
+296	Waveform 1	1	954.892930508	956.589178927	0.0	22050.0	lglblg	dawn	post trial sing				
+296	Spectrogram 1	1	954.892930508	956.589178927	0.0	22050.0	lglblg	dawn	post trial sing				
+297	Waveform 1	1	956.607418157	957.341547177	0.0	22050.0	lglblg	dawn	c				
+297	Spectrogram 1	1	956.607418157	957.341547177	0.0	22050.0	lglblg	dawn	c				
+298	Waveform 1	1	960.654121364	962.861068231	0.0	22050.0	lglblg	dawn	post trial sing				
+298	Spectrogram 1	1	960.654121364	962.861068231	0.0	22050.0	lglblg	dawn	post trial sing				
+299	Waveform 1	1	962.787347842	963.991137042	0.0	22050.0	lglblg	dawn	c				
+299	Spectrogram 1	1	962.787347842	963.991137042	0.0	22050.0	lglblg	dawn	c				

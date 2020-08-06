@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1596693342218.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8B3FDCCA",
+    "lastKnownWriteTime" : 2763323058424,
+    "last_content_update" : 1596693342218,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ED0D7F4E",
+        "caption" : "AllSongs",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=AllSongs&cache_key=ED0D7F4E",
+        "displayedObservations" : 60,
+        "environment" : "",
+        "expression" : "AllSongs",
+        "object" : "AllSongs",
+        "preview" : 0,
+        "totalObservations" : 60,
+        "variables" : 3
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

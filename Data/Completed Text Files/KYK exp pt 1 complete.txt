@@ -1,0 +1,95 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Bird	Experiment	Signal Type	Stim Type	Response	Overlapping	Notes
+1	Waveform 1	1	2.222222222	11.052631579	0.0	22050.0	KYK	dawn	c				
+1	Spectrogram 1	1	2.222222222	11.052631579	0.0	22050.0	KYK	dawn	c				
+2	Waveform 1	1	17.777777778	21.052631579	0.0	22050.0	KYK	dawn	pre trial sing				
+2	Spectrogram 1	1	17.777777778	21.052631579	0.0	22050.0	KYK	dawn	pre trial sing				
+3	Waveform 1	1	24.845604389	32.038586846	0.0	22050.0	KYK	dawn	c				
+3	Spectrogram 1	1	24.845604389	32.038586846	0.0	22050.0	KYK	dawn	c				
+4	Waveform 1	1	32.280701754	35.789473684	0.0	22050.0	KYK	dawn	pre trial sing				
+4	Spectrogram 1	1	32.280701754	35.789473684	0.0	22050.0	KYK	dawn	pre trial sing				
+5	Waveform 1	1	36.959064327	41.345029240	0.0	22050.0	KYK	dawn	pre trial sing				
+5	Spectrogram 1	1	36.959064327	41.345029240	0.0	22050.0	KYK	dawn	pre trial sing				
+6	Waveform 1	1	54.611686261	56.950867547	0.0	22050.0	KYK	dawn	c				
+6	Spectrogram 1	1	54.611686261	56.950867547	0.0	22050.0	KYK	dawn	c				
+7	Waveform 1	1	58.085362259	62.178929510	0.0	22050.0	KYK	dawn	pre trial sing				
+7	Spectrogram 1	1	58.085362259	62.178929510	0.0	22050.0	KYK	dawn	pre trial sing				
+8	Waveform 1	1	66.553477145	71.056401122	0.0	22050.0	KYK	dawn	pre trial sing				
+8	Spectrogram 1	1	66.553477145	71.056401122	0.0	22050.0	KYK	dawn	pre trial sing				
+9	Waveform 1	1	79.477453754	82.927746151	0.0	22050.0	KYK	dawn	pre trial sing				
+9	Spectrogram 1	1	79.477453754	82.927746151	0.0	22050.0	KYK	dawn	pre trial sing				
+10	Waveform 1	1	83.087094198	84.607562035	0.0	22050.0	KYK	dawn	c				
+10	Spectrogram 1	1	83.087094198	84.607562035	0.0	22050.0	KYK	dawn	c				
+11	Waveform 1	1	83.804939134	86.728915742	0.0	22050.0	KYK	dawn	pre trial sing				
+11	Spectrogram 1	1	83.804939134	86.728915742	0.0	22050.0	KYK	dawn	pre trial sing				
+12	Waveform 1	1	92.555802126	96.356971716	0.0	22050.0	KYK	dawn	pre trial sing				
+12	Spectrogram 1	1	92.555802126	96.356971716	0.0	22050.0	KYK	dawn	pre trial sing				
+13	Waveform 1	1	95.484755017	100.513994783	0.0	22050.0	KYK	dawn	c				
+13	Spectrogram 1	1	95.484755017	100.513994783	0.0	22050.0	KYK	dawn	c				
+14	Waveform 1	1	100.072462264	103.464275130	0.0	22050.0	KYK	dawn	pre trial sing				
+14	Spectrogram 1	1	100.072462264	103.464275130	0.0	22050.0	KYK	dawn	pre trial sing				
+15	Waveform 1	1	103.230357001	107.031526592	0.0	22050.0	KYK	dawn	pre trial sing				
+15	Spectrogram 1	1	103.230357001	107.031526592	0.0	22050.0	KYK	dawn	pre trial sing				
+16	Waveform 1	1	106.699347792	115.939113874	0.0	22050.0	KYK	dawn	c				
+16	Spectrogram 1	1	106.699347792	115.939113874	0.0	22050.0	KYK	dawn	c				
+17	Waveform 1	1	119.604626007	123.113397937	0.0	22050.0	KYK	dawn	pre trial sing				
+17	Spectrogram 1	1	119.604626007	123.113397937	0.0	22050.0	KYK	dawn	pre trial sing				
+18	Waveform 1	1	123.073616798	124.535605102	0.0	22050.0	KYK	dawn	c				
+18	Spectrogram 1	1	123.073616798	124.535605102	0.0	22050.0	KYK	dawn	c				
+19	Waveform 1	1	124.107549984	128.201117235	0.0	22050.0	KYK	dawn	pre trial sing				
+19	Spectrogram 1	1	124.107549984	128.201117235	0.0	22050.0	KYK	dawn	pre trial sing				
+20	Waveform 1	1	133.833850716	147.342622646	0.0	22050.0	KYK	dawn	c				
+20	Spectrogram 1	1	133.833850716	147.342622646	0.0	22050.0	KYK	dawn	c				
+21	Waveform 1	1	134.481506440	138.399635095	0.0	22050.0	KYK	dawn	pre trial sing				
+21	Spectrogram 1	1	134.481506440	138.399635095	0.0	22050.0	KYK	dawn	pre trial sing				
+22	Waveform 1	1	143.370395328	147.171564919	0.0	22050.0	KYK	dawn	pre trial sing				
+22	Spectrogram 1	1	143.370395328	147.171564919	0.0	22050.0	KYK	dawn	pre trial sing				
+23	Waveform 1	1	149.827985547	153.746114202	0.0	22050.0	KYK	dawn	c				
+23	Spectrogram 1	1	149.827985547	153.746114202	0.0	22050.0	KYK	dawn	c				
+24	Waveform 1	1	152.785600007	156.528290065	0.0	22050.0	KYK	dawn	pre trial sing				
+24	Spectrogram 1	1	152.785600007	156.528290065	0.0	22050.0	KYK	dawn	pre trial sing				
+25	Waveform 1	1	155.734418295	187.488804260	0.0	22050.0	KYK	dawn	c				
+25	Spectrogram 1	1	155.734418295	187.488804260	0.0	22050.0	KYK	dawn	c				
+26	Waveform 1	1	164.243763118	167.577096451	0.0	22050.0	KYK	dawn	pre trial sing				
+26	Spectrogram 1	1	164.243763118	167.577096451	0.0	22050.0	KYK	dawn	pre trial sing				
+27	Waveform 1	1	172.957213410	176.582944404	0.0	22050.0	KYK	dawn	pre trial sing				
+27	Spectrogram 1	1	172.957213410	176.582944404	0.0	22050.0	KYK	dawn	pre trial sing				
+28	Waveform 1	1	180.559552591	184.185283586	0.0	22050.0	KYK	dawn	pre trial sing				
+28	Spectrogram 1	1	180.559552591	184.185283586	0.0	22050.0	KYK	dawn	pre trial sing				
+29	Waveform 1	1	186.641423936	189.740839141	0.0	22050.0	KYK	dawn	pre trial sing				
+29	Spectrogram 1	1	186.641423936	189.740839141	0.0	22050.0	KYK	dawn	pre trial sing				
+30	Waveform 1	1	189.137885190	200.482914429	0.0	22050.0	KYK	dawn	c				
+30	Spectrogram 1	1	189.137885190	200.482914429	0.0	22050.0	KYK	dawn	c				
+31	Waveform 1	1	203.757768230	211.652505073	0.0	22050.0	KYK	dawn	c				
+31	Spectrogram 1	1	203.757768230	211.652505073	0.0	22050.0	KYK	dawn	c				
+32	Waveform 1	1	213.123544867	230.608924983	0.0	22050.0	KYK	dawn	c				
+32	Spectrogram 1	1	213.123544867	230.608924983	0.0	22050.0	KYK	dawn	c				
+33	Waveform 1	1	219.290794895	224.729391387	0.0	22050.0	KYK	dawn	pre trial sing				
+33	Spectrogram 1	1	219.290794895	224.729391387	0.0	22050.0	KYK	dawn	pre trial sing				
+34	Waveform 1	1	225.665063901	229.583192556	0.0	22050.0	KYK	dawn	pre trial sing				
+34	Spectrogram 1	1	225.665063901	229.583192556	0.0	22050.0	KYK	dawn	pre trial sing				
+35	Waveform 1	1	232.097812439	237.419449866	0.0	22050.0	KYK	dawn	pre trial sing				
+35	Spectrogram 1	1	232.097812439	237.419449866	0.0	22050.0	KYK	dawn	pre trial sing				
+36	Waveform 1	1	236.704529047	254.306868229	0.0	22050.0	KYK	dawn	c				
+36	Spectrogram 1	1	236.704529047	254.306868229	0.0	22050.0	KYK	dawn	c				
+37	Waveform 1	1	241.277041517	244.668854383	0.0	22050.0	KYK	dawn	pre trial sing				
+37	Spectrogram 1	1	241.277041517	244.668854383	0.0	22050.0	KYK	dawn	pre trial sing				
+38	Waveform 1	1	247.124994734	251.452480114	0.0	22050.0	KYK	dawn	pre trial sing				
+38	Spectrogram 1	1	247.124994734	251.452480114	0.0	22050.0	KYK	dawn	pre trial sing				
+39	Waveform 1	1	255.546047365	259.756573681	0.0	22050.0	KYK	dawn	pre trial sing				
+39	Spectrogram 1	1	255.546047365	259.756573681	0.0	22050.0	KYK	dawn	pre trial sing				
+40	Waveform 1	1	257.144865435	262.349543798	0.0	22050.0	KYK	dawn	c				
+40	Spectrogram 1	1	257.144865435	262.349543798	0.0	22050.0	KYK	dawn	c				
+41	Waveform 1	1	262.830235520	266.572925578	0.0	22050.0	KYK	dawn	pre trial sing				
+41	Spectrogram 1	1	262.830235520	266.572925578	0.0	22050.0	KYK	dawn	pre trial sing				
+42	Waveform 1	1	265.916795260	295.986643991	0.0	22050.0	KYK	dawn	c				
+42	Spectrogram 1	1	265.916795260	295.986643991	0.0	22050.0	KYK	dawn	c				
+43	Waveform 1	1	270.432574701	273.298071777	0.0	22050.0	KYK	dawn	pre trial sing				
+43	Spectrogram 1	1	270.432574701	273.298071777	0.0	22050.0	KYK	dawn	pre trial sing				
+44	Waveform 1	1	277.696312655	281.146605052	0.0	22050.0	KYK	dawn	pre trial sing				
+44	Spectrogram 1	1	277.696312655	281.146605052	0.0	22050.0	KYK	dawn	pre trial sing				
+45	Waveform 1	1	281.088125520	284.538417918	0.0	22050.0	KYK	dawn	pre trial sing				
+45	Spectrogram 1	1	281.088125520	284.538417918	0.0	22050.0	KYK	dawn	pre trial sing				
+46	Waveform 1	1	285.591049497	289.158300959	0.0	22050.0	KYK	dawn	pre trial sing				
+46	Spectrogram 1	1	285.591049497	289.158300959	0.0	22050.0	KYK	dawn	pre trial sing				
+47	Waveform 1	1	291.322043649	295.986643991	0.0	22050.0	KYK	dawn	pre trial sing				
+47	Spectrogram 1	1	291.322043649	295.986643991	0.0	22050.0	KYK	dawn	pre trial sing				
