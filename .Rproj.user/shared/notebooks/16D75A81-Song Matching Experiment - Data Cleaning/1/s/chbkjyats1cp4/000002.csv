@@ -1,0 +1,5 @@
+"0","DawnSongsList <- as.data.frame(as.vector(replicate(10, sample(DawnSongs, 3))))"
+"0","colnames(DawnSongsList) <- ""SongInfo"""
+"0","DawnSongsList <- separate(data = DawnSongsList,"
+"0","                           col= SongInfo,"
+"0","                           into = c(""SongNum"", ""SongSpeed""), sep = ""-"", remove = FALSE)"

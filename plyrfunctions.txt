@@ -1,0 +1,10 @@
+mutate()
+pull()
+setNames()
+unite()
+sample_n()
+slice()
+select()
+rep_sample_n()
+The %<>% pipe
+. notation

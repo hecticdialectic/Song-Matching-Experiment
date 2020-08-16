@@ -1,0 +1,3 @@
+"0","write.csv(DawnSongsList, "
+"0","          file = here(""/Simulated/Single/Stimlists"", "
+"0","            paste(YBDawnStimtrack$Bird[1], ""-"", YBDawnStimtrack$`Trial Type`[1], ""-StimTrack.csv"", sep ="""")))"

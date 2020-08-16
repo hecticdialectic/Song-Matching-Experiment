@@ -1,0 +1,4 @@
+"0","DawnSongsList$Duration <- as.numeric(as.character(mapvalues(DawnSongsList$SongSel,"
+"0","                                 from = c(""Dawn1"", ""Dawn2"", ""Dawn3""),"
+"0","                                 to = Durations)))"
+"0",""

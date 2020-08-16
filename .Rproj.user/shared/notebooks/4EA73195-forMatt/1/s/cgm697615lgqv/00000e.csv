@@ -1,0 +1,18 @@
+"0","#DAWN"
+"0",""
+"0","DawnSongsList <- read.csv(here(""/Simulated/Single/Stimlists"", ""DawnStims.csv""))"
+"0","DawnSongsList$SongPath <- as.factor(DawnSongsList$SongPath)"
+"0","                               "
+"0","DawnSongsTrack <- appendSample(DawnSongsList$SongPath[1],DawnSongsList$SongPath[2], DawnSongsList$SongPath[3],"
+"0","                      DawnSongsList$SongPath[4],DawnSongsList$SongPath[5],DawnSongsList$SongPath[6],"
+"0","                      DawnSongsList$SongPath[7],DawnSongsList$SongPath[8],DawnSongsList$SongPath[9],"
+"0","                      DawnSongsList$SongPath[10],DawnSongsList$SongPath[11],DawnSongsList$SongPath[12],"
+"0","                      DawnSongsList$SongPath[13],DawnSongsList$SongPath[14],DawnSongsList$SongPath[15],"
+"0","                      DawnSongsList$SongPath[16],DawnSongsList$SongPath[17],DawnSongsList$SongPath[18],"
+"0","                      DawnSongsList$SongPath[19],DawnSongsList$SongPath[20],DawnSongsList$SongPath[21],"
+"0","                      DawnSongsList$SongPath[22],DawnSongsList$SongPath[23],DawnSongsList$SongPath[24],"
+"0","                      DawnSongsList$SongPath[25],DawnSongsList$SongPath[26],DawnSongsList$SongPath[27],"
+"0","                      DawnSongsList$SongPath[28],DawnSongsList$SongPath[29],DawnSongsList$SongPath[30])"
+"2","Error in appendSample(DawnSongsList$SongPath[1], DawnSongsList$SongPath[2],  : 
+  Argument must be a Sample object or the name of a wav file.
+"

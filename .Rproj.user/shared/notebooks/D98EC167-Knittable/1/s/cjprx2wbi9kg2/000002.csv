@@ -1,0 +1,3 @@
+"0","BirdID <- subset(BirdID, Var1 != Var2) "
+"0","BirdID$BirdID <- paste(BirdID$Var1, BirdID$Var2, sep="""")"
+"0","rm(colors)"

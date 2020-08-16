@@ -1,0 +1,7 @@
+"0","## Adding up the cumulative length"
+"0","DawnSongsList$`Begin Time (s) 2`<- Dawn.ad$start"
+"0","DawnSongsList$`End Time (s) 2`<- Dawn.ad$end"
+"0",""
+"0","## Computing differences"
+"0","DawnSongsList$StartDiff <- DawnSongsList$`Begin Time (s)` - DawnSongsList$`Begin Time (s) 2`"
+"0","DawnSongsList$EndDiff <- DawnSongsList$`End Time (s)` - DawnSongsList$`End Time (s) 2`"

@@ -1,0 +1,2449 @@
+---
+title: "Stekic et al. (2019)- Data Analysis (No Appendices and Data cleaning)"
+output:   
+  html_document:
+    keep_md: true
+    theme: journal
+    toc: true
+    toc_depth: 4
+    toc_float: 
+      collapsed: false
+    code_folding: hide
+---
+
+
+#### Loading Libaries
+```{r Loading Libraries, include = FALSE}
+library(tidyverse)
+library(ggthemes)
+library(plyr)
+library(lme4)
+library(afex)
+library(emmeans)
+
+
+library(kableExtra)
+library(Hmisc)
+library(binom)
+library(Rmisc)
+library(magick)
+library(webshot)
+library(magrittr)
+library(multcomp)
+```
+
+```{r Loading my GGTheme, include = FALSE}
+theme_alan <- function(base_size = 12 , base_family = "")
+{
+  half_line <- base_size/2
+  colors <- ggthemes_data$few
+  gray <- colors$medium["gray"]
+  black <- colors$dark["black"]
+  
+  theme(
+    line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
+    rect = element_rect(fill = "white", 
+                        colour = "black", size = 0.5, linetype = 1),
+    text = element_text(family = base_family, face = "plain", colour = "black", 
+                        size = base_size, lineheight = 0.9, hjust = 0.5, vjust = 0.5,
+                        angle = 0, margin = margin(), debug = FALSE),
+    
+    axis.line = element_blank(),
+    axis.line.x = NULL,
+    axis.line.y = NULL, 
+    axis.text = element_text(size = rel(0.8), colour = "grey30"),
+    axis.text.x = element_text(margin = margin(t = 0.8 * half_line/2), vjust = 1),
+    axis.text.x.top = element_text(margin = margin(b = 0.8 * half_line/2), vjust = 0),
+    axis.text.y = element_text(margin = margin(r = 0.8 * half_line/2), hjust = 1),
+    axis.text.y.right = element_text(margin = margin(l = 0.8 * half_line/2), hjust = 0), 
+    axis.ticks = element_line(colour = "grey20"), 
+    axis.ticks.length = unit(half_line/2, "pt"),
+    axis.title.x = element_text(margin = margin(t = half_line), vjust = 1),
+    axis.title.x.top = element_text(margin = margin(b = half_line), vjust = 0),
+    axis.title.y = element_text(angle = 90, margin = margin(r = half_line), vjust = 1),
+    axis.title.y.right = element_text(angle = -90, margin = margin(l = half_line), vjust = 0),
+    
+    legend.background = element_rect(colour = NA),
+    legend.spacing = unit(0.4, "cm"), 
+    legend.spacing.x = NULL, 
+    legend.spacing.y = NULL,
+    legend.margin = margin(0.2, 0.2, 0.2, 0.2, "cm"),
+    legend.key = element_rect(fill = "white", colour = NA), 
+    legend.key.size = unit(1.2, "lines"), 
+    legend.key.height = NULL,
+    legend.key.width = NULL,
+    legend.text = element_text(size = rel(0.8)), 
+    legend.text.align = NULL,
+    legend.title = element_text(hjust = 0),
+    legend.title.align = NULL,
+    legend.position = "right", 
+    legend.direction = NULL,
+    legend.justification = "center", 
+    legend.box = NULL,
+    legend.box.margin = margin(0, 0, 0, 0, "cm"),
+    legend.box.background = element_blank(),
+    legend.box.spacing = unit(0.4, "cm"),
+    
+    panel.background = element_rect(fill = "white", colour = NA),
+    panel.border = element_rect(fill = NA, colour = "grey20"),
+    panel.grid.major = element_line(colour = "grey92"),
+    panel.grid.minor = element_line(colour = "grey92", size = 0.25),
+    panel.spacing = unit(half_line, "pt"),
+    panel.spacing.x = NULL,
+    panel.spacing.y = NULL,
+    panel.ontop = FALSE,
+    
+    strip.background = element_rect(fill = "NA", colour = "NA"),
+    strip.text = element_text(colour = "grey10", size = rel(0.8)),
+    strip.text.x = element_text(margin = margin(t = half_line, b = half_line)),
+    strip.text.y = element_text(angle = 0, margin = margin(l = half_line, r = half_line)),
+    strip.placement = "inside",
+    strip.placement.x = NULL, 
+    strip.placement.y = NULL,
+    strip.switch.pad.grid = unit(0.1, "cm"), 
+    strip.switch.pad.wrap = unit(0.1, "cm"), 
+    
+    plot.background = element_rect(colour = "white"),
+    plot.title = element_text(size = rel(1.2), hjust = 0, vjust = 1, margin = margin(b = half_line * 1.2)),
+    plot.subtitle = element_text(size = rel(0.9), hjust = 0, vjust = 1, margin = margin(b = half_line * 0.9)),
+    plot.caption = element_text(size = rel(0.9), hjust = 1, vjust = 1, margin = margin(t = half_line * 0.9)), 
+    plot.margin = margin(half_line, half_line, half_line, half_line),
+    
+    complete = TRUE)
+}
+
+pd <- position_dodge(width = 0.1)
+
+```
+
+```{r Centering Function, include = FALSE}
+#Just a piece of code that will center a numeric factor on zero
+
+center_scale <- function(x) {
+    scale(x, scale = FALSE)
+}
+
+```
+
+
+```{r Reading in the clean data}
+
+#Read in the clean data. This data has had a number of exclusions done on it based on response time and patterns (see the appendices)
+
+CleanData <- read.csv("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Data/CleanDataFinal.csv")
+
+# Change the order of the Trial Type factor - collapse old and new items
+CleanData$TrialType <- factor(CleanData$TrialType, levels = c("Training", "Testing"))
+CleanData$TrialType2 <- factor(CleanData$TrialType2, levels = c("Training", "Testing-Old", "Testing-New"))
+
+#Rename our Blocks to see if we can get any models to converge with Blocks
+#To do this we need our Testing Blocks to have different names than 1-4, so we go with 10-13 (we can rename these on graphs as we see fit)
+
+CleanData.Testing <- subset(CleanData, TrialType =="Testing")
+CleanData.Training <- subset(CleanData, TrialType == "Training")
+
+CleanData.Testing$Block <- mapvalues(CleanData.Testing$Block,
+                                     from = c(1,2,3,4),
+                                     to = c(10,11,12,13))
+
+CleanData <- rbind(CleanData.Training, CleanData.Testing)
+
+CleanData$BlockF <- factor(CleanData$Block)
+CleanData$BlockC <- center_scale(as.numeric(CleanData$Block))
+
+CleanData.Testing <- subset(CleanData, TrialType =="Testing")
+CleanData.Training <- subset(CleanData, TrialType == "Training")
+
+```
+
+# EXPERIMENT 1
+
+```{r Experiment 1 - Lupyan Replication - Data Wrangling}
+
+# Subsetting out only the conditions for the replication
+Exp1Data <- subset(CleanData, Condition == 10|Condition == "3A"|Condition == "3B")
+
+# Name the levels of Condition, rather than having them be numbers
+# This also collapses subconditions 3A and 3B (justified above)
+Exp1Data$Condition2 <- factor(Exp1Data$Condition,
+                            levels= c("3A", "3B", 10),
+                            labels = c("Conventional Category","Conventional Category","No Label"))
+
+```
+
+## Participants
+```{r Experiment 1 - Lupyan Replication - Participants}
+count(Exp1Data$Condition) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Condition in Experiment 1", ) %>%
+              kable_styling(full_width= F)
+
+count(Exp1Data$Gender) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Gender in Experiment 1", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp1Data %>% 
+  summarySE(measurevar = "Age") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Ages", )
+
+```
+
+## Subcondition collapse
+```{r Experiment 1- Subcondition Collapse}
+
+# Means and SEs of subconditions
+
+Exp1DataSubs <- subset(Exp1Data, Condition2 == "Conventional Category")
+Exp1DataSubs$Condition <- factor(Exp1DataSubs$Condition)
+
+Exp1DataSubs %>% 
+  summarySE(measurevar = "RespCorr", groupvars = "Condition") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - SubConditions", )
+
+#Sub Condition x Trial Type
+Exp1DataSubs %>% 
+  summarySE(measurevar = "RespCorr", groupvars = c("Condition", "TrialType")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Interaction of SubConditions x Trial Type", )
+
+
+# MIXED MODEL
+afex.Exp1.SC <- mixed(RespCorr ~ Condition * TrialType + (1 |ParticipantID),
+                         data=Exp1DataSubs,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+afex.Exp1.SC$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 1 - Subconditions", ) %>%
+              kable_styling(full_width= F)
+
+
+#SUBCONDITION PLOT
+
+Exp1Data.SC.Agg <- summarySE(subset(Exp1Data, Condition2 == "Conventional Category"), measurevar = "RespCorr", groupvars = c("Condition", "TrialType", "BlockF"))
+
+
+ggplot(data=Exp1Data.SC.Agg, aes(x=BlockF, y=RespCorr, group= Condition)) +
+  geom_line(aes(linetype = Condition), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan() +
+  ggtitle("Experiment 1 - Subconditions")
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 1 - Subconditions.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+
+
+
+```
+
+
+
+
+## Performance
+### Descriptive Statistics
+```{r Experiment 1 - Lupyan Replication - Descriptive Statistics, warning = false}
+
+#Means and SEs
+Exp1Data.Condition <- 
+  summarySE(Exp1Data, measurevar = "RespCorr", groupvars = "Condition2") %>%
+    `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+Exp1Data.TrialType <- 
+  summarySE(Exp1Data, measurevar = "RespCorr", groupvars = "TrialType") %>%
+    `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+Exp1Data.Interaction <- 
+  summarySE(Exp1Data, measurevar = "RespCorr", groupvars = c("Condition2", "TrialType")) %>%
+    unite("Combo", `Condition2`:`TrialType`) %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) %>%
+        mutate(Variable=recode(Variable,
+                               `Conventional Category_Training` = "Conventional Category - Training",
+                               `Conventional Category_Testing` = "Conventional Category - Testing",
+                               `No Label_Training` = "No Label - Training",
+                               `No Label_Testing` = "No Label - Training"))
+  
+  
+  
+#Bind into a Single DataFrame, output as a Kable, and Save
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp1Descriptives <-
+  rbind.data.frame(Exp1Data.Condition, Exp1Data.TrialType, Exp1Data.Interaction) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      subset(select = c(Variable, RespCorr, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 1 - Summary Statistics", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Conditions", 1, 2) %>%
+                pack_rows("Trial Types", 3, 4) %>%
+                  pack_rows("Interactions", 5, 8)
+
+Exp1Descriptives
+
+save_kable(Exp1Descriptives, "Experiment 1- Descriptive Statistics.png")
+
+```
+
+### Mixed Models 
+```{r Experiment 1 - Lupyan Replication - Mixed Models, warning = FALSE}
+
+Exp1Data$Block <- as.numeric(Exp1Data$Block)
+
+afex.Exp1 <- mixed(RespCorr ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp1Data,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp1Anova <- 
+  afex.Exp1$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 1 - Response Data", ) %>%
+              kable_styling(full_width= F) 
+
+Exp1Anova
+
+save_kable(Exp1Anova, "Experiment 1- Learning Performance - ANOVA Results.png")
+
+
+```
+#### Mixed Model Post Hoc Comparisons with EM Means
+```{r Experiment 1 - Lupyan Replication - EM Means}
+#EM MEans
+##Blocks vs. Each Other
+
+Exp1.PostHoc <- 
+  afex.Exp1 %>% 
+  emmeans(~ Condition2 * TrialType)  %>% 
+    pairs(adjust = "Tukey") %>% 
+      data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        knitr::kable(caption = "Experiment 1 - EM Means - Interaction Type", ) %>%
+              kable_styling(full_width= F)
+
+Exp1.PostHoc
+save_kable(Exp1.PostHoc, "Experiment 1- Learning Performance - Post Hoc Comparisons.png")
+
+```
+
+### Plotted Data
+
+```{r Experiment 1 - Lupyan Replication - Omnibus Plot}
+
+#Aggregate our data for plotting
+Exp1Data.Agg <- summarySE(Exp1Data, measurevar = "RespCorr", groupvars = c("Condition2", "TrialType", "BlockF"))
+
+#Plot our data
+ggplot(data=Exp1Data.Agg, aes(x=BlockF, y=RespCorr, group= Condition2)) +
+  geom_line(aes(linetype = Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 1 - Learning.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+
+## Response Times
+
+### Descriptive Statistics
+
+```{r Experiment 1 - Resposne Times - Descriptive}
+
+#Means and SEs
+Exp1Data.Condition.RT <- 
+  summarySE(Exp1Data, measurevar = "RT", groupvars = "Condition2") %>%
+    `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci")) 
+
+Exp1Data.TrialType.RT <- 
+  summarySE(Exp1Data, measurevar = "RT", groupvars = "TrialType") %>%
+    `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci")) 
+
+Exp1Data.Interaction.RT <- 
+  summarySE(Exp1Data, measurevar = "RT", groupvars = c("Condition2", "TrialType")) %>%
+    unite("Combo", `Condition2`:`TrialType`) %>%
+      `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci")) %>%
+        mutate(Variable=recode(Variable,
+                               `Conventional Category_Training` = "Conventional Category - Training",
+                               `Conventional Category_Testing` = "Conventional Category - Testing",
+                               `No Label_Training` = "No Label - Training",
+                               `No Label_Testing` = "No Label - Training"))
+  
+  
+  
+#Bind into a Single DataFrame, output as a Kable, and Save
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp1Descriptives.RT <-
+  rbind.data.frame(Exp1Data.Condition.RT, Exp1Data.TrialType.RT, Exp1Data.Interaction.RT) %>%
+    mutate_if(is.numeric, round, digits = 2) %>%
+      subset(select = c(Variable, RT, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 1 - Summary Statistics - Response Times", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Conditions", 1, 2) %>%
+                pack_rows("Trial Types", 3, 4) %>%
+                  pack_rows("Interactions", 5, 8)
+
+Exp1Descriptives.RT
+
+save_kable(Exp1Descriptives.RT, "Experiment 1- Descriptive Statistics - RT.png")
+
+```
+
+
+### Mixed Models
+```{r Experiment 1 - Lupyan Replication - Stats - Response Times, warning = FALSE}
+
+afex.Exp1.RT <- mixed(RT ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp1Data,
+                        control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+
+Exp1Anova.RT <- 
+  afex.Exp1.RT$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 1 - Response Data - RTs", ) %>%
+              kable_styling(full_width= F)
+
+Exp1Anova.RT
+
+save_kable(Exp1Anova.RT, "Experiment 1- Learning Performance - ANOVA Results - RTs.png")
+
+```
+
+
+#### Mixed Model Post Hoc Comparisons with EM Means
+
+```{r RT EMmeans Comparison of Conditions}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#Condition
+Exp1.PostHoc.RT <- 
+  Exp1Data %>% 
+  summarySE(measurevar = "RT", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 0) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Condition - RT", )
+
+Exp1.PostHoc.RT
+save_kable(Exp1.PostHoc.RT, "Experiment 1- Learning Performance - Post Hoc Comparisons - RTs.png")
+```
+
+
+
+
+### Plotted Data
+
+```{r Experiment 1 - Lupyan Replication - Graph 3- Our Data - RTs}
+
+Exp1Data.RT.Agg <- summarySE(Exp1Data, measurevar = "RT", groupvars = c("Condition2", "TrialType", "Block"))
+
+Exp1Data.RT.Agg$Block <- factor(Exp1Data.RT.Agg$Block)
+
+#Plot our data
+ggplot(data=Exp1Data.RT.Agg, aes(x=Block, y=RT, group= Condition2)) +
+  geom_line(aes(linetype = Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RT - ci, ymax= RT + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Response Time (ms)") +
+  #scale_y_continuous(limits = c(0.45,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan() 
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 1 -RTs.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+```
+
+
+## Block Effects
+
+### Descriptive Statistics
+
+```{r Experiment 1 - Block Effects - Descriptives}
+#Means and SEs
+#Condition
+Exp1Data.Block.Condition <- 
+  subset(Exp1Data, TrialType == "Training")%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Condition2") %>%
+      `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci")) 
+
+
+#Block
+Exp1Data.Block.Block <- 
+  subset(Exp1Data, TrialType == "Training")%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Block") %>%
+      `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci")) 
+
+#Interaction
+Exp1Data.Block.Interaction <- 
+  subset(Exp1Data, TrialType == "Training")%>% 
+    summarySE(measurevar = "RespCorr", groupvars = c("Condition2", "Block")) %>%
+      subset(select = -Condition2) %>%
+      `colnames<-`(c("Variable", "N", "RT", "sd", "se", "ci"))
+
+#Bind into a Single DataFrame, output as a Kable, and Save
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp1Descriptives.Block <- rbind.data.frame(Exp1Data.Block.Condition, Exp1Data.Block.Block, Exp1Data.Block.Interaction) 
+Exp1Descriptives.Block$Variable <- c("Conventional Category", "No Label", rep(1:9, 3))
+
+Exp1Descriptives.Block <- Exp1Descriptives.Block %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      subset(select = c(Variable, RT, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 1 - Summary Statistics - Response Times", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Conditions", 1, 2) %>%
+                pack_rows("Blocks", 3, 11) %>%
+                    pack_rows("Interaction - Conventional Category x Block", 12, 20) %>%
+                      pack_rows("Interaction - No Label x Block", 21, 29)
+  
+
+Exp1Descriptives.Block
+
+save_kable(Exp1Descriptives.Block, "Experiment 1- Descriptive Statistics - Blocks.png")
+```
+
+
+### Mixed Models
+
+```{r Experiment 1 - Block Effects - Mixed Models, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+Exp1Data.Training <- subset(Exp1Data, TrialType == "Training")
+
+afex.Exp1.Block <- mixed(RespCorr ~ Condition2 * BlockC + (1+ Condition2|ParticipantID),
+                         data=Exp1Data.Training ,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                        method = 'LRT')
+
+
+Exp1Anova.Block <- 
+  afex.Exp1.Block$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 1 - Effect of Block", ) %>%
+              kable_styling(full_width= F)
+
+Exp1Anova.Block
+
+save_kable(Exp1Anova.Block, "Experiment 1- Learning Performance - ANOVA Results - Block.png")
+
+```
+
+
+
+#### Mixed Model Post Hoc Comparisons with EM Trends
+
+```{r Experiment 1 - Block Effects - EM Trends, warning= FALSE}
+
+Exp1.Trend <- emtrends(afex.Exp1.Block, pairwise ~ Condition2, var = "BlockC")
+
+Exp1.Trend$emtrends %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          `colnames<-`(c("Condition", "Block Trend", "SE", "df", "LCL", "UCL")) %>%
+            knitr::kable(caption = "Experiment 1 - Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp1.Trend$contrasts %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          mutate_at("p.value", funs(ifelse(.<0.001, "<0.001", .)))%>% 
+          `colnames<-`(c("Contrast", "Estimate", "SE", "df", "z ratio", "p")) %>%
+            knitr::kable(caption = "Experiment 1 - Comparison of Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+
+
+```
+
+
+
+
+
+```{r Experiment 1 - Lupyan Replication - Reading in Gary's Data}
+
+Lupyan2007 <- read.csv("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/RScripts/Lupyan2007Data.csv")
+#adding columns we need (filled with NAs) to Gary's data (so the frames can be bound)
+Lupyan2007$N <- NA
+Lupyan2007$sd <- NA
+Lupyan2007$se<- NA
+Lupyan2007$ci <- NA
+
+
+
+#Adding a "study" column to our data
+Exp1Data.Agg2 <- summarySE(Exp1Data, measurevar = "RespCorr", groupvars = c("Condition2", "TrialType", "Block"))
+Exp1Data.Agg2$Condition <- Exp1Data.Agg2$Condition2
+Exp1Data.Agg2 <- subset(Exp1Data.Agg2, select = -Condition2)
+Exp1Data.Agg2$Study <- "Stekic et al (2020)"
+
+#Combining the 2 dataframes into 1
+ReplicationAgg2 <- rbind(Exp1Data.Agg2, Lupyan2007)
+
+ReplicationAgg2$Group <- paste(ReplicationAgg2$Study, ReplicationAgg2$Condition)
+ReplicationAgg2$Block <- factor(ReplicationAgg2$Block)
+
+
+```
+
+```{r Experiment 1 - Lupyan Replication - Graph 2 - Comparison - Response Data}
+
+ggplot(data=ReplicationAgg2, aes(x=Block, y=RespCorr, group= Group)) +
+  geom_line(aes(linetype = Condition, color = Study), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci, color = Study), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#0066CC", "#CC0033","#33FF00", "#33FF00", "#000000")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.40,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  theme_alan()
+
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 1 - Replication - Comparison.png.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##EXPERIMENT 2
+
+```{r Experiment 2 - Data Wrangling}
+
+# Subsetting out only the conditions for the replication
+Exp2Data <- subset(CleanData, Condition == 10|Condition == "3A"|Condition == "3B"|Condition == 1|Condition == 2)
+
+Exp2Data$Condition2 <- factor(Exp2Data$Condition,
+                            levels= c(10, 1, 2, "3A", "3B"),
+                            labels = c("No Label", "Iconic (Category)", "Counter-Iconic (Category)",
+                                       "Conventional (Category)", "Conventional (Category)"))
+
+```
+
+## Participants
+```{r Experiment 2 - Participants}
+
+count(Exp2Data$Condition2) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Condition in Experiment 2", ) %>%
+              kable_styling(full_width= F)
+
+count(Exp2Data$Gender) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Gender in Experiment 2", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp2Data %>% 
+  summarySE(measurevar = "Age") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 2- Ages", )
+
+
+```
+
+
+
+## Performance
+### Descriptive Statistics
+```{r Experiment 2- Descriptive Statistics}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#Means and SEs
+#Condition
+Exp2Data.Condition <- 
+  Exp2Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Condition2") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+
+#Trial Type
+Exp2Data.TrialType <- 
+  Exp2Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "TrialType") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+#Interaction
+Exp2Data.Interaction <- 
+  Exp2Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = c("Condition2", "TrialType")) %>%
+      subset(select = -Condition2) %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci"))
+
+#Bind into a Single DataFrame, output as a Kable, and Save
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp2Descriptives <- rbind.data.frame(Exp2Data.Condition, Exp2Data.TrialType, Exp2Data.Interaction) 
+
+Exp2Descriptives <- 
+  Exp2Descriptives %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      subset(select = c(Variable, RespCorr, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 2 - Summary Statistics", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Conditions", 1, 4) %>%
+                pack_rows("Trial Types", 5, 6) %>%
+                    pack_rows("Interaction - No Label x Trial Type", 7, 8) %>%
+                      pack_rows("Interaction - Iconic Category x Trial Type", 9, 10)%>%
+                        pack_rows("Interaction - Counter-Iconic Category x Trial Type", 11, 12) %>%
+                          pack_rows("Interaction - Conventional Category x Trial Type", 13, 14)
+
+Exp2Descriptives
+
+save_kable(Exp2Descriptives, "Experiment 2- Descriptive Statistics.png")
+
+
+```
+
+### Mixed Models 
+```{r Experiment 2 - Mixed Models, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+afex.Exp2 <- mixed(RespCorr ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp2Data,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+Exp2Anova <- 
+  afex.Exp2$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+  
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Part 2", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp2Anova
+
+save_kable(Exp2Anova, "Experiment 2- Learning Performance - ANOVA Results.png")
+
+```
+#### Mixed Model Post Hoc Comparisons with EM Means - Condition
+```{r Experiment 2 -  EM Means}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+##Post-Hoc Effect of Condition
+Part2.Condition <- summarySE(data=Exp2Data,
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+Part2.Condition.EM <- emmeans(afex.Exp2, ~Condition2)
+
+##Condition vs. Chance
+Part2.Condition.vchance <- test(Part2.Condition.EM, adjust = "none")
+
+##Condition vs. Each Other
+Part2.Condition.vPairs <- data.frame(pairs(Part2.Condition.EM, adjust = "none" ))
+
+###NoLabel Baseline
+Part2.Condition.vPairs.1 <- 
+  rbind(rep(NA,6),Part2.Condition.vPairs[1:3,])
+#Iconic Baseline
+Part2.Condition.vPairs.2 <- 
+  rbind(Part2.Condition.vPairs[1,], rep(NA,6),Part2.Condition.vPairs[4:5,])
+#Counter-Iconic Baseline
+Part2.Condition.vPairs.3 <- 
+  rbind(Part2.Condition.vPairs[2,], Part2.Condition.vPairs[4,], rep(NA,6),Part2.Condition.vPairs[6,])
+#Conventional Baseline
+Part2.Condition.vPairs.4 <- 
+  rbind(Part2.Condition.vPairs[3,],Part2.Condition.vPairs[5,],Part2.Condition.vPairs[6,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Part2.Condition.Combo <- cbind.data.frame (
+  Part2.Condition$Condition, Part2.Condition$RespCorr, Part2.Condition$sd,
+  Part2.Condition.vPairs.1$p.value,
+  Part2.Condition.vPairs.2$p.value,
+  Part2.Condition.vPairs.3$p.value,
+  Part2.Condition.vPairs.4$p.value
+)
+
+colnames(Part2.Condition.Combo) <- c("Condition", "Mean", "SD", 
+                                "No Label",
+                                "Iconic",
+                                "Counter-Iconic",
+                                "Conventional"
+                                )
+
+###Knitting Condition Table
+Exp2PostHoc.Condition <- 
+  Part2.Condition.Combo %>%  
+    mutate_if(is.numeric, round, 3) %>%
+      mutate_at(.vars = vars("No Label", "Iconic", "Counter-Iconic", "Conventional"),
+        funs(ifelse(.<0.001, "<0.001", .))) %>%
+          knitr::kable(caption = 'Experiment 2- Post Hoc Comparisons - Condition', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2, 
+                "Post-Hoc Comparisons to Other Conditions (p values)" = 4),
+                   font_size = 12)
+
+Exp2PostHoc.Condition
+
+save_kable(Exp2PostHoc.Condition, "Experiment 2- Learning Performance - Post-Hoc comparison of Conditions.png")
+
+```
+
+#### Mixed Model Post Hoc Comparisons with EM Means - Interaction
+```{r Experiment 2 -  EM Means of Interaction}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#EMMeans of Interaction Terms vs Chance
+Part2.Interaction.vChance <- test(emmeans(afex.Exp2, 
+                                          ~Condition2 * TrialType,
+                                          adjust = "Tukey"))
+
+#EM Means of Interaction Terms vs Each Other
+Part2.Interaction.vPairs <- data.frame(pairs(emmeans(afex.Exp2, 
+                    ~Condition2 * TrialType,
+                    adjust = "Tukey")))
+
+# TRAINING TABLE
+
+#summary Stats
+Part2.Condition.Training <- summarySE(data=subset(Exp2Data, TrialType == "Training"),
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+
+#EM Means comparisons table
+Part2.Interaction.vPairs.Training.1 <-   rbind(rep(NA,6),Part2.Interaction.vPairs[1:3,])
+
+Part2.Interaction.vPairs.Training.2 <-   rbind(Part2.Interaction.vPairs[1,], rep(NA, 6),
+                                               Part2.Interaction.vPairs[8:9,])
+
+Part2.Interaction.vPairs.Training.3 <-   rbind(Part2.Interaction.vPairs[2,], Part2.Interaction.vPairs[8,],
+                                               rep(NA, 6), Part2.Interaction.vPairs[14,])
+
+Part2.Interaction.vPairs.Training.4 <-   rbind(Part2.Interaction.vPairs[3,], Part2.Interaction.vPairs[9,],
+                                               Part2.Interaction.vPairs[14,], rep(NA, 6))
+
+
+Part2.Condition.Combo.Training <- cbind.data.frame (
+  Part2.Condition.Training$Condition2, Part2.Condition.Training$RespCorr, Part2.Condition.Training$sd,
+  Part2.Interaction.vPairs.Training.1$p.value, Part2.Interaction.vPairs.Training.2$p.value,
+  Part2.Interaction.vPairs.Training.3$p.value, Part2.Interaction.vPairs.Training.4$p.value)
+
+colnames(Part2.Condition.Combo.Training) <- c("Condition", "Mean", "SD", 
+                                "No Label", "Iconic", "Counter-Iconic", "Conventional"
+                                )
+# TESTING TABLE
+
+#summary Stats
+Part2.Condition.Testing <- summarySE(data=subset(Exp2Data, TrialType == "Testing"),
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+
+#EM Means comparisons table
+Part2.Interaction.vPairs.Testing.1 <-   rbind(rep(NA,6),Part2.Interaction.vPairs[23:25,])
+
+Part2.Interaction.vPairs.Testing.2 <-   rbind(Part2.Interaction.vPairs[23,], rep(NA, 6),
+                                               Part2.Interaction.vPairs[26:27,])
+
+Part2.Interaction.vPairs.Testing.3 <-   rbind(Part2.Interaction.vPairs[24,], Part2.Interaction.vPairs[26,],
+                                               rep(NA, 6), Part2.Interaction.vPairs[28,])
+
+Part2.Interaction.vPairs.Testing.4 <-   rbind(Part2.Interaction.vPairs[25,], Part2.Interaction.vPairs[27,],
+                                               Part2.Interaction.vPairs[28,], rep(NA, 6))
+
+
+Part2.Condition.Combo.Testing <- cbind.data.frame (
+  Part2.Condition.Testing$Condition2, Part2.Condition.Testing$RespCorr, Part2.Condition.Testing$sd,
+  Part2.Interaction.vPairs.Testing.1$p.value, Part2.Interaction.vPairs.Testing.2$p.value,
+  Part2.Interaction.vPairs.Testing.3$p.value, Part2.Interaction.vPairs.Testing.4$p.value)
+
+colnames(Part2.Condition.Combo.Testing) <- c("Condition", "Mean", "SD", 
+                                "No Label",
+                                "Iconic",
+                                "Counter-Iconic",
+                                "Conventional"
+                                )
+
+#OUTPUT WHOLE TABLE
+
+OutputTable <- rbind.data.frame(Part2.Condition.Combo.Training, Part2.Condition.Combo.Testing)
+
+Exp2PostHoc.Interaction <- 
+  OutputTable %>%
+  mutate_if(is.numeric, round, 3) %>%
+    mutate_at(.vars = vars("No Label", "Iconic", "Counter-Iconic", "Conventional"),
+        funs(ifelse(.<0.001, "<0.001", .))) %>%
+          knitr::kable(caption = 'Experiment 2 - Post-Hoc Comparisons - Interaction', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2,  
+                                  "Post-Hoc Comparisons between Conditions (p vals)" = 4),
+                   font_size = 12) %>%
+                pack_rows("Post-Hoc Comparisons of Conditions (Training)", 1, 4) %>%
+                  pack_rows("Post-Hoc Comparisons of Conditions (Testing)", 5, 8) 
+
+Exp2PostHoc.Interaction
+
+save_kable(Exp2PostHoc.Interaction, "Experiment 2- Learning Performance - Post-Hoc Exploration of Interactions.png")
+
+```
+
+
+### Plotted Data
+
+```{r Experiment 2 - Omnibus Plot}
+
+#Aggregate our data for plotting
+Exp2Data.Agg <- summarySE(Exp2Data, measurevar = "RespCorr", groupvars = c("Condition2", "TrialType", "BlockF"))
+
+#Plot our data
+ggplot(data=Exp2Data.Agg, aes(x=BlockF, y=RespCorr, group= Condition2)) +
+  geom_line(aes(linetype = Condition2, color= Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci, color = Condition2), width= 0.2, size = 1, position=pd) +
+  scale_color_manual(values= c("#000000", "#007e70","#00b19d", "#00e4ca")) +
+  scale_linetype_manual(values = c("dashed", rep("solid",3))) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition", color = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 2 - Learning.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+
+## Response Times
+
+### Descriptive Statistics
+
+```{r Experiment 2 - Resposne Times - Descriptive}
+#Condition
+Exp2Data %>% 
+  summarySE(measurevar = "RT", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Condition", )
+
+#Trial Type
+Exp2Data %>% 
+  summarySE(measurevar = "RT", groupvars = "TrialType") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Trial Type", )
+
+
+#Condition x Trial Type
+Exp2Data %>% 
+  summarySE(measurevar = "RT", groupvars = c("Condition2", "TrialType")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Interaction of Condition x Trial Type", )
+```
+
+
+### Mixed Models
+```{r Experiment 2 - Stats - Response Times, warning = FALSE}
+
+afex.Exp2.RT <- mixed(RT ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp2Data,
+                      control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+afex.Exp2.RT$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 1 - Response Data - RTs", ) %>%
+              kable_styling(full_width= F)
+
+```
+
+
+#### Mixed Model Post Hoc Comparisons with EM Means
+
+```{r EXP2 - RT EMmeans Comparison of Conditions}
+
+#Condition
+Exp2Data %>% 
+  summarySE(measurevar = "RT", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 0) %>%
+      knitr::kable(caption = "Experiment 2 - Summary Statistics - Condition - RT", )
+```
+
+
+
+### Plotted Data
+
+```{r Experiment 2 - Graph 3- Our Data - RTs}
+
+Exp2Data.RT.Agg <- summarySE(Exp2Data, measurevar = "RT", groupvars = c("Condition2", "TrialType", "Block"))
+
+Exp2Data.RT.Agg$Block <- factor(Exp1Data.RT.Agg$Block)
+
+#Plot our data
+ggplot(data=Exp2Data.RT.Agg, aes(x=Block, y=RT, group= Condition2)) +
+  geom_line(aes(linetype = Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RT - ci, ymax= RT + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Response Time (ms)") +
+  #scale_y_continuous(limits = c(0.45,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan() +
+  ggtitle("Experiment 2 - Response Times")
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 2 - RTs.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+```
+
+
+## Block Effects
+
+### Descriptive Statistics
+
+```{r Experiment 2 - Block Effects - Descriptives}
+#Condition
+subset(Exp2Data, TrialType == "Training") %>% 
+  summarySE(measurevar = "RespCorr", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Training - Condition -", )
+
+#Interaction
+subset(Exp2Data, TrialType == "Training") %>% 
+  summarySE(measurevar = "RespCorr", groupvars = c("Block", "Condition2")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 1 - Summary Statistics - Training -  Interaction -", )
+
+```
+
+
+### Mixed Models
+
+```{r Experiment 2 - Block Effects - Mixed Models, warning = FALSE}
+Exp2Data.Training <- subset(Exp2Data, TrialType == "Training")
+
+afex.Exp2.Block <- mixed(RespCorr ~ Condition2  * BlockC + (1|ParticipantID),
+                         data=Exp2Data.Training ,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                        method = 'LRT')
+
+
+
+afex.Exp2.Block$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 2 - Effect of Block", ) %>%
+              kable_styling(full_width= F)
+
+```
+
+
+
+#### Mixed Model Post Hoc Comparisons with EM Trends
+
+```{r Experiment 2 - Block Effects - EM Trends, warning= FALSE}
+
+Exp2.Trend <- emtrends(afex.Exp2.Block, pairwise ~ Condition2, var = "BlockC", adjust = "Tukey")
+
+Exp2.Trend$emtrends %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          `colnames<-`(c("Condition", "Block Trend", "SE", "df", "LCL", "UCL")) %>%
+            knitr::kable(caption = "Experiment 1 - Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp2.Trend$contrasts %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          mutate_at("p.value", funs(ifelse(.<0.001, "<0.001", .)))%>% 
+          `colnames<-`(c("Contrast", "Estimate", "SE", "df", "z ratio", "p")) %>%
+            knitr::kable(caption = "Experiment 1 - Comparison of Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+emmip(afex.Exp2.Block, Condition2 ~ BlockC, cov.reduce = range)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##EXPERIMENT 3
+
+```{r Experiment 3 - Data Wrangling}
+
+Exp3Data <- subset(CleanData, Condition == 10|Condition == 4|Condition == 5|Condition == "6A"|Condition == "6B"
+                    |Condition == 7|Condition == 8|Condition == 9)
+
+Exp3Data$Condition2 <- factor(Exp3Data$Condition,
+                            levels= c(10, 4, 5, "6A", "6B", 7, 8, 9),
+                            labels = c("No Label", "Iconic Item", "Counter-Iconic Item", "Conventional Item", "Conventional Item",
+                                       rep("Arbitrary",3)))
+
+```
+
+## Participants
+```{r Experiment 3 - Participants}
+
+count(Exp3Data$Condition2) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Condition in Experiment 3", ) %>%
+              kable_styling(full_width= F)
+
+count(Exp3Data$Gender) %>%
+      data.frame() %>%
+        mutate_at("freq", ~ . /240) %>%
+          knitr::kable(caption = "Number of Participants per Gender in Experiment 3", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp3Data %>% 
+  summarySE(measurevar = "Age") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3- Ages", )
+
+
+```
+
+## Subcondition collapse - Conventional Item Labels (6A and B8)
+```{r Experiment 3- Subcondition Collapse - Conventional Items}
+
+# Means and SEs of subconditions
+
+Exp3DataSubs.Conventional <- subset(Exp3Data, Condition2 == "Conventional Item")
+Exp3DataSubs.Conventional$Condition <- factor(Exp3DataSubs.Conventional$Condition)
+
+Exp3DataSubs.Conventional %>% 
+  summarySE(measurevar = "RespCorr", groupvars = "Condition") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - SubConditions of Conventional Items", )
+
+#Sub Condition x Trial Type
+Exp3DataSubs.Conventional %>% 
+  summarySE(measurevar = "RespCorr", groupvars = c("Condition", "TrialType")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics (Conventional Items) - Interaction of SubConditions x Trial Type", )
+
+
+# MIXED MODEL
+afex.Exp3.SC1 <- mixed(RespCorr ~ Condition * TrialType + (1 |ParticipantID),
+                         data=Exp3DataSubs.Conventional,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+afex.Exp3.SC1$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 3 - Subconditions of Conventional Items", ) %>%
+              kable_styling(full_width= F)
+
+
+#SUBCONDITION PLOT
+
+Exp3Data.SC1.Agg <- summarySE(Exp3DataSubs.Conventional, measurevar = "RespCorr", groupvars = c("Condition", "TrialType", "BlockF"))
+
+
+ggplot(data=Exp3Data.SC1.Agg, aes(x=BlockF, y=RespCorr, group= Condition)) +
+  geom_line(aes(linetype = Condition), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 3 - Subconditions of Conventional Items.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+
+
+
+```
+
+
+## Subcondition collapse - Arbitrary Item Labels (Conditions 7,8,9)
+```{r Experiment 3- Subcondition Collapse}
+
+# Means and SEs of subconditions
+
+Exp3DataSubs.Arbitrary <- subset(Exp3Data, Condition2 == "Arbitrary")
+Exp3DataSubs.Arbitrary$Condition <- factor(Exp3DataSubs.Arbitrary$Condition)
+
+Exp3DataSubs.Arbitrary %>% 
+  summarySE(measurevar = "RespCorr", groupvars = "Condition") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - SubConditions of Arbitrary Items", )
+
+#Sub Condition x Trial Type
+Exp3DataSubs.Arbitrary %>% 
+  summarySE(measurevar = "RespCorr", groupvars = c("Condition", "TrialType")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics (Arbitrary Items) - Interaction of SubConditions x Trial Type", )
+
+
+# MIXED MODEL
+afex.Exp3.SC2 <- mixed(RespCorr ~ Condition * TrialType + (1 |ParticipantID),
+                         data=Exp3DataSubs.Arbitrary,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+afex.Exp3.SC2$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 3 - Subconditions of Arbitrary Items", ) %>%
+              kable_styling(full_width= F)
+
+
+#SUBCONDITION PLOT
+
+Exp3Data.SC2.Agg <- summarySE(Exp3DataSubs.Arbitrary, measurevar = "RespCorr", groupvars = c("Condition", "TrialType", "BlockF"))
+
+
+ggplot(data=Exp3Data.SC2.Agg, aes(x=BlockF, y=RespCorr, group= Condition)) +
+  geom_line(aes(linetype = Condition), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 3 - Subconditions of Arbitrary Items.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+
+
+
+```
+
+
+
+
+
+## Performance
+### Descriptive Statistics
+```{r Experiment 3- Descriptive Statistics}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#Means and SEs
+#Condition
+Exp3Data.Condition <- 
+  Exp3Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Condition2") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+
+#Trial Type
+Exp3Data.TrialType <- 
+  Exp3Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "TrialType") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+#Interaction
+Exp3Data.Interaction <- 
+  Exp3Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = c("Condition2", "TrialType")) %>%
+      subset(select = -Condition2) %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci"))
+
+Exp3Descriptives <- rbind.data.frame(Exp3Data.Condition, Exp3Data.TrialType, Exp3Data.Interaction) 
+
+Exp3Descriptives <- 
+  Exp3Descriptives %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      subset(select = c(Variable, RespCorr, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 3 - Summary Statistics", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Conditions", 1, 5) %>%
+                pack_rows("Trial Types", 6, 7) %>%
+                    pack_rows("Interaction - No Label x Trial Type", 8, 9) %>%
+                      pack_rows("Interaction - Iconic Item x Trial Type", 10, 11)%>%
+                        pack_rows("Interaction - Counter-Iconic Item x Trial Type", 12, 13) %>%
+                          pack_rows("Interaction - Conventional Item x Trial Type", 14, 15)%>%
+                            pack_rows("Interaction - Arbitrary x Trial Type", 16, 17)
+
+Exp3Descriptives
+
+save_kable(Exp3Descriptives, "Experiment 3- Descriptive Statistics.png")
+
+
+```
+
+### Mixed Models 
+```{r Experiment 3 - Mixed Models, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+afex.Exp3 <- mixed(RespCorr ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp3Data,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+Exp3Anova <- 
+  afex.Exp3$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 3", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp3Anova
+
+save_kable(Exp3Anova, "Experiment 3- Learning Performance - ANOVA Results.png")
+
+```
+#### Mixed Model Post Hoc Comparisons with EM Means - Condition
+```{r Experiment 3 -  EM Means}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+##Post-Hoc Effect of Condition
+Exp3.Condition <- summarySE(data=Exp3Data,
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+Exp3.Condition.EM <- emmeans(afex.Exp3, ~Condition2)
+
+##Condition vs. Chance
+Exp3.Condition.vchance <- test(Exp3.Condition.EM, adjust = "none")
+
+##Condition vs. Each Other
+Exp3.Condition.vPairs <- data.frame(pairs(Exp3.Condition.EM, adjust = "none" ))
+
+###NoLabel Baseline
+Exp3.Condition.vPairs.1 <- 
+  rbind(rep(NA,6),Exp3.Condition.vPairs[1:4,])
+#Iconic Baseline
+Exp3.Condition.vPairs.2 <- 
+  rbind(Exp3.Condition.vPairs[1,], rep(NA,6),Exp3.Condition.vPairs[5:7,])
+#Counter-Iconic Baseline
+Exp3.Condition.vPairs.3 <- 
+  rbind(Exp3.Condition.vPairs[2,], Exp3.Condition.vPairs[5,], rep(NA,6),Exp3.Condition.vPairs[8:9,])
+#Conventional Baseline
+Exp3.Condition.vPairs.4 <- 
+  rbind(Exp3.Condition.vPairs[3,],Exp3.Condition.vPairs[6,],Exp3.Condition.vPairs[8,], rep(NA,6), Exp3.Condition.vPairs[10,])
+#Arbitrary Baseline
+Exp3.Condition.vPairs.5 <- 
+  rbind(Exp3.Condition.vPairs[4,],Exp3.Condition.vPairs[7,],Exp3.Condition.vPairs[9:10,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Exp3.Condition.Combo <- cbind.data.frame (
+  Exp3.Condition$Condition, Exp3.Condition$RespCorr, Exp3.Condition$sd,
+  Exp3.Condition.vPairs.1$p.value,
+  Exp3.Condition.vPairs.2$p.value,
+  Exp3.Condition.vPairs.3$p.value,
+  Exp3.Condition.vPairs.4$p.value,
+  Exp3.Condition.vPairs.5$p.value
+)
+
+colnames(Exp3.Condition.Combo) <- c("Condition", "Mean", "SD", 
+                                "No Label",
+                                "Iconic",
+                                "Counter-Iconic",
+                                "Conventional",
+                                "Arbitrary"
+                                )
+
+###Knitting Condition Table
+Exp3PostHoc.Condition <- 
+  Exp3.Condition.Combo %>%  
+    mutate_if(is.numeric, round, 3) %>%
+      mutate_at(.vars = vars("No Label", "Iconic", "Counter-Iconic", "Conventional", "Arbitrary"),
+        funs(ifelse(.<0.001, "<0.001", .))) %>%
+          knitr::kable(caption = 'Experiment 3- Post Hoc Comparisons - Condition', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2, 
+                "Post-Hoc Comparisons to Other Conditions (p values)" = 5),
+                   font_size = 12)
+
+Exp3PostHoc.Condition
+
+save_kable(Exp3PostHoc.Condition, "Experiment 3- Learning Performance - Post-Hoc comparison of Conditions.png")
+
+```
+
+#### Mixed Model Post Hoc Comparisons with EM Means - Interaction
+```{r Experiment 3 -  EM Means of Interaction}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#EMMeans of Interaction Terms vs Chance
+Exp3.Interaction.vChance <- test(emmeans(afex.Exp3, 
+                                          ~Condition2 * TrialType,
+                                          adjust = "Tukey"))
+
+#EM Means of Interaction Terms vs Each Other
+Exp3.Interaction.vPairs <- data.frame(pairs(emmeans(afex.Exp3, 
+                    ~Condition2 * TrialType,
+                    adjust = "Tukey")))
+
+# TRAINING TABLE
+
+#summary Stats
+Exp3.Condition.Training <- summarySE(data=subset(Exp3Data, TrialType == "Training"),
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+
+#EM Means comparisons table
+
+#No Label baseline
+Exp3.Interaction.vPairs.Training.1 <-   rbind(rep(NA,6),Exp3.Interaction.vPairs[1:4,])
+
+#Iconic Baseline
+Exp3.Interaction.vPairs.Training.2 <- 
+  rbind(Exp3.Interaction.vPairs[1,], rep(NA,6),Exp3.Interaction.vPairs[10:12,])
+
+#Counter-Iconic Baseline
+Exp3.Interaction.vPairs.Training.3 <- 
+  rbind(Exp3.Interaction.vPairs[2,], Exp3.Interaction.vPairs[10,], rep(NA,6),Exp3.Interaction.vPairs[18:19,])
+
+#Conventional Baseline
+Exp3.Interaction.vPairs.Training.4 <- 
+  rbind(Exp3.Interaction.vPairs[3,],Exp3.Interaction.vPairs[11,],Exp3.Interaction.vPairs[18,], rep(NA,6), Exp3.Interaction.vPairs[25,])
+
+#Arbitrary Baseline
+Exp3.Interaction.vPairs.Training.5 <- 
+  rbind(Exp3.Interaction.vPairs[4,],Exp3.Interaction.vPairs[12,],Exp3.Interaction.vPairs[19,], Exp3.Interaction.vPairs[25,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Exp3.Condition.Combo.Training <- cbind.data.frame (
+  Exp3.Condition.Training$Condition, Exp3.Condition.Training$RespCorr, Exp3.Condition.Training$sd,
+  Exp3.Interaction.vPairs.Training.1$p.value,
+  Exp3.Interaction.vPairs.Training.2$p.value,
+  Exp3.Interaction.vPairs.Training.3$p.value,
+  Exp3.Interaction.vPairs.Training.4$p.value,
+  Exp3.Interaction.vPairs.Training.5$p.value
+)
+
+colnames(Exp3.Condition.Combo.Training) <- c("Condition", "Mean", "SD", 
+                                "No Label", "Iconic", "Counter-Iconic", "Conventional", "Arbitrary"
+                                )
+# TESTING TABLE
+
+#summary Stats
+Exp3.Condition.Testing <- summarySE(data=subset(Exp3Data, TrialType == "Testing"),
+                             measurevar = "RespCorr",
+                             groupvars = "Condition2")
+
+#EM Means comparisons table
+#NoLabel Baseline
+Exp3.Interaction.vPairs.Testing.1 <-   rbind(rep(NA,6),Exp3.Interaction.vPairs[36:39,])
+
+#Iconic Baseline
+Exp3.Interaction.vPairs.Testing.2 <- 
+  rbind(Exp3.Interaction.vPairs[36,], rep(NA,6),Exp3.Interaction.vPairs[40:42,])
+
+#Counter-Iconic Baseline
+Exp3.Interaction.vPairs.Testing.3 <- 
+  rbind(Exp3.Interaction.vPairs[37,], Exp3.Interaction.vPairs[40,], rep(NA,6),Exp3.Interaction.vPairs[43:44,])
+
+#Conventional Baseline
+Exp3.Interaction.vPairs.Testing.4 <- 
+  rbind(Exp3.Interaction.vPairs[38,],Exp3.Interaction.vPairs[41,],Exp3.Interaction.vPairs[43,], rep(NA,6), Exp3.Interaction.vPairs[45,])
+
+#Arbitrary Baseline
+Exp3.Interaction.vPairs.Testing.5 <- 
+  rbind(Exp3.Interaction.vPairs[39,],Exp3.Interaction.vPairs[42,],Exp3.Interaction.vPairs[44,], Exp3.Interaction.vPairs[45,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Exp3.Condition.Combo.Testing <- cbind.data.frame (
+  Exp3.Condition.Testing$Condition, Exp3.Condition.Testing$RespCorr, Exp3.Condition.Testing$sd,
+  Exp3.Interaction.vPairs.Testing.1$p.value,
+  Exp3.Interaction.vPairs.Testing.2$p.value,
+  Exp3.Interaction.vPairs.Testing.3$p.value,
+  Exp3.Interaction.vPairs.Testing.4$p.value,
+  Exp3.Interaction.vPairs.Testing.5$p.value
+)
+
+colnames(Exp3.Condition.Combo.Testing) <- c("Condition", "Mean", "SD", 
+                                "No Label", "Iconic", "Counter-Iconic", "Conventional", "Arbitrary"
+                                )
+
+
+
+#OUTPUT WHOLE TABLE
+
+OutputTable <- rbind.data.frame(Exp3.Condition.Combo.Training, Exp3.Condition.Combo.Testing)
+
+Exp3PostHoc.Interaction <- 
+  OutputTable %>%
+  mutate_if(is.numeric, round, 3) %>%
+    mutate_at(.vars = vars("No Label", "Iconic", "Counter-Iconic", "Conventional", "Arbitrary"),
+        funs(ifelse(.<0.001, "<0.001", .))) %>%
+          knitr::kable(caption = 'Experiment 3 - Post-Hoc Comparisons - Interaction', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2,  
+                                  "Post-Hoc Comparisons between Conditions (p vals)" = 5),
+                   font_size = 12) %>%
+                pack_rows("Post-Hoc Comparisons of Conditions (Training)", 1, 5) %>%
+                  pack_rows("Post-Hoc Comparisons of Conditions (Testing)", 6, 10) 
+
+Exp3PostHoc.Interaction
+
+save_kable(Exp3PostHoc.Interaction, "Experiment 3- Learning Performance - Post-Hoc Exploration of Interactions.png")
+
+```
+
+
+### Plotted Data
+
+```{r Experiment 3 - Omnibus Plot}
+
+#Aggregate our data for plotting
+Exp3Data.Agg <- summarySE(Exp3Data, measurevar = "RespCorr", groupvars = c("Condition2", "TrialType", "BlockF"))
+
+#Plot our data
+ggplot(data=Exp3Data.Agg, aes(x=BlockF, y=RespCorr, group= Condition2)) +
+  geom_line(aes(linetype = Condition2, color= Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci, color = Condition2), width= 0.2, size = 1, position=pd) +
+  scale_color_manual(values= c("#000000", "#c144c1","#8b2e8b", "#652165", "gray")) +
+  scale_linetype_manual(values = c(rep("dashed",5))) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.4,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition", color = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 3 - Learning.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+
+## Response Times
+
+### Descriptive Statistics
+
+```{r Experiment 3 - Resposne Times - Descriptive}
+#Condition
+Exp3Data %>% 
+  summarySE(measurevar = "RT", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Condition - RT", )
+
+#Trial Type
+Exp3Data %>% 
+  summarySE(measurevar = "RT", groupvars = "TrialType") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Trial Type - RT", )
+
+
+#Condition x Trial Type
+Exp3Data %>% 
+  summarySE(measurevar = "RT", groupvars = c("Condition2", "TrialType")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Interaction of Condition x Trial Type - RT", )
+```
+
+
+### Mixed Models
+```{r Experiment 3 - Stats - Response Times, warning = FALSE}
+
+afex.Exp3.RT <- mixed(RT ~ Condition2 * TrialType + (1 + Condition2|ParticipantID),
+                         data=Exp3Data,
+                      control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+afex.Exp3.RT$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 3 - Response Data - RTs", ) %>%
+              kable_styling(full_width= F)
+
+```
+
+
+#### Mixed Model Post Hoc Comparisons with EM Means
+
+```{r EXP3 - RT EMmeans Comparison of Conditions}
+
+#Condition
+Exp3Data %>% 
+  summarySE(measurevar = "RT", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 0) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Condition - RT", )
+```
+
+
+
+### Plotted Data
+
+```{r Experiment 3 - Graph 3- Our Data - RTs}
+
+Exp3Data.RT.Agg <- summarySE(Exp3Data, measurevar = "RT", groupvars = c("Condition2", "TrialType", "Block"))
+
+Exp3Data.RT.Agg$Block <- factor(Exp3Data.RT.Agg$Block)
+
+#Plot our data
+ggplot(data=Exp3Data.RT.Agg, aes(x=Block, y=RT, group= Condition2)) +
+  geom_line(aes(linetype = Condition2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RT - ci, ymax= RT + ci), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#0066CC", "#CC0033","#33FF00", "#000000")) +
+  labs(x="Block", y="Response Time (ms)") +
+  #scale_y_continuous(limits = c(0.45,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  facet_grid(~TrialType, scales="free", space= "free_x") +
+  labs(linetype = "Condition") +
+  theme_alan()
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 3 - RTs.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+
+
+```
+
+
+## Block Effects
+
+### Descriptive Statistics
+
+```{r Experiment 3 - Block Effects - Descriptives}
+#Condition
+subset(Exp3Data, TrialType == "Training") %>% 
+  summarySE(measurevar = "RespCorr", groupvars = "Condition2") %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Training - Condition -", )
+
+#Interaction
+subset(Exp3Data, TrialType == "Training") %>% 
+  summarySE(measurevar = "RespCorr", groupvars = c("Block", "Condition2")) %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      knitr::kable(caption = "Experiment 3 - Summary Statistics - Training -  Interaction -", )
+
+```
+
+
+### Mixed Models
+
+```{r Experiment 3 - Block Effects - Mixed Models, warning = FALSE}
+Exp3Data.Training <- subset(Exp3Data, TrialType == "Training")
+
+afex.Exp3.Block <- mixed(RespCorr ~ Condition2  * BlockC + (1|ParticipantID),
+                         data=Exp3Data.Training ,
+                         family=binomial,
+                         control=glmerControl(optimizer="bobyqa", optCtrl=list(maxfun=1e6)),
+                        method = 'LRT')
+
+
+
+afex.Exp3.Block$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Mixed Model Results - Experiment 3 - Effect of Block", ) %>%
+              kable_styling(full_width= F)
+
+```
+
+
+
+#### Mixed Model Post Hoc Comparisons with EM Trends
+
+```{r Experiment 3 - Block Effects - EM Trends, warning= FALSE}
+
+Exp3.Trend <- emtrends(afex.Exp3.Block, pairwise ~ Condition2, var = "BlockC", adjust = "Tukey")
+
+Exp3.Trend$emtrends %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          `colnames<-`(c("Condition", "Block Trend", "SE", "df", "LCL", "UCL")) %>%
+            knitr::kable(caption = "Experiment 3 - Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+Exp3.Trend$contrasts %>% 
+  data.frame() %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+          mutate_at("p.value", funs(ifelse(.<0.001, "<0.001", .)))%>% 
+          `colnames<-`(c("Contrast", "Estimate", "SE", "df", "z ratio", "p")) %>%
+            knitr::kable(caption = "Experiment 3 - Comparison of Estimated Marginal Trends", ) %>%
+              kable_styling(full_width= F)
+
+
+##Output as a nice table
+
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp3EMTrends <- data.frame(Exp3.Trend$emtrend)
+Exp3EMContrasts <- data.frame(Exp3.Trend$contrasts)
+
+###NoLabel Baseline
+Exp3EMContrasts.1 <- 
+  rbind(rep(NA,6),Exp3EMContrasts[1:4,])
+#Iconic Baseline
+Exp3EMContrasts.2 <- 
+  rbind(Exp3EMContrasts[1,], rep(NA,6),Exp3EMContrasts[5:7,])
+#Counter-Iconic Baseline
+Exp3EMContrasts.3 <- 
+  rbind(Exp3EMContrasts[2,], Exp3EMContrasts[5,], rep(NA,6),Exp3EMContrasts[8:9,])
+#Conventional Baseline
+Exp3EMContrasts.4 <- 
+  rbind(Exp3EMContrasts[3,],Exp3EMContrasts[6,],Exp3EMContrasts[8,], rep(NA,6), Exp3EMContrasts[10,])
+#Arbitrary Baseline
+Exp3EMContrasts.5 <- 
+  rbind(Exp3EMContrasts[4,],Exp3EMContrasts[7,],Exp3EMContrasts[9:10,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Exp3.EMContrasts.Combo <- 
+  cbind.data.frame (
+  Exp3EMTrends$Condition2, Exp3EMTrends$BlockC.trend, Exp3EMTrends$SE,
+  Exp3EMContrasts.1$p.value,
+  Exp3EMContrasts.2$p.value,
+  Exp3EMContrasts.3$p.value,
+  Exp3EMContrasts.4$p.value,
+  Exp3EMContrasts.4$p.value
+)
+
+colnames(Exp3.EMContrasts.Combo) <- c("Condition", "Slope", "SE", 
+                                "No Label",
+                                "Iconic",
+                                "Counter-Iconic",
+                                "Conventional",
+                                "Arbitrary"
+                                )
+
+###Knitting Condition Table
+Exp3.EMContrasts.Combo <- 
+  Exp3.EMContrasts.Combo %>%  
+    mutate_if(is.numeric, round, 3) %>%
+      mutate_at(.vars = vars("No Label", "Iconic", "Counter-Iconic", "Conventional", "Arbitrary"),
+        funs(ifelse(.<0.001, "<0.001", .))) %>%
+          knitr::kable(caption = 'Experiment 3- Post Hoc Comparisons of Estimated Marginal Trends', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2, 
+                "Post-Hoc Comparisons to Other Conditions (p values)" = 5),
+                   font_size = 12)
+
+Exp3.EMContrasts.Combo
+
+save_kable(Exp3.EMContrasts.Combo, "Experiment 3- Learning Performance - Post-Hoc comparison of Estimated Marginal Trends.png")
+
+emmip(afex.Exp3.Block, Condition2 ~ BlockC, cov.reduce = range)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##EXPERIMENT 4
+
+For "Experiment 4" we bring everything from the above together, making use of a factorial approach to look for effects of iconicity, systematicity, and label type
+
+In this, we're going to look only at Training trials (because testing trials haven't told us anything interesting so far)
+
+
+
+
+```{r Experiment 4 - Data Wrangling}
+
+Exp4Data <- CleanData.Training
+
+conditions <- levels(Exp4Data$Condition)
+
+#Label Type Column
+Exp4Data$LabelType <- mapvalues(Exp4Data$Condition,
+                                 from = conditions,
+                                 to = c("Category", "No Label", rep("Category", 3), rep("Item", 7)))
+
+Exp4Data$LabelType <- factor(Exp4Data$LabelType, levels = c("No Label", "Category", "Item"))
+
+#Systematicity Column
+Exp4Data$Systematicity <- mapvalues(Exp4Data$Condition,
+                                 from = conditions,
+                                 to = c("Non-Systematic", "No Label", rep("Non-Systematic", 3), rep("Systematic", 4), rep("Non-Systematic",3)))
+
+Exp4Data$Systematicity <- factor(Exp4Data$Systematicity, levels = c("No Label", "Systematic", "Non-Systematic"))
+
+#Iconicity Column
+
+Exp4Data$Iconicity <- mapvalues(Exp4Data$Condition,
+                                 from = conditions,
+                                 to = c("Iconic", "No Label", "Counter-Iconic", "Conventional", "Conventional", "Iconic", "Counter-Iconic",
+                                        rep("Conventional", 5)))
+
+Exp4Data$Iconicity <- factor(Exp4Data$Iconicity, levels = c("No Label", "Iconic", "Counter-Iconic", "Conventional"))
+```
+
+## Performance
+### Descriptive Statistics
+```{r Experiment 4- Descriptive Statistics}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+#Means and SEs
+#Label Type
+Exp4Data.LabelType <- 
+  Exp4Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "LabelType") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+
+#Systematicity
+Exp4Data.Systematicity <- 
+  Exp4Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Systematicity") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci")) 
+
+#Iconicity
+Exp4Data.Iconicity <- 
+  Exp4Data%>% 
+    summarySE(measurevar = "RespCorr", groupvars = "Iconicity") %>%
+      `colnames<-`(c("Variable", "N", "RespCorr", "sd", "se", "ci"))
+
+Exp4Descriptives <- rbind.data.frame(Exp4Data.LabelType, Exp4Data.Systematicity, Exp4Data.Iconicity) 
+
+#Remove the extra "No Label" Rows
+Exp4Descriptives <- Exp4Descriptives[-4,]
+Exp4Descriptives <- Exp4Descriptives[-6,]
+
+Exp4Descriptives <- 
+  Exp4Descriptives %>%
+    mutate_if(is.numeric, round, digits = 3) %>%
+      subset(select = c(Variable, RespCorr, sd)) %>%
+        `colnames<-`(c("", "Mean", "sd")) %>%
+          knitr::kable(caption = "Experiment 4 - Summary Statistics", ) %>%
+            kable_styling(full_width= F) %>%
+              pack_rows("Label Type", 2, 3) %>%
+                pack_rows("Systematicity", 4, 5) %>%
+                    pack_rows("Iconicity", 6, 8)
+
+Exp4Descriptives
+
+save_kable(Exp4Descriptives, "Experiment 4- Descriptive Statistics.png")
+
+
+```
+
+### Mixed Models 
+```{r Experiment 4 - Mixed Models, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+
+afex.Exp4 <- mixed(RespCorr ~ LabelType + Systematicity + Iconicity + (1|ParticipantID),
+                         data=Exp4Data,
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+Exp4Anova <-
+  afex.Exp4$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Experiment 4 - Analysis of Factors", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp4Anova
+
+save_kable(Exp4Anova, "Experiment 4- Learning Performance - ANOVA Results.png")
+
+```
+
+
+#### Mixed Model Post Hoc Comparisons with t Tests
+
+This doesn't really work out very well - its confusing and convoluted - see below (after the plots) for an attempt to use EMMeans for this after simplifying the model by removing the non-significant effect of iconicity
+
+```{r Experiment 4 -  EM Means}
+
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+##Post-Hoc Effect of Label Type
+Exp4Agg.mean <- aggregate(RespCorr ~ LabelType * ParticipantID, data = Exp4Data, FUN= mean)
+
+Exp4.LabelType<- data.frame(
+  summarySE(data= Exp4Agg.mean,
+          measurevar = "RespCorr",
+          groupvars = "LabelType")
+)
+
+Exp4.LabelType
+
+Exp4.NoLabel <- subset(Exp4.LabelType, LabelType == "No Label")
+Exp4.Category <- subset(Exp4.LabelType, LabelType == "Category")
+Exp4.Item <- subset(Exp4.LabelType, LabelType == "Item")
+
+
+#Here we make use of Welch's two-sample t-test using the tsum.test tool from the BSDA package
+library(BSDA)
+
+## Category vs Item
+tsum.test(mean.x=Exp4.Category$RespCorr,   s.x=Exp4.Category$sd, n.x=Exp4.Category$N,
+          mean.y=Exp4.Item$RespCorr, s.y=Exp4.Item$sd, n.y= Exp4.Item$N)
+
+
+#Category vs No Label
+tsum.test(mean.x=Exp4.Category$RespCorr,   s.x=Exp4.Category$sd, n.x=Exp4.Category$N,
+          mean.y=Exp4.NoLabel$RespCorr, s.y=Exp4.NoLabel$sd, n.y= Exp4.NoLabel$N)
+
+#No Label vs Item
+tsum.test(mean.x=Exp4.NoLabel$RespCorr,   s.x=Exp4.NoLabel$sd, n.x=Exp4.NoLabel$N,
+          mean.y=Exp4.Item$RespCorr, s.y=Exp4.Item$sd, n.y= Exp4.Item$N)
+
+```
+
+#### Mixed Model Post Hoc Comparisons with EM Means - Interaction
+```{r Experiment 3 -  EM Means of Interaction}
+
+
+```
+
+
+### Plotted Data
+
+```{r Experiment 4 - Omnibus Plot}
+
+#Aggregate our data for plotting
+Exp4Data$Collapse <- paste(Exp4Data$LabelType, Exp4Data$Systematicity, Exp4Data$Iconicity, sep = ":")
+
+Exp4Data$Collapse <- factor(Exp4Data$Collapse, 
+                             levels = c(
+                               "No Label:No Label:No Label",
+                                "Category:Non-Systematic:Iconic", 
+                                "Category:Non-Systematic:Counter-Iconic",
+                                "Category:Non-Systematic:Conventional",
+                                "Item:Systematic:Iconic",
+                                "Item:Systematic:Counter-Iconic",
+                                "Item:Systematic:Conventional",
+                                "Item:Non-Systematic:Conventional"
+                               ),
+                             labels = c(
+                                "No Labels",
+                                "Iconic Category Labels", 
+                                "Counter-Iconic Category Labels",
+                                "Conventional Category Labels",
+                                "Iconic Item Labels",
+                                "Counter-Iconic Item Labels",
+                                "Conventional Item Labels",
+                                "Arbitrary Labels"
+                               )
+                            )
+
+Exp4Agg <- summarySE(Exp4Data, measurevar = "RespCorr", groupvars = c("Block", "Collapse"))
+Exp4Agg$Block <- factor(Exp4Agg$Block)
+
+
+#Plot our data
+ggplot(data=Exp4Agg, aes(x=Block, y=RespCorr, group= Collapse)) +
+  geom_line(aes(linetype = Collapse, color = Collapse), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci, color= Collapse), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(name = "Condition", 
+                     values= c("black", 
+                               "#007e70", "#00b19d", "#00e4ca", 
+                               "#c144c1", "#8b2e8b", "#652165", 
+                               "gray")) +
+  scale_linetype_manual(name = "Condition",
+                        values = c("dashed", rep("solid",3), rep("dashed",4))) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.40,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  #facet_grid(~LabelType) +
+  theme_alan() 
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 4 - Learning - Omnibus.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+So maybe that doesn't show us anything super exciting - or rather its hard to read. Because we don't actually plot Label Type Here.
+
+But we know from our omnibus analysis that level of Iconicity makes no difference (and of course we saw that in all other analyses), so lets get rid of iconicity and instead plot Label Type vs Systematicity
+
+
+```{r Experiment 4 - Label Type x Systematicity Plot}
+
+Exp4Data$Collapse2 <- paste(Exp4Data$LabelType, Exp4Data$Systematicity, sep = ":")
+Exp4Data$Collapse2 <- factor(Exp4Data$Collapse2, 
+                             levels = 
+                               c("Category:Non-Systematic",
+                                 "Item:Systematic",
+                                "Item:Non-Systematic",
+                                 "No Label:No Label"),
+                             labels = 
+                               c("Category Labels",
+                                 "Item Labels (Systematic)",
+                                 "Arbitrary Labels",
+                                 "No Labels"))
+
+Exp4Agg2 <- summarySE(Exp4Data, measurevar = "RespCorr", groupvars = c("BlockC", "Collapse2", "Systematicity", "LabelType"))
+Exp4Agg2$Block <- factor(Exp4Agg2$Block)
+
+#Plot our data
+ggplot(data=Exp4Agg2, aes(x=Block, y=RespCorr, group= Collapse2)) +
+  geom_line(aes(linetype = Collapse2, color = Collapse2), size = 1.2, position=pd) +
+  geom_errorbar(aes(ymin= RespCorr - ci, ymax= RespCorr + ci, color= Collapse2), width= 0.2, size = 1, position=pd)+
+  scale_color_manual(values= c("#00b19d", "#8b2e8b","gray", "black")) +
+  scale_linetype_manual(values = c(rep("solid", 2), "dashed", "dashed")) +
+  labs(x="Block", y="Proportion of Correct Responses") +
+  scale_y_continuous(limits = c(0.40,1), breaks=c(0.5,0.6,0.7,0.8,0.9,1.0)) +
+  theme_alan() +
+  labs(color = "Label Type", linetype = "Label Type")
+
+#GGSAVE
+ggsave("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Experiment 4 - Learning - Simplified.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 8, height = 4, units = c("in", "cm", "mm"),
+  dpi = 600)
+
+```
+
+
+In order to get some sensible EMmeans comparisons out, we're now going to re-write our ANOVA to use the Collapsed conditions shown in the figure above
+
+
+```{r Experiment 4 - Mixed Models II, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+
+afex.Exp4.2 <- mixed(RespCorr ~ Collapse2 * BlockC + (1|ParticipantID),
+                         data=Exp4Data,
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+Exp4Anova2 <-
+  afex.Exp4.2$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Experiment 4 - Analysis of Factors - Collapsed", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp4Anova2
+
+save_kable(Exp4Anova2, "Experiment 4- Learning Performance - ANOVA Results - Collapsed.png")
+
+```
+
+#### Comparisons with EMMeans II
+
+```{r Experiment 4 -  EM Means}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+##Post-Hoc Effect of Condition
+Exp4.Collapsed <- summarySE(data=Exp4Data,
+                             measurevar = "RespCorr",
+                             groupvars = "Collapse2")
+
+Exp4.Collapsed.EM <- emmeans(afex.Exp4.2, ~Collapse2)
+
+
+
+
+##Condition vs. Chance
+Exp4.Collapsed.vchance <- test(Exp4.Collapsed.EM, adjust = "Tukey")
+
+##Condition vs. Each Other
+Exp4.Collapsed.vPairs <- data.frame(pairs(Exp4.Collapsed.EM, adjust = "Tukey" ))
+
+
+
+
+###Category Baseline
+Exp4.Collapsed.vPairs.1 <- 
+  rbind(rep(NA,6),Exp4.Collapsed.vPairs[1:3,])
+
+#Item Baseline
+Exp4.Collapsed.vPairs.2 <- 
+  rbind(Exp4.Collapsed.vPairs[1,], rep(NA,6),Exp4.Collapsed.vPairs[4:5,])
+
+#Arbitrary Baseline
+Exp4.Collapsed.vPairs.3 <- 
+  rbind(Exp4.Collapsed.vPairs[2,], Exp4.Collapsed.vPairs[4,], rep(NA,6),Exp4.Collapsed.vPairs[6,])
+
+#No Label Baseline
+Exp4.Collapsed.vPairs.4 <- 
+  rbind(Exp4.Collapsed.vPairs[3,],Exp4.Collapsed.vPairs[4,],Exp4.Collapsed.vPairs[6,], rep(NA,6))
+
+###Creating a single dataframe for Blocks
+Exp4.Collapsed.Combo <- cbind.data.frame (
+  Exp4.Collapsed$Collapse2, Exp4.Collapsed$RespCorr, Exp4.Collapsed$sd,
+  Exp4.Collapsed.vPairs.1$p.value,
+  Exp4.Collapsed.vPairs.2$p.value,
+  Exp4.Collapsed.vPairs.3$p.value,
+  Exp4.Collapsed.vPairs.4$p.value
+)
+
+colnames(Exp4.Collapsed.Combo) <- c("Condition", "Mean", "SD", 
+                                "Category Labels",
+                                 "Item Labels (Systematic)",
+                                 "Arbitrary Labels",
+                                 "No Labels")
+
+
+###Knitting Condition Table
+Exp4PostHoc.Collapsed <- 
+  Exp4.Collapsed.Combo %>%  
+    mutate_if(is.numeric, round, 3) %>%
+      mutate_at(.vars = vars("Category Labels", "Item Labels (Systematic)",
+                             "Arbitrary Labels", "No Labels"),
+      funs(ifelse(.<0.001, "<0.001", .))) %>%
+      knitr::kable(caption = 'Experiment 4- Post Hoc Comparisons - Omnibus', "html") %>%
+            kable_styling(full_width = F) %>%
+              add_header_above(c("", "Descriptive Stats" = 2, 
+                "Post-Hoc Comparisons to Other Conditions (p values)" = 4),
+                   font_size = 12)
+
+Exp4PostHoc.Collapsed
+
+save_kable(Exp4PostHoc.Collapsed, "Experiment 4- Learning Performance - Omnibus Post Hoc Comparison.png")
+
+
+```
+```{r Experiment 4 - Mixed Models III- Final Block Only, warning = FALSE}
+setwd("C:/Users/Alan Nielsen/Documents/GitHub/Stekic-et-al/Figures/Tables")
+
+Exp4Data.Last <- subset(Exp4Data, Block == 9)
+Exp4Data.Last <- subset(Exp4Data.Last, Collapse2 == "Category Labels"| Collapse2 == "Item Labels (Systematic)")
+
+afex.Exp4.3 <- mixed(RespCorr ~ Collapse2 + (1|ParticipantID),
+                         data=Exp4Data.Last,
+                         method = 'LRT')
+
+
+#Pretty up results and kick out as kable
+Exp4Anova3 <-
+  afex.Exp4.3$anova_table %>% 
+  data.frame() %>% 
+    tibble::rownames_to_column(var= "Variable") %>% 
+      mutate_if(is.numeric, round, digits = 3) %>% 
+        mutate_all(funs(ifelse(.<0.001, "<0.001", .))) %>%
+          `colnames<-`(c("Variable", "df", "Chi Sq", "Chi df", "p")) %>%
+            knitr::kable(caption = "Experiment 4 - Analysis of Factors - Collapsed - Final Block Only", ) %>%
+              kable_styling(full_width= F)
+
+
+Exp4Anova3
+
+save_kable(Exp4Anova3, "Experiment 4- Learning Performance - ANOVA Results - Collapsed - Final Block Only.png")
+
+```
+
+
+

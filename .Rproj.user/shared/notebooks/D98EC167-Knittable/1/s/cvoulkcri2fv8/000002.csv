@@ -1,0 +1,5 @@
+"0","BirdSongs <- paste(here(""Simulated/Stimuli-Shared/Source Files""), ""/"",  #File Path"
+"0","                  rep(""Song "", 20),   #Just the word ""Song"" 20 times"
+"0","                  rep(1:20, 3), ""-"", # The numbers 1:20 3 times in a row"
+"0","                  rep(c(""Control"", ""Fast"", ""Slow""), each = 20), #""Control"" 20 times, then ""Fast"" 20 times, etc."
+"0","                  "".wav"", sep = """" )"

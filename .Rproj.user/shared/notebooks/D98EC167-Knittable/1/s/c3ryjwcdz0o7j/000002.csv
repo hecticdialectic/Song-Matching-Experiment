@@ -1,0 +1,7 @@
+"0","as.list(AfternoonSongsList$SongPath2) %>%
+  do.call(appendSample, ., 
+  filename = here(""Simulated/Single/Stimuli/Afternoon"", paste(""Stimtrack-Afternoon"", "".wav"", sep = """")))
+"
+"2","Error in do.call(appendSample, ., filename = here(""Simulated/Single/Stimuli/Afternoon"",  : 
+  unused argument (filename = here(""Simulated/Single/Stimuli/Afternoon"", paste(""Stimtrack-Afternoon"", "".wav"", sep = """")))
+"

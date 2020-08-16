@@ -1,0 +1,5 @@
+"0","Speeds <- c(""Control"", ""Fast"", ""Slow"")"
+"0","SpeedOrder <- as.vector(replicate(2, sample(Speeds, 3))) #unfortunately the replicate function needs us to add ""as.vector"" to output data in a sensible format (i.e. not as a list of lists)"
+"0","ChosenSongs <- paste(ChosenSongs, SpeedOrder, sep = ""-"") #Add our Speeds to the songs"
+"0",""
+"0","rm(Speeds, SpeedOrder)"

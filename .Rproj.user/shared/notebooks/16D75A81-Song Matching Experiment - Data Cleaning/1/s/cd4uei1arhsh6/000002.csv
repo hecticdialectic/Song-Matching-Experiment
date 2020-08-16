@@ -1,0 +1,4 @@
+"0","#DAWN"
+"0","rm(YBDawnStimtrack2, `Begin Time (s)`, Bird, BirdSongs, Channel, ChosenSongs, Dawn1, Dawn1silent, Dawn2, Dawn2silent,"
+"0","   Dawn3, Dawn3silent,DawnSongs, DawnSongsD, DawnSongsS, Durations, `End Time (s)`, `High Freq (Hz)`, `Low Freq (Hz)`, Notes,"
+"0","   Overlapping, Response, Selection, `Signal Type`, SongNum, SongSel, `Stim Type`, View, DawnSongsTrack, Dawn.ad, BaseSongs, Participants)"

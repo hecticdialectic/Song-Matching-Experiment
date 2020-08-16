@@ -1,0 +1,13 @@
+"0","file.remove(dir(here(""Simulated/Single/Stimuli/Dawn""), pattern = ""Silent.wav"", full.names = TRUE))"
+"1","logical(0)
+"
+"0","save.wave(Dawn1silent, "
+"0","           where = here(""Simulated/Single/Stimuli/Dawn"", "
+"0","                  paste(DawnSongs[1],""-Dawn1-"",""Silent"", "".wav"", sep = """")))"
+"0","save.wave(Dawn2silent, "
+"0","           where = here(""Simulated/Single/Stimuli/Dawn"", "
+"0","                  paste(DawnSongs[2],""-Dawn2-"",""Silent"", "".wav"", sep = """")))"
+"0","save.wave(Dawn3silent, "
+"0","           where = here(""Simulated/Single/Stimuli/Dawn"", "
+"0","                  paste(DawnSongs[3],""-Dawn3-"",""Silent"", "".wav"", sep = """")))"
+"0",""

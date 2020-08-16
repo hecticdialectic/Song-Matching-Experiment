@@ -1,0 +1,3 @@
+"0","## Adding up the cumulative length"
+"0","DawnSongsList$`End Time (s)` <- cumsum(DawnSongsList$Duration +10)"
+"0","DawnSongsList$`Begin Time (s)` <- DawnSongsList$`End Time (s)` - DawnSongsList$Duration"

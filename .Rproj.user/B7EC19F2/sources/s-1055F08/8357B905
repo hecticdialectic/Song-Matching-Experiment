@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597363820952.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8357B905",
+    "lastKnownWriteTime" : 1597578195,
+    "last_content_update" : 1597578195165,
+    "path" : "~/GitHub/Song Matching Experiment/Knittable.Rmd",
+    "project_path" : "Knittable.Rmd",
+    "properties" : {
+        "cursorPosition" : "757,505",
+        "scrollLine" : "756"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

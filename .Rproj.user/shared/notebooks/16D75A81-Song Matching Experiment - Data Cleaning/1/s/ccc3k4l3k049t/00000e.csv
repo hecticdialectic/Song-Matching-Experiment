@@ -1,0 +1,3 @@
+"0","Dawn1 <- load.wave(  here(""Simulated/Single/Stimuli/Dawn"", paste(DawnSongs[1], "".wav"", sep = """"))  )"
+"0","Dawn2 <- load.wave(  here(""Simulated/Single/Stimuli/Dawn"", paste(DawnSongs[2], "".wav"", sep = """"))  )"
+"0","Dawn3 <- load.wave(  here(""Simulated/Single/Stimuli/Dawn"", paste(DawnSongs[3], "".wav"", sep = """"))  )"
