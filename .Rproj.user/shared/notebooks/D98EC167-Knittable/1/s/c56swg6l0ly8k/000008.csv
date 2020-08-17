@@ -1,6 +1,4 @@
-"0","here(""Simulated/Single/Stimuli/Afternoon"", paste(""Stimtrack-Afternoon"", "".wav"", sep = """"))
-"
-"1","[1]"
-"1"," ""C:/Users/Alan Nielsen/Documents/GitHub/Song Matching Experiment/Simulated/Single/Stimuli/Afternoon/Stimtrack-Afternoon.wav"""
-"1","
-"
+"0","as.list(AfternoonSongsList$SongPath2) %>%"
+"0","  do.call(appendSample, .) %>%"
+"0","    saveSample(filename = here(""Simulated/Single/Stimuli/Afternoon"", paste(""Stimtrack-Afternoon"", "".wav"", sep = """")), "
+"0","           overwrite = TRUE)"

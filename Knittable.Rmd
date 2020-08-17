@@ -770,17 +770,135 @@ When we're using pipes, the default is that whatever we pipe into a function tak
 
 In the chunk below, we use this with the interleave() function, because we want the lines containing "Waveform 1" in the View column to appear before those containing "Spectrogram 1" - so we need the mutated version of the songlist with "Spectrogram 1" to be the second argument to interleave.
 ```{r Creating Stimuli - Afternoon Stimtrack VIII, message= FALSE, warning = FALSE, results = "hide", cache = TRUE}
-
-
-# Duplicating our dataframe, changing the "View" column to "Spectrogram 1", and then pasting it all back together and exporting as a csv
-
 AfternoonSongsList %>%
   mutate(View = "Spectrogram 1") %>%
       interleave(AfternoonSongsList, .) %>%
         write.csv(file = here("/Simulated/Single/Stimlists", 
           paste(AfternoonSongsList$Bird[1], "-", AfternoonSongsList$`Trial Type`[1], "-StimTrack.csv", sep ="")))
+```
+
+### Assigning Stimuli - The "For Loop"
+
+What we have above is nice: it generates lists of stimuli for one of our birds to be tested both at Dawn and in the Afternoon, and even generates the actual experimental Stimtracks (wav files) for use in the field. But it only does this for one bird, which isn't what we want. The real power of R for data wrangling starts coming when we [iterate or loop over something](https://r4ds.had.co.nz/iteration.html).
+
+In this case, we are going to write something that tells R to run (a slightly modified version) of the above code N times, where N is the number of lines in our "Participants" dataframe (in this case, 60 times- twice for each bird (Dawn and Afternoon)).
+
+We'll start with bits of code that we've already used above to generate our list of participants and our Source Files. We do this because we want each section of this document to be able to be run in isolation without explicit references to previous sections.
+
+```{r Creating Stimuli - The For Loop - Setup, message= FALSE, warning = FALSE, results = "hide", cache = TRUE}
+
+Participants <-                                             #The saved dataframe that we pipe this all out to
+  c("B", "W", "O", "R", "G", "Y") %>%                       #set up a vector
+    expand.grid(c("B", "W", "O", "R", "G", "Y")) %>%        #combine that vector with itself into a dataframe of permutations
+      subset(Var1 != Var2) %>%                              #exclude rows of the dataframe where the two colors are the same
+        unite("BirdID", Var1:Var2, sep= "", remove = FALSE) %>%     #Unite two columns into a new column
+          pull(BirdID) %>%                                  #Pipe only the BirdID column to the next function
+            expand.grid(c("Dawn", "Afternoon")) %>%         #Combine BirdIDs and Trialtypes
+              setNames(c("BirdID", "TrialType"))            #Rename columns
+
+#Getting ourselves the same initial seed
+set.seed(49) 
+
+#Make Sure Folder is empty
+file.remove(dir(here("Simulated/Stimuli-Shared/Source Files"), pattern = ".wav", full.names = TRUE))
+
+#Make a copy of the files in folder
+file.copy(from = dir(here("Simulated/Stimuli-Shared/Source Files/Original"), pattern = ".wav", full.names = TRUE),
+          to= here("Simulated/Stimuli-Shared/Source Files")) 
+
+#Rename files
+file.rename(from = dir(here("Simulated/Stimuli-Shared/Source Files"), pattern = ".wav", full.names = TRUE),
+            to = paste(here("Simulated/Stimuli-Shared/Source Files"), "/",  
+                  rep("Song ", 20),   #Just the word "Song" 20 times
+                  rep(1:20, 3), "-", # The numbers 1:20 3 times in a row
+                  rep(c("Control", "Fast", "Slow"), each = 20), #"Control" 20 times, then "Fast" 20 times, etc.
+                  ".wav", sep = "" )) 
 
 ```
 
 
+
+
+```{r Creating Stimuli - The For Loop, message= FALSE, warning = FALSE, results = "hide", cache = TRUE}
+
+
+file.remove(dir(here("Simulated/For Loop/Stimuli/Afternoon"), pattern = ".wav", full.names = TRUE))
+file.remove(dir(here("Simulated/For Loop/Stimuli/Dawn"), pattern = ".wav", full.names = TRUE))
+file.remove(dir(here("Simulated/For Loop/StimLists/StimTracks"), pattern = ".wav", full.names = TRUE))
+file.remove(dir(here("Simulated/For Loop/Stimuli/StimLists"), pattern = ".txt", full.names = TRUE))
+
+for (participant in 1:nrow(Participants)) {
+  
+  Bird <- Participants$BirdID[participant]
+  `Trial Type` <- Participants$TrialType[participant]
+  
+  Songs <- 
+    as.data.frame(dir(here("Simulated/Stimuli-Shared/Source Files"), pattern = ".wav")) %>%
+      setNames("SongData") %>%                                                                #Set our column name
+      transmute(SongData = str_replace_all(SongData, ".wav", "")) %>%                          #Delete ".wav"
+        separate(SongData, into = c("SongNum", "SongType"), sep = "-", remove = FALSE) %>%  #Separate into two new columns
+          subset(SongType == "Control") %>%                                                 #Subset to only controls
+            sample_n(3) %>%                                                                 #sample(), but for a dataframe
+              mutate(Speed = as.vector(sample(c("Control", "Fast", "Slow"), 3))) %>%    #New column speeds 
+                unite(SongData, c("SongNum", "Speed"), sep = "-", remove = FALSE) %>%      #Unite into a new column
+                  dplyr::select(-SongType) %>%  #Get rid of a useless column
+                    mutate(SongSel = c("1", "1", "1")) %>%                   #Adding a songsel column we'll use later
+                      mutate(SongSel = paste(`Trial Type`, .$SongSel, sep=""))  %>%
+                        mutate(SongPath = paste(here("Simulated/For Loop/Stimuli"), "/", `Trial Type`, "/",
+                                 SongData, sep = "" )) %>%
+                         mutate(SongPath2 = paste(SongPath, "-", SongSel, "-", "Silent.wav", sep = "")) 
+  
+  file.copy(from = here("Simulated/Stimuli-Shared/Source Files", paste(Songs$SongData, ".wav", sep = "")) ,
+          to =  here("Simulated/For Loop/Stimuli", paste("/", `Trial Type`, "/", Songs$SongData, ".wav", sep = ""))       )
+  
+  SongsList <- 
+    Songs %>%
+    rep_sample_n(size = 3, reps = 10) %>%
+      ungroup() %>%
+        data.frame() %>%
+           mutate(Duration = lapply(lapply(paste(SongPath, ".wav", sep=""), load.wave), duration)) %>% #WOAH!
+            mutate(Duration = unlist(Duration)) %>%
+              mutate(`End Time (s)` = cumsum(Duration + 10)) %>%
+                mutate(`Begin Time (s)` = `End Time (s)` - Duration ) %>%
+                  mutate(Selection = 1:30) %>%
+                  mutate(View = "Waveform 1") %>%
+                  mutate(Channel = 1) %>%
+                  mutate(`Low Freq (Hz)` = 1) %>%
+                  mutate(`High Freq (Hz)` = 1) %>%
+                  mutate(Bird = Participants$BirdID[5]) %>%
+                  mutate(`Trial Type` = `Trial Type`) %>%
+                  mutate(`Signal Type` = "S") %>%
+                  mutate(`Stim Type` = Speed) %>%
+                  mutate(Response = "") %>%
+                  mutate(Overlapping = "") %>%
+                  mutate(Notes = "") %>%
+                  mutate(Duration = Duration) %>%
+                    subset(select = c("Selection", "View", "Channel", "Begin Time (s)", "End Time (s)", 
+                                    "Low Freq (Hz)", "High Freq (Hz)", "Bird", "Trial Type", 
+                                    "Signal Type", "Stim Type", "Response", "Overlapping", "Notes", 
+                                    "SongNum", "SongSel", "Duration", "SongPath", "SongPath2")) 
+
+  for (song in 1:nrow(Songs)) {
+    SongPath1 <- paste(Songs$SongPath[song], ".wav", sep = "")
+    SongPath2 <- Songs$SongPath2[song]
+    
+    SongPath1 %>%
+      load.wave() %>%
+        addsilw(at = "start", d= 10, output = "audioSample") %>%
+          save.wave(where = SongPath2)
+  }
+  
+as.list(SongsList$SongPath2) %>%
+  do.call(appendSample, .) %>%
+    saveSample(filename = here("Simulated/For Loop/StimLists/StimTracks", 
+                               paste("/", Bird, "-", `Trial Type`, "-Stimtrack.wav", sep = "")))
+
+SongsList %>%
+  mutate(View = "Spectrogram 1") %>%
+      interleave(SongsList, .) %>%
+        write.csv(file = here("/Simulated/For Loop/StimLists", 
+          paste("/", Bird, "-", `Trial Type`, "-Stimtrack.txt", sep = "")))
+                                                                   
+}
+```
 

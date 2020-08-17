@@ -1,0 +1,5 @@
+"0","AfternoonSongsList %>%"
+"0","  mutate(View = ""Spectrogram 1"") %>%"
+"0","      interleave(AfternoonSongsList, .) %>%"
+"0","        write.csv(file = here(""/Simulated/Single/Stimlists"", "
+"0","          paste(AfternoonSongsList$Bird[1], ""-"", AfternoonSongsList$`Trial Type`[1], ""-StimTrack.csv"", sep ="""")))"
